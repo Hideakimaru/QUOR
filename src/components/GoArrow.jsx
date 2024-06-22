@@ -5,7 +5,7 @@ function ArrowButton({ onClick }) {
 	return (
 		<button
 			onClick={onClick}
-			className='z-[10000] flex fixed bottom-11 right-16 w-12 h-12 bg-custom-green justify-center items-center rounded-full font-poppins text-white bg-opacity-50 hover:bg-opacity-100 hover:transition hover:duration-500 hover:ease-in-out'
+			className='z-[10000] flex fixed bottom-10 right-3 md:bottom-16 md:right-10 w-12 h-12 bg-custom-green justify-center items-center rounded-full font-poppins text-white bg-opacity-80 hover:bg-opacity-100 hover:transition hover:duration-500 hover:ease-in-out'
 		>
 			<ArrowIcon fontSize='medium' />
 		</button>

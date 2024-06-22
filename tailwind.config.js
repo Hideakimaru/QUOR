@@ -8,6 +8,15 @@ export default {
 			poetsen: ["Poetsen One", "Helvetica", "sans-serif"]
 		},
 		extend: {
+			animation: {
+				showing: "showing 1s ease-in-out"
+			},
+			keyframes: {
+				showing: {
+					"0%": { opacity: 0 },
+					"100%": { opacity: 1 }
+				}
+			},
 			colors: {
 				"custom-green": "#2ecc71",
 				"custom-orange": "#f39c12"

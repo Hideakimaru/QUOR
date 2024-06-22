@@ -6,16 +6,12 @@ import MobileMenu from "./components/MobileMenu.jsx";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import { ScrollTrigger } from "gsap/all";
 import { Outlet, ScrollRestoration } from "react-router-dom";
 
 function App() {
 	const [isOpen, setIsOpen] = useState(false);
-	const footerRef = useRef(null);
 	const headerRef = useRef(null);
-
 	gsap.registerPlugin(useGSAP);
-	gsap.registerPlugin(ScrollTrigger);
 
 	function handleOpen() {
 		setIsOpen(true);
@@ -44,61 +40,6 @@ function App() {
 		{ scope: headerRef }
 	);
 
-	useGSAP(
-		() => {
-			const footerTl = gsap.timeline({
-				scrollTrigger: {
-					trigger: footerRef.current
-				}
-			});
-
-			gsap.context(() => {
-				footerTl.fromTo(
-					footerRef.current,
-					{ y: 222, opacity: 0 },
-					{ y: 0, opacity: 1 }
-				);
-				footerTl.fromTo(
-					".LOGO-TEXT",
-					{ rotation: 0, opacity: 0 },
-					{ rotation: 720, opacity: 1 }
-				);
-				footerTl.fromTo(
-					".INSTAGRAM",
-					{ y: 20, opacity: 0 },
-					{ y: 0, opacity: 1, ease: true }
-				);
-				footerTl.fromTo(
-					".KOFI",
-					{ y: 20, opacity: 0 },
-					{ y: 0, opacity: 1, ease: true }
-				);
-				footerTl.fromTo(
-					".GITHUB",
-					{ y: 20, opacity: 0 },
-					{ y: 0, opacity: 1, ease: true }
-				);
-				footerTl.fromTo(
-					".MAIL",
-					{ y: 20, opacity: 0 },
-					{ y: 0, opacity: 1, ease: true }
-				);
-				footerTl.fromTo(
-					".TELEGRAM",
-					{ y: 20, opacity: 0 },
-					{ y: 0, opacity: 1, ease: true }
-				);
-				footerTl.fromTo(".LINKS", { opacity: 0 }, { opacity: 1, ease: true });
-				footerTl.fromTo(
-					".COPYRIGHT",
-					{ opacity: 0 },
-					{ opacity: 1, ease: true }
-				);
-			}, footerRef);
-		},
-		{ scope: footerRef }
-	);
-
 	return (
 		<>
 			{isOpen ? (
@@ -106,9 +47,8 @@ function App() {
 			) : (
 				<MainWrapper>
 					<Header onClick={handleOpen} headerRef={headerRef} />
-
 					<Outlet />
-					<Footer footerRef={footerRef} />
+					<Footer />
 				</MainWrapper>
 			)}
 			<ScrollRestoration />
