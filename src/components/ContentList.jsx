@@ -49,7 +49,7 @@ export default function ContentList({
 						className='w-fit py-1 px-4 flex justify-center items-center text-white rounded-md'
 						style={{
 							backgroundColor:
-								contentType.toLowerCase() === "film"
+								contentType.toLowerCase() === "movie"
 									? "#2980b9"
 									: contentType.toLowerCase() === "anime"
 									? "#8e44ad"
@@ -66,7 +66,7 @@ export default function ContentList({
 			</div>
 			<div className='pt-5 flex w-full flex-col justify-between'>
 				<div className='flex gap-4 w-full flex-col md:justify-start font-roboto text-black'>
-					<h1 className='text-center md:text-left font-bold text-2xl md:text-3xl uppercase'>
+					<h1 className='pr-5 text-center md:text-left font-bold text-2xl md:text-3xl uppercase'>
 						{title}
 					</h1>
 					<div className='flex flex-col gap-2'>

@@ -3,7 +3,7 @@ export const initialData = [
 		id: 0,
 		title: "Money Heist",
 		titleImage: "https://i.imgur.com/MQNdCA7.jpg",
-		contentYear: " 2017",
+		contentYear: "2017",
 		episodesCount: "9 / 9",
 		ratingNumber: "8.2",
 		contentGenre: "Drama, Action, Crime",
@@ -31,7 +31,7 @@ export const initialData = [
 		episodesCount: "1 / 1",
 		ratingNumber: "7.4",
 		contentGenre: "Action, Crime, Thriller",
-		contentType: "Film",
+		contentType: "Movie",
 		contentDescription:
 			"Former assassin John Wick loses his wife Helen to a terminal illness." +
 			"  Following her death, John receives a beagle puppy named Daisy, the last gift" +
@@ -116,7 +116,7 @@ export const initialData = [
 		episodesCount: "1 / 1",
 		ratingNumber: "5.8",
 		contentGenre: "Romance, Comedy",
-		contentType: "Film",
+		contentType: "Movie",
 		contentDescription:
 			"The story begins seven years after the broken engagement of Anne Elliot to Frederick Wentworth, then a young and undistinguished naval officer. Wentworth was considered clever, confident and ambitious, but his low social status and lack of wealth made Anne's friends and family view him as an unsuitable partner. Furthermore, Lady Russell, a distant relative whom Anne considers to be a second mother to her after her own died, also saw the relationship as imprudent for one so young and persuaded Anne to break off the engagement." +
 			"" +
@@ -168,5 +168,51 @@ export const initialData = [
 			"Geralt of Rivia, a brooding professional monster hunter for hire also known as witcher, struggles to keep his humanity in a medieval dark fantasy world ruled by corrupt kings, queens and mages, where poverty, violence and intolerance are rampant, normal humans are sometimes worse than actual monsters and most jobs that pay well involve the darkest of human emotions and desires. Yennefer of Vengerberg is an ambitious mage who came from nothing and wants everything. Princess Cirilla or Ciri is a young girl who may or may not possess some great mysterious power within her. Their destinies, seemingly quite different, slowly intertwine in a rather cosmic fashion. Their companions include Jaskier the bard, Geralt's endearingly annoying friend and hype man vowed to spread the word of his heroics throughout the continent even if he has to embellish them a little for a few coins more, Tissaia de Vries, Yennefer's secretive mentor who believes in tough love, and Triss Merigold, a good-natured druidic mage and trustworthy friend. The Nilfgaardian Empire's sudden brutal invasion of the kingdom of Cintra ruled by Cirilla's protective grandmother, warrior queen Calanthe, puts their lives in great danger." +
 			"Geralt of Rivia is a witcher, a mutant with special powers who kills monsters for money. The land is in a state of turmoil, due to the empire of Nilfgaard seeking to enlarge its territory. Among the refugees of this struggle is Cirilla, the Princess of Cintra, one of Nilfgaard's victims. She and Geralt share a destiny. Meanwhile, another figure looms large in Geralt's adventures: Yennefer, a sorceress." +
 			"—grantss"
+	},
+	{
+		id: 8,
+		title: "Spider-Man: Across the Spider-Verse",
+		titleImage: "https://i.imgur.com/rF4QeqA.jpg",
+		contentYear: "2023",
+		episodesCount: "1 / 1",
+		ratingNumber: "8.6",
+		contentGenre: "Animation, Action, Adventure",
+		contentType: "Cartoon",
+		contentDescription:
+			"On Earth-65, police captain George Stacy is unaware that his daughter Gwen Stacy is Spider-Woman, whom the police are hunting for killing Peter Parker, whom Gwen had accidentally killed after he turned into the Lizard. One night, Gwen encounters a version of the Vulture from an Italian Renaissance–themed alternate universe. Miguel O'Hara and Jess Drew arrive using portal-generating watches and help Gwen neutralize the Vulture. George corners Gwen, who then reveals her identity to him; distraught, he attempts to arrest her. Miguel reluctantly grants Gwen membership into the Spider-Society, allowing her to escape with him and Jess." +
+			"" +
+			"In Brooklyn on Earth-1610, sixteen months after Kingpin's defeat and the destruction of the Alchemax collider,[a] Miles Morales encounters the Spot, an Alchemax scientist-turned-criminal whose body was infused with portals during the explosion. The Spot blames Miles for causing his mutation and reveals that, while testing the collider, he had transported a spider from another dimension, Earth-42, which then bit Miles and turned him into Spider-Man. The Spot then accidentally transports himself into a void, where he learns to travel to other universes, find Alchemax colliders and empower himself further." +
+			"" +
+			"Gwen travels to Earth-1610 and reconnects with Miles while tracking the Spot, having traveled to Earth-50101, one of the universes with an active Alchemax collider. Miles secretly follows her through the portal to Mumbattan, and they team up with that world's local Spider-Man Pavitr Prabhakar, and later Hobie Brown, against the Spot, who absorbs the power of that world's collider. The Spot and Miles share a vision of the Spot's future attacks, which include the deaths of Police Inspector Singh, the father of Pavitr's girlfriend Gayatri, and Miles' father Jeff. The Spot departs, and the collider collapses; Miles saves Singh from the ensuing destruction, but Earth-50101 begins to fall apart from its disrupted \"canon event\" before members of the Society arrive to contain the damage. Miles, Gwen, and Hobie are sent to the Society's headquarters on Nueva York in Earth-928, where hundreds of Spider-People gather and reside in a massive complex." +
+			"" +
+			'Miles, along with Gwen and Hobie, meets with Miguel and reunites with Peter B. Parker, who is accompanied by his infant daughter Mayday. Miguel explains to Miles that each of the Spider-People\'s stories throughout the multiverse contains "canon events", such as the deaths of a police captain close to Spider-Man, and that straying from these events threatens reality and may cause that universe to collapse, which in turn could collapse the entire multiverse as a consequence. Miguel reveals that he witnessed the collapse of another universe firsthand when attempting to replace a deceased version of himself from that universe.' +
+			"" +
+			"Miles realizes that the Spot murdering Jeff, who is set to be promoted to police captain in two days, is a canon event. Miguel imprisons Miles to prevent him from saving Jeff, but Hobie helps Miles break loose before quitting the Society. As Miles flees through the complex, Miguel orders the Society to capture him. Miguel corners Miles and tells him he was never supposed to be Spider-Man; Earth-42's spider traveling dimensions inadvertently caused the death of Earth-1610's Peter Parker, the Spot's creation, and the absence of Spider-Man on Earth-42. Miles overpowers Miguel and with the help of Margo Kess, flees to what he believes is his home dimension. Considering Gwen a liability, a furious Miguel ejects her from the Society and forcibly sends her back to Earth-65. Once there, Gwen reunites with George, who has resigned from his job as police captain. The two reconcile, and George gives Gwen a portal watch left behind by Hobie." +
+			"" +
+			"As the Society begins their search for Miles in Earth-1610, Gwen and Miles realizes that Miles has arrived on Earth-42 rather than his own dimension. In this world, his uncle Aaron Davis is alive while his father is dead, and New York City is riddled with unchecked crime. Miles is knocked unconscious and finds himself restrained by Aaron and Earth-42's version of the Prowler, who is revealed to be Miles. Meanwhile, Gwen speaks with Miles' parents, promising to find him and bring him home. As the Spot begins his multiversal attack on Earth-1610's New York, Miles prepares to escape his restraints, and Gwen assembles a team to find Miles, consisting of Peter B., Mayday, Pavitr, Hobie, Margo, Spider-Man Noir, Peni Parker, and Spider-Ham."
+	},
+	{
+		id: 9,
+		title: "LIFT",
+		titleImage: "https://i.imgur.com/sWrWEBJ.png",
+		contentYear: "2024",
+		episodesCount: "1 / 1",
+		ratingNumber: "5.5",
+		contentGenre: "Action, Comedy, Crime",
+		contentType: "Movie",
+		contentDescription:
+			'Cyrus, a renowned international thief, leads a heist crew that consists of Denton, pilot Camila, hacker Mi-Sun, safecracker Magnus, and engineer Luke. They undertake two simultaneous thefts, stealing a Van Gogh painting in London while staging the fake kidnapping of renowned NFT artist N8 in Venice. The team staged a kidnapping for N8 and Cyrus points out that famous paintings rapidly increase in value after being stolen and he says that his crew stole the Van Gogh painting and sold it in the black market for $20 million to buy N8 NFTs. After being "kidnapped", N8\'s NFT ballooned in value to $89 million. N8 decides to celebrate with the team after being promised a cut of the money.' +
+			"" +
+			"Interpol agent Abby Gladwell, a former fling of Cyrus, uncovers evidence implicating Denton, in the theft and arrests him. Rather than proceed with charges against the crew, Abby's superior, Commander Huxley, leverages their legal predicament to force them to help capture billionaire Lars Jorgenson, who intends to make more money by working with the hacking group Leviathan to stage a massive flooding in Europe, allowing him to make billions in profit through stock manipulation. As Leviathan requires payment in untraceable gold bullion, Jorgenson has arranged for a shipment of gold to be taken from his vault in London and flown to Leviathan's bank in Zürich via a commercial airliner. As part of the deal for clean records for Cyrus and all his members, Cyrus insists Abby join the team to provide certain cover for Interpol." +
+			"" +
+			"The crew determines they will only be able to steal the gold while the airliner is in mid-air. To do so, they procure a private jet from a rich private art collector named Molsen that Camila will fly directly underneath the airliner, allowing Mi-Sun to switch the radar signals to make it seem like the plane is still on course while the crew diverts it to a private airfield. In exchange for loaning his private jet, Cyrus promises Molsen to persuade N8 to make a special NFT art for him. After Magnus cracks the safe and Jorgenson's henchmen are incapacitated, the crew will extract the gold via the jet." +
+			"" +
+			"Their timing is complicated when Jorgenson executes a mole in his organization and moves up the delivery date. Nevertheless, the crew is ready on time. After successfully diverting the plane, Jorgenson's henchmen attempt an hijack, resulting in a fight on board the plane. Magnus, Abby, Cyrus, and Camila are captured. Magnus escapes on the ground, while the remaining three are taken aboard the jet with the gold, headed for Jorgenson's estate in Tuscany." +
+			"" +
+			"Desperate for the gold to not reach Jorgenson, Huxley orders the plane shot down by NATO. Harry, the crew's contact at air traffic control, works with Camila to get a message to the pilots that there are hostages on board, forcing them to stand down. Another fight between the crew and Jorgenson's henchmen results in the jet crash landing on the grounds of Jorgenson's villa." +
+			"" +
+			"Abby, Cyrus, and Camila are captured at gunpoint by Jorgenson, who also executes Leviathan's representative after they decide to cancel the deal. The Carabinieri arrive, and Cyrus uses N8's NFT technology to show them a recording of Jorgenson murdering the representative. Jorgenson is arrested, while Abby punches Huxley upon learning he authorized the NATO jets. She resigns from Interpol and joins Cyrus." +
+			"" +
+			"Weeks later, Cyrus reveals to Abby that the crew stole the gold shipment during the heist on the airliner, replacing the actual shipment with iron bars painted to look like gold. Together, the crew recover their gold haul and celebrate their success while Cyrus and Abby rekindle their relationship."
 	}
 ];

@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useRef } from "react";
-import { initialData } from "./data.js";
 import Hr from "./utils/Hr.jsx";
 import Title from "./Title.jsx";
 import SearchBar from "./SearchBar.jsx";
@@ -15,29 +14,38 @@ import { ScrollRestoration } from "react-router-dom";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import { initialData } from "./data.js";
+import ContentFilters from "./ContentFilters.jsx";
 
 export default function AddToList() {
 	const [contentData, setContentData] = useState(initialData);
+	const [originalData, setOriginalData] = useState(initialData);
 	const [imageUrl, setImageUrl] = useState("");
 	const [imageAlt, setImageAlt] = useState("");
 	const [isPrivew, setIsPrivew] = useState(false);
-	const [searchValue, setSearchValue] = useState("");
 	const [scrollVisability, setScrollVisability] = useState("");
+	const [isText, setIsText] = useState(false);
+	const [isShow, setIsShow] = useState(false);
+	const [isSearch, setIsSearch] = useState(false);
+	const [searchValue, setSearchValue] = useState("");
+	const [isFilterActive, setIsFilterActive] = useState(null);
+
 	gsap.registerPlugin(useGSAP);
 	gsap.registerPlugin(ScrollTrigger);
 
-	const [isSearch, setIsSearch] = useState(false);
 	const searchBarRef = useRef(null);
-	const [isText, setIsText] = useState(false);
-	const [isShow, setIsShow] = useState(false);
 
-	console.log(isShow);
+	useGSAP(
+		() => {
+			ScrollTrigger.refresh();
+		},
+		{ dependencies: [searchValue, isFilterActive] }
+	);
 
 	// SearchBar handlers
 	function handleSearchChange(e) {
 		setSearchValue(e.target.value);
 		setIsText(true);
-		ScrollTrigger.refresh();
 	}
 
 	function handleSearchClick() {
@@ -60,9 +68,36 @@ export default function AddToList() {
 		const filteredContent = contentData.filter(content =>
 			content.title.toLowerCase().includes(searchValue.toLowerCase())
 		);
-		console.log(filteredContent);
 		setIsShow(filteredContent.length === 0 && searchValue.toLowerCase() !== "");
 	}, [contentData, searchValue]);
+
+	function handleFilter(contentType) {
+		if (contentType === "new") {
+			if (isFilterActive === "new") {
+				setIsFilterActive(null);
+				setContentData(originalData);
+			} else {
+				setIsFilterActive("new");
+				const currentYear = new Date().getFullYear().toString();
+				const filteredData = originalData.filter(
+					content => content.contentYear === currentYear
+				);
+				setContentData(filteredData);
+			}
+		} else {
+			if (isFilterActive === contentType) {
+				setIsFilterActive(null);
+				setContentData(originalData);
+			} else {
+				setIsFilterActive(contentType);
+				const filteredData = originalData.filter(
+					content =>
+						content.contentType.toLowerCase() === contentType.toLowerCase()
+				);
+				setContentData(filteredData);
+			}
+		}
+	}
 
 	// Image handlers
 	useEffect(() => {
@@ -104,6 +139,10 @@ export default function AddToList() {
 					handleSearchClick={handleSearchClick}
 					handleSearchClear={handleSearchClear}
 					handleSearchBlur={handleSearchBlur}
+				/>
+				<ContentFilters
+					onClick={handleFilter}
+					isFilterActive={isFilterActive}
 				/>
 				<Hr />
 				<ContentWrapper>

@@ -558,6 +558,10 @@ video {
   visibility: visible;
 }
 
+.collapse {
+  visibility: collapse;
+}
+
 .fixed {
   position: fixed;
 }
@@ -1013,6 +1017,11 @@ video {
   padding-right: 1.5rem;
 }
 
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .px-9 {
   padding-left: 2.25rem;
   padding-right: 2.25rem;
@@ -1058,6 +1067,10 @@ video {
   padding-bottom: 1.25rem;
 }
 
+.pb-0 {
+  padding-bottom: 0px;
+}
+
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -1068,6 +1081,10 @@ video {
 
 .pb-5 {
   padding-bottom: 1.25rem;
+}
+
+.pr-5 {
+  padding-right: 1.25rem;
 }
 
 .pt-10 {
@@ -2004,6 +2021,10 @@ video {
   --tw-scale-x: .9;
   --tw-scale-y: .9;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.active\:bg-opacity-100:active {
+  --tw-bg-opacity: 1;
 }
 
 .active\:opacity-100:active {

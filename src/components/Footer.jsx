@@ -4,66 +4,8 @@ import KofiIcon from "@mui/icons-material/Coffee";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import MailIcon from "@mui/icons-material/Mail";
 import TelegramIcon from "@mui/icons-material/Telegram";
-import { ScrollTrigger } from "gsap/all";
-import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
-import gsap from "gsap";
 
-export default function Footer() {
-	const footerRef = useRef(null);
-	gsap.registerPlugin(ScrollTrigger);
-	gsap.registerPlugin(useGSAP);
-
-	useGSAP(
-		() => {
-			const footerTl = gsap.timeline({
-				scrollTrigger: {
-					trigger: footerRef.current,
-					start: "top bottom",
-					end: "-=222"
-				}
-			});
-
-			footerTl.fromTo(
-				footerRef.current,
-				{ y: 222, opacity: 0 },
-				{ y: 0, opacity: 1 }
-			);
-			footerTl.fromTo(
-				".LOGO-TEXT",
-				{ rotation: 0, opacity: 0 },
-				{ rotation: 720, opacity: 1 }
-			);
-			footerTl.fromTo(
-				".INSTAGRAM",
-				{ y: 20, opacity: 0 },
-				{ y: 0, opacity: 1, ease: true }
-			);
-			footerTl.fromTo(
-				".KOFI",
-				{ y: 20, opacity: 0 },
-				{ y: 0, opacity: 1, ease: true }
-			);
-			footerTl.fromTo(
-				".GITHUB",
-				{ y: 20, opacity: 0 },
-				{ y: 0, opacity: 1, ease: true }
-			);
-			footerTl.fromTo(
-				".MAIL",
-				{ y: 20, opacity: 0 },
-				{ y: 0, opacity: 1, ease: true }
-			);
-			footerTl.fromTo(
-				".TELEGRAM",
-				{ y: 20, opacity: 0 },
-				{ y: 0, opacity: 1, ease: true }
-			);
-			footerTl.fromTo(".LINKS", { opacity: 0 }, { opacity: 1, ease: true });
-			footerTl.fromTo(".COPYRIGHT", { opacity: 0 }, { opacity: 1, ease: true });
-		},
-		{ scope: footerRef }
-	);
+export default function Footer({ footerRef }) {
 	return (
 		<footer
 			ref={footerRef}
