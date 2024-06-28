@@ -4,7 +4,7 @@ import GoArrow from "./GoArrow";
 export default function PrivacyPolicy() {
 	return (
 		<>
-			<div className='p-10 md:p-20 flex flex-col'>
+			<div className='container mx-auto p-10 md:p-20 flex flex-col'>
 				<strong className='text-2xl md:text-4xl text-center'>
 					Privacy Policy
 				</strong>

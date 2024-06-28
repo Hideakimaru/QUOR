@@ -16,7 +16,7 @@ function FilterBtn({ text, onClick, isFilterActive, contentType }) {
 
 export default function ContentFilters({ onClick, isFilterActive }) {
 	return (
-		<section className='gap-4 px-5 pt-8 pb-0 flex w-full flex-row justify-center'>
+		<section className='gap-3 sm:gap-6 md:gap-4 md:max-w-[500px] md:mx-auto lg:max-w-max px-5 pt-8 pb-0 flex flex-wrap w-full flex-row justify-center items-center'>
 			<FilterBtn
 				key='New'
 				text='New'

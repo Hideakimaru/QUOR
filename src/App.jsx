@@ -50,7 +50,6 @@ function App() {
 					trigger: footerRef.current,
 					start: "top bottom",
 					toggleActions: "play none none none"
-					// markers: true
 				}
 			});
 

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import ArrowDownIcon from "@mui/icons-material/ExpandMore";
 import ArrowUpIcon from "@mui/icons-material/ExpandLess";
 import { gsap } from "gsap/gsap-core";
@@ -16,16 +16,12 @@ export default function ContentList({
 	contentType,
 	contentDescription
 }) {
-	const [descriptionHeight, setDescriptionHeight] = useState(0);
 	const [isAdded, setIsAdded] = useState(false);
 	const [isExpanded, setIsExpaned] = useState(false);
 	const descriptionRef = useRef(null);
 	const btnRef = useRef(null);
 	const arrowDownRef = useRef(null);
 	gsap.registerPlugin(useGSAP);
-	useEffect(() => {
-		setDescriptionHeight(descriptionRef.current.clientHeight);
-	}, [descriptionHeight]);
 
 	function onArrowDownClick() {
 		setIsExpaned(true);

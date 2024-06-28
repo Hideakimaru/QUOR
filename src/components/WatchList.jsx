@@ -9,6 +9,7 @@ import ContentWrapper from "./ContentWrapper.jsx";
 import Wrapper from "./Wrapper.jsx";
 import GoArrow from "./GoArrow.jsx";
 import { ScrollRestoration } from "react-router-dom";
+import Hr from "./utils/Hr.jsx";
 
 export default function WatchList() {
 	const [contentData, setContentData] = useState(initialData);
@@ -53,6 +54,7 @@ export default function WatchList() {
 				)}
 				<Title text='My List' />
 				<SearchBar value={searchTitle} onChange={handleSearchChange} />
+				<Hr />
 				<ContentWrapper>
 					<ul className='flex w-full flex-col'>
 						{contentData
