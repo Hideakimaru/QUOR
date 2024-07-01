@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ArrowDownIcon from "@mui/icons-material/ExpandMore";
 import ArrowUpIcon from "@mui/icons-material/ExpandLess";
 import { gsap } from "gsap/gsap-core";
@@ -14,14 +14,27 @@ export default function ContentList({
 	ratingNumber,
 	contentGenre,
 	contentType,
-	contentDescription
+	contentDescription,
+	handleAddBtn,
+	isAdded,
+	contentId
 }) {
-	const [isAdded, setIsAdded] = useState(false);
 	const [isExpanded, setIsExpaned] = useState(false);
 	const descriptionRef = useRef(null);
 	const btnRef = useRef(null);
 	const arrowDownRef = useRef(null);
+	const [isButtonActive, setIsButtonActive] = useState(false);
+
+	const localData = JSON.parse(localStorage.getItem("myData") || []);
+	console.log(localData);
+
 	gsap.registerPlugin(useGSAP);
+
+	useEffect(() => {
+		const savedData = JSON.parse(localStorage.getItem("myData") || []);
+		const isAlreadyAdded = savedData.some(item => item.id === contentId);
+		setIsButtonActive(isAlreadyAdded);
+	}, [contentId]);
 
 	function onArrowDownClick() {
 		setIsExpaned(true);
@@ -116,15 +129,13 @@ export default function ContentList({
 						ref={btnRef}
 						className='flex w-full justify-center md:justify-start items-start'
 					>
-						{isAdded ? (
+						{isAdded || isButtonActive ? (
 							<p className='font-poppins font-normal text-base text-custom-green '>
 								This has been added!&#9825;
 							</p>
 						) : (
 							<button
-								onClick={() => {
-									setIsAdded(true);
-								}}
+								onClick={isAdded ? null : handleAddBtn}
 								className='py-2 px-1 flex w-36 justify-center items-center bg-custom-green  font-poppins font-bold text-lg text-white rounded-md hover:bg-opacity-80 transition duration-500 ease-in-out'
 							>
 								Add

@@ -14,8 +14,9 @@ import { ScrollRestoration } from "react-router-dom";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
-import { initialData } from "./data.js";
+import { initialData } from "./config/data.js";
 import ContentFilters from "./ContentFilters.jsx";
+const LOCAL_STORAGE_KEY = "myData";
 
 export default function AddToList() {
 	const [contentData, setContentData] = useState(initialData);
@@ -29,7 +30,23 @@ export default function AddToList() {
 	const [isSearch, setIsSearch] = useState(false);
 	const [searchValue, setSearchValue] = useState("");
 	const [isFilterActive, setIsFilterActive] = useState(null);
+	const [isMyData, setIsMyData] = useState(() => {
+		return JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) || []);
+	});
+	const [addedContentIds, setAddedContentIds] = useState([]);
 
+	// newData
+
+	useEffect(() => {
+		localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(isMyData));
+	}, [isMyData]);
+
+	function handleAddBtn(content) {
+		setIsMyData([...isMyData, content]);
+		setAddedContentIds([...addedContentIds, content.id]);
+	}
+
+	// Gsap
 	gsap.registerPlugin(useGSAP);
 	gsap.registerPlugin(ScrollTrigger);
 
@@ -64,6 +81,7 @@ export default function AddToList() {
 	function handleSearchBlur() {
 		setIsSearch(false);
 	}
+
 	useEffect(() => {
 		const filteredContent = contentData.filter(content =>
 			content.title.toLowerCase().includes(searchValue.toLowerCase())
@@ -129,7 +147,7 @@ export default function AddToList() {
 						onClick={handlePreviewClose}
 					/>
 				)}
-				<Title text='take something new' />
+				<Title text='watch something new' />
 				<SearchBar
 					searchBarRef={searchBarRef}
 					isSearch={isSearch}
@@ -171,6 +189,21 @@ export default function AddToList() {
 												contentGenre={content.contentGenre}
 												contentType={content.contentType}
 												contentDescription={content.contentDescription}
+												contentId={content.id}
+												handleAddBtn={() => {
+													handleAddBtn({
+														id: content.id,
+														title: content.title,
+														titleImage: content.titleImage,
+														contentYear: content.contentYear,
+														episodesCount: content.episodesCount,
+														ratingNumber: content.ratingNumber,
+														contentGenre: content.contentGenre,
+														contentType: content.contentType,
+														contentDescription: content.contentDescription
+													});
+												}}
+												isAdded={addedContentIds.includes(content.id)}
 											/>
 										</li>
 									);

@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { initialData } from "./data.js";
 import Title from "./Title.jsx";
 import SearchBar from "./SearchBar.jsx";
 import Content from "./Content.jsx";
@@ -11,13 +10,29 @@ import GoArrow from "./GoArrow.jsx";
 import { ScrollRestoration } from "react-router-dom";
 import Hr from "./utils/Hr.jsx";
 
+const LOCAL_STORAGE_KEY = "myData";
+
 export default function WatchList() {
-	const [contentData, setContentData] = useState(initialData);
+	const [contentData, setContentData] = useState([]);
 	const [imageUrl, setImageUrl] = useState("");
 	const [imageAlt, setImageAlt] = useState("");
 	const [isPrivew, setIsPrivew] = useState(false);
 	const [searchTitle, setSearchTitle] = useState("");
 	const [scrollVisability, setScrollVisability] = useState("");
+
+	function handleDelete(id) {
+		const clearedData = contentData.filter(content => content.id !== id);
+		setContentData(clearedData);
+		localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(clearedData));
+	}
+
+	useEffect(() => {
+		const data = JSON.parse(localStorage.getItem("myData"));
+
+		if (data) {
+			setContentData(data);
+		}
+	}, []);
 
 	useEffect(() => {
 		isPrivew && setScrollVisability("hidden");
@@ -69,11 +84,7 @@ export default function WatchList() {
 										title={content.title}
 										statusText={content.status}
 										onClick={handleImageClick}
-										onDelete={() =>
-											setContentData(
-												contentData.filter(c => c.id !== content.id)
-											)
-										}
+										onDelete={() => handleDelete(content.id)}
 										onSelectChanges={choise => {
 											setContentData(
 												contentData.map(c => {
