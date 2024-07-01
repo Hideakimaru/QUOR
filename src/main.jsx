@@ -1,12 +1,11 @@
-import ErrorBoundary from "./components/ErrorBoundary.jsx";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import HomePage from "./components/HomePage.jsx";
-import AuthPage from "./components/AuthPage.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
+import ErrorBoundary from "./components/ErrorBoundary.jsx";
 import PrivacyPolicy from "./components/PrivacyPolicy.jsx";
 import TermsAndConditions from "./components/TermsAndConditions.jsx";
+import HomePage from "./components/HomePage.jsx";
 import WatchList from "./components/WatchList.jsx";
 import AddToList from "./components/AddToList.jsx";
 
@@ -32,11 +31,6 @@ const router = createBrowserRouter([
 				errorElement: <ErrorBoundary />
 			}
 		]
-	},
-	{
-		path: "auth",
-		element: <AuthPage />,
-		errorElement: <ErrorBoundary />
 	},
 	{
 		path: "privacy-policy",

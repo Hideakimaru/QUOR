@@ -25,9 +25,6 @@ export default function ContentList({
 	const arrowDownRef = useRef(null);
 	const [isButtonActive, setIsButtonActive] = useState(false);
 
-	const localData = JSON.parse(localStorage.getItem("myData") || []);
-	console.log(localData);
-
 	gsap.registerPlugin(useGSAP);
 
 	useEffect(() => {

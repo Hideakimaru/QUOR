@@ -1,5 +1,4 @@
-import { NavLink, Link } from "react-router-dom";
-import ProfileIcon from "@mui/icons-material/AccountCircle";
+import { NavLink } from "react-router-dom";
 
 function NavLinks() {
 	return (
@@ -46,9 +45,6 @@ export default function Nav() {
 	return (
 		<nav className='hidden lg:flex flex-row items-center font-poppins font-bold text-white'>
 			<NavLinks />
-			<Link className='p-5 hover:bg-slate-700' to='/auth' replace={true}>
-				<ProfileIcon fontSize='large' />
-			</Link>
 		</nav>
 	);
 }

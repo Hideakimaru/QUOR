@@ -13,6 +13,7 @@ function App() {
 	const [isOpen, setIsOpen] = useState(false);
 	const headerRef = useRef(null);
 	const footerRef = useRef(null);
+
 	gsap.registerPlugin(useGSAP);
 	gsap.registerPlugin(ScrollTrigger);
 

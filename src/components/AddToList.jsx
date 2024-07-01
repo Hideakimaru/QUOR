@@ -20,7 +20,7 @@ const LOCAL_STORAGE_KEY = "myData";
 
 export default function AddToList() {
 	const [contentData, setContentData] = useState(initialData);
-	const [originalData, setOriginalData] = useState(initialData);
+	const [originalData] = useState(initialData);
 	const [imageUrl, setImageUrl] = useState("");
 	const [imageAlt, setImageAlt] = useState("");
 	const [isPrivew, setIsPrivew] = useState(false);
