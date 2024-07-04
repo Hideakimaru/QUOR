@@ -5,7 +5,7 @@ import Hr from "./utils/Hr.jsx";
 import Title from "./Title.jsx";
 import SearchBar from "./SearchBar.jsx";
 import ContentList from "./ContentList.jsx";
-import ImagePrivew from "./ImagePrivew.jsx";
+import ImagePrivew from "./ImagePreview.jsx";
 import ContentWrapper from "./ContentWrapper.jsx";
 import Wrapper from "./Wrapper.jsx";
 import GoArrow from "./GoArrow.jsx";
@@ -200,7 +200,10 @@ export default function AddToList() {
 														ratingNumber: content.ratingNumber,
 														contentGenre: content.contentGenre,
 														contentType: content.contentType,
-														contentDescription: content.contentDescription
+														contentDescription: content.contentDescription,
+														selectStatus: content.selectStatus,
+														currentEpisode: content.currentEpisode,
+														allEpisodes: content.allEpisodes
 													});
 												}}
 												isAdded={addedContentIds.includes(content.id)}

@@ -1,9 +1,8 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Title from "./Title.jsx";
 import SearchBar from "./SearchBar.jsx";
 import Content from "./Content.jsx";
-import ImagePrivew from "./ImagePrivew.jsx";
+import ImagePreview from "./ImagePreview.jsx";
 import ContentWrapper from "./ContentWrapper.jsx";
 import Wrapper from "./Wrapper.jsx";
 import GoArrow from "./GoArrow.jsx";
@@ -13,17 +12,40 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import NoContentMessage from "./utils/NoContentMessage.jsx";
+import MyListItem from "./MyListItem.jsx";
+import MyListContainer from "./MyListContainer.jsx";
+import MyListNoContentMessage from "./utils/MyListNoContentMessage.jsx";
+import MyListsWrapper from "./utils/MyListsWrapper.jsx";
+import ContentMessage from "./ContentMessage.jsx";
 
 const LOCAL_STORAGE_KEY = "myData";
 
 export default function WatchList() {
-	const [contentData, setContentData] = useState([]);
+	const [contentData, setContentData] = useState(() => {
+		const storedData = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+		return storedData || [];
+	});
 	const [imageUrl, setImageUrl] = useState("");
 	const [imageAlt, setImageAlt] = useState("");
-	const [isPrivew, setIsPrivew] = useState(false);
-	const [searchTitle, setSearchTitle] = useState("");
-	const [scrollVisability, setScrollVisability] = useState("");
+	const [isPreview, setIsPreview] = useState(false);
+	const [scrollVisibility, setScrollVisibility] = useState("");
 	const [isContent, setIsContent] = useState(false);
+	const [isUnfolded, setIsUnfolded] = useState({
+		watching: true,
+		planned: true,
+		completed: true
+	});
+	const [isDisabled, setIsDisabled] = useState({
+		watching: false,
+		planned: false,
+		completed: false
+	});
+	const [isSearch, setIsSearch] = useState(false);
+	const [isText, setIsText] = useState(false);
+	const [searchValue, setSearchValue] = useState("");
+	const [isShow, setIsShow] = useState(false);
+
+	const searchBarRef = useRef(null);
 
 	gsap.registerPlugin(useGSAP);
 	gsap.registerPlugin(ScrollTrigger);
@@ -37,112 +59,311 @@ export default function WatchList() {
 		}
 	);
 
-	// Data workers
+	// Episodes button's
 
-	useEffect(() => {
-		const data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-		if (data) {
-			if (data && data.length > 0) {
-				setContentData(data);
-				setIsContent(true);
-			} else {
-				setIsContent(false);
-			}
-		}
-	}, [contentData.length]);
+	function handleAddEpisodes(id) {
+		setContentData(prevData =>
+			prevData.map(content =>
+				content.id === id && content.currentEpisode < content.allEpisodes
+					? { ...content, currentEpisode: content.currentEpisode + 1 }
+					: content
+			)
+		);
+	}
 
-	function handleDelete(id) {
-		const clearedData = contentData.filter(content => content.id !== id);
-		setContentData(clearedData);
-		localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(clearedData));
-		setIsContent(clearedData.length > 0);
+	function handleRemoveEpisodes(id) {
+		setContentData(prevData =>
+			prevData.map(content =>
+				content.id === id && content.currentEpisode > 0
+					? { ...content, currentEpisode: content.currentEpisode - 1 }
+					: content
+			)
+		);
+	}
+
+	// SearchBar
+	function handleSearchChange(e) {
+		setSearchValue(e.target.value);
+		setIsText(true);
+	}
+
+	function handleSearchClick() {
+		setIsSearch(true);
+		searchBarRef.current.focus();
+	}
+
+	function handleSearchClear(e) {
+		e.stopPropagation();
+		searchBarRef.current.focus();
+		setIsText(false);
+		setIsSearch(true);
+		setSearchValue("");
+	}
+
+	function handleSearchBlur() {
+		setIsSearch(false);
 	}
 
 	useEffect(() => {
-		const data = JSON.parse(localStorage.getItem("myData"));
+		const filteredContent = contentData.filter(content =>
+			content.title.toLowerCase().includes(searchValue.toLowerCase())
+		);
+		setIsShow(filteredContent.length === 0 && searchValue.toLowerCase() !== "");
+	}, [contentData, searchValue]);
 
-		if (data) {
-			setContentData(data);
+	// Data workers
+	useEffect(() => {
+		const storedData = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+		if (storedData && storedData.length > 0) {
+			setContentData(storedData);
+			setIsContent(true);
+		} else {
+			setIsContent(false);
 		}
 	}, []);
 
 	useEffect(() => {
-		isPrivew && setScrollVisability("hidden");
-		document.body.style.overflow = scrollVisability;
+		localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contentData));
+	}, [contentData]);
 
-		return () => {
-			setScrollVisability("visible");
-		};
-	}, [isPrivew, scrollVisability]);
+	useEffect(() => {
+		setIsDisabled({
+			watching:
+				contentData.filter(content =>
+					content.selectStatus.toLowerCase().includes("watching")
+				).length === 0,
+			planned:
+				contentData.filter(content =>
+					content.selectStatus.toLowerCase().includes("planned")
+				).length === 0,
+			completed:
+				contentData.filter(content =>
+					content.selectStatus.toLowerCase().includes("completed")
+				).length === 0
+		});
+	}, [contentData]);
 
-	// Search bar
-	function handleSearchChange(e) {
-		setSearchTitle(e.target.value);
+	function handleDelete(id) {
+		const updatedData = contentData.filter(content => content.id !== id);
+		setContentData(updatedData);
+		setIsContent(updatedData.length > 0);
 	}
 
+	useEffect(() => {
+		isPreview && setScrollVisibility("hidden");
+		document.body.style.overflow = scrollVisibility;
+
+		return () => {
+			setScrollVisibility("visible");
+		};
+	}, [isPreview, scrollVisibility]);
+
 	function handleImageClick(e) {
-		setIsPrivew(true);
+		setIsPreview(true);
 		setImageUrl(e.target.src);
 		setImageAlt(e.target.alt);
 	}
 
 	function handlePreviewClose() {
-		setIsPrivew(false);
+		setIsPreview(false);
+	}
+
+	function handleSelectChange(contentId, choice) {
+		const updatedData = contentData.map(c =>
+			c.id === contentId
+				? { ...c, selectStatus: choice.value.toLowerCase() }
+				: c
+		);
+		setContentData(updatedData);
+	}
+
+	function handleUnfold(type) {
+		setIsUnfolded(prevState => ({
+			...prevState,
+			[type]: !prevState[type]
+		}));
 	}
 
 	return (
 		<>
 			<Wrapper>
-				{isPrivew && (
-					<ImagePrivew
+				{isPreview && (
+					<ImagePreview
 						src={imageUrl}
 						alt={imageAlt}
 						onClick={handlePreviewClose}
 					/>
 				)}
 				<Title text='My List' />
-				<SearchBar value={searchTitle} onChange={handleSearchChange} />
+				<SearchBar
+					searchBarRef={searchBarRef}
+					isSearch={isSearch}
+					isText={isText}
+					value={searchValue}
+					onChange={handleSearchChange}
+					handleSearchClick={handleSearchClick}
+					handleSearchClear={handleSearchClear}
+					handleSearchBlur={handleSearchBlur}
+				/>
 				<Hr />
-				{isContent ? (
-					<ContentWrapper>
-						<ul className='flex w-full flex-col'>
-							{contentData
-								.filter(content =>
-									content.title
-										.toLowerCase()
-										.includes(searchTitle.toLowerCase())
-								)
-								.map(content => (
-									<li className='mb-14 last:mb-0' key={content.id}>
-										<Content
-											imageSrc={content.titleImage}
-											altText={content.title}
-											title={content.title}
-											statusText={content.status}
-											onClick={handleImageClick}
-											onDelete={() => handleDelete(content.id)}
-											onSelectChanges={choise => {
-												setContentData(
-													contentData.map(c => {
-														if (c.id === content.id) {
-															return {
-																...c,
-																status: choise.value.toLowerCase()
-															};
-														} else {
-															return c;
-														}
-													})
-												);
-											}}
-										/>
-									</li>
-								))}
-						</ul>
-					</ContentWrapper>
-				) : (
-					<NoContentMessage />
-				)}
+				<ContentWrapper>
+					{isContent ? (
+						<MyListsWrapper>
+							<MyListContainer>
+								<MyListItem
+									title='Watching'
+									isUnfolded={isUnfolded.watching}
+									onClick={() => handleUnfold("watching")}
+									isDisabled={isDisabled.watching}
+								/>
+								{isUnfolded.watching && (
+									<ul className='flex w-full flex-col'>
+										{contentData.filter(content =>
+											content.selectStatus.toLowerCase().includes("watching")
+										).length === 0 ? (
+											<MyListNoContentMessage text='No Content in "Watching"' />
+										) : (
+											contentData
+												.filter(content =>
+													content.selectStatus
+														.toLowerCase()
+														.includes("watching")
+												)
+												.map(content => (
+													<li className='mb-14 last:mb-0' key={content.id}>
+														<Content
+															imageSrc={content.titleImage}
+															altText={content.title}
+															title={content.title}
+															statusText={content.status}
+															onClick={handleImageClick}
+															onDelete={() => handleDelete(content.id)}
+															selectedStatus={content.selectStatus}
+															onSelectChanges={choice =>
+																handleSelectChange(content.id, choice)
+															}
+															contentType={content.contentType}
+															currentEpisode={content.currentEpisode}
+															allEpisodes={content.allEpisodes}
+															onEpisodesAdd={() => {
+																handleAddEpisodes(content.id);
+															}}
+															onEpisodesRemove={() => {
+																handleRemoveEpisodes(content.id);
+															}}
+															episodesCount={content.currentEpisode}
+														/>
+													</li>
+												))
+										)}
+									</ul>
+								)}
+							</MyListContainer>
+							<MyListContainer>
+								<MyListItem
+									title='Planned'
+									isUnfolded={isUnfolded.planned}
+									onClick={() => handleUnfold("planned")}
+									isDisabled={isDisabled.planned}
+								/>
+								{isUnfolded.planned && (
+									<ul className='flex w-full flex-col'>
+										{contentData.filter(content =>
+											content.selectStatus.toLowerCase().includes("planned")
+										).length === 0 ? (
+											<MyListNoContentMessage text='No Content in "Planned"' />
+										) : (
+											contentData
+												.filter(content =>
+													content.selectStatus.toLowerCase().includes("planned")
+												)
+												.map(content => (
+													<li className='mb-14 last:mb-0' key={content.id}>
+														<Content
+															imageSrc={content.titleImage}
+															altText={content.title}
+															title={content.title}
+															statusText={content.status}
+															onClick={handleImageClick}
+															onDelete={() => handleDelete(content.id)}
+															selectedStatus={content.selectStatus}
+															onSelectChanges={choice =>
+																handleSelectChange(content.id, choice)
+															}
+															contentType={content.contentType}
+															currentEpisode={content.currentEpisode}
+															allEpisodes={content.allEpisodes}
+															onEpisodesAdd={() => {
+																handleAddEpisodes(content.id);
+															}}
+															onEpisodesRemove={() => {
+																handleRemoveEpisodes(content.id);
+															}}
+															episodesCount={content.currentEpisode}
+														/>
+													</li>
+												))
+										)}
+									</ul>
+								)}
+							</MyListContainer>
+							<MyListContainer>
+								<MyListItem
+									title='Completed'
+									isUnfolded={isUnfolded.completed}
+									onClick={() => handleUnfold("completed")}
+									isDisabled={isDisabled.completed}
+								/>
+								{isUnfolded.completed && (
+									<ul className='flex w-full flex-col'>
+										{contentData.filter(content =>
+											content.selectStatus.toLowerCase().includes("completed")
+										).length === 0 ? (
+											<MyListNoContentMessage text='No Content in "Completed"' />
+										) : (
+											contentData
+												.filter(content =>
+													content.selectStatus
+														.toLowerCase()
+														.includes("completed")
+												)
+												.map(content => (
+													<li className='mb-14 last:mb-0' key={content.id}>
+														<Content
+															imageSrc={content.titleImage}
+															altText={content.title}
+															title={content.title}
+															statusText={content.status}
+															onClick={handleImageClick}
+															onDelete={() => handleDelete(content.id)}
+															selectedStatus={content.selectStatus}
+															onSelectChanges={choice =>
+																handleSelectChange(content.id, choice)
+															}
+															contentType={content.contentType}
+															currentEpisode={content.currentEpisode}
+															allEpisodes={content.allEpisodes}
+															onEpisodesAdd={() => {
+																handleAddEpisodes(content.id);
+															}}
+															onEpisodesRemove={() => {
+																handleRemoveEpisodes(content.id);
+															}}
+															episodesCount={content.currentEpisode}
+														/>
+													</li>
+												))
+										)}
+									</ul>
+								)}
+							</MyListContainer>
+						</MyListsWrapper>
+					) : isShow ? (
+						<ContentMessage searchWords={searchValue} />
+					) : (
+						<NoContentMessage />
+					)}
+				</ContentWrapper>
 				<GoArrow />
 			</Wrapper>
 			<ScrollRestoration />

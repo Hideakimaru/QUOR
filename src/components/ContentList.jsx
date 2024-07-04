@@ -41,7 +41,7 @@ export default function ContentList({
 		<div className='gap-6 md:gap-12 px-3 py-5 md:px-8 md:pt-5 md:pb-8 flex w-full flex-col md:flex-row bg-white'>
 			<div className='gap-4 md:gap-0 flex w-full md:w-36 flex-col justify-start items-center'>
 				<div className='relative flex md:min-w-36 md:h-40'>
-					<div className='flex w-48 h-64 md:w-36 md:h-48 left-0 hover:opacity-80 active:opacity-100 active:scale-90 transition duration-500 ease-in-out md:rounded-md md:absolute md:-top-[40px] md:left-auto overflow-hidden cursor-pointer'>
+					<div className='flex w-48 h-64 md:w-36 md:h-48 left-0 hover:opacity-80 active:opacity-100 active:scale-90 transition duration-500 ease-in-out md:rounded-md md:absolute md:-top-[40px] md:left-auto overflow-hidden cursor-pointer active:duration-0'>
 						<img
 							className='w-full h-auto'
 							src={imageSrc}
@@ -50,7 +50,7 @@ export default function ContentList({
 						/>
 					</div>
 				</div>
-				<div className='md:pt-0 flex w-full justify-center font-poetsen uppercase'>
+				<div className='md:pt-0 flex w-full justify-center font-poetsen uppercas'>
 					<span
 						className='w-fit py-1 px-4 flex justify-center items-center text-white rounded-md'
 						style={{

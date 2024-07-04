@@ -1,14 +1,18 @@
-import Select from 'react-select';
+import { useEffect, useState } from "react";
+import Select from "react-select";
+import RemoveButton from "./utils/RemoveButton";
+import AddEpisodesBtn from "./utils/AddEpisodesBtn";
+import RemoveEpisodesBtn from "./utils/RemoveEpisodesBtn";
 
-const dot = (color = 'transperent') => ({
-	alignItems: 'center',
-	display: 'flex',
+const dot = (color = "transperent") => ({
+	alignItems: "center",
+	display: "flex",
 
-	':before': {
+	":before": {
 		backgroundColor: color,
 		borderRadius: 10,
 		content: '" "',
-		display: 'block',
+		display: "block",
 		marginRight: 8,
 		height: 10,
 		width: 10
@@ -21,105 +25,173 @@ export default function Content({
 	title,
 	onClick,
 	onDelete,
-	onSelectChanges
+	onSelectChanges,
+	selectedStatus,
+	contentType,
+	allEpisodes,
+	onEpisodesAdd,
+	onEpisodesRemove,
+	episodesCount
 }) {
+	const [currentState, setCurrentState] = useState(selectedStatus);
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+	useEffect(() => {
+		setCurrentState(selectedStatus);
+	}, [selectedStatus]);
+
 	const colorStyles = {
 		control: styles => ({
 			...styles,
-			backgroundColor: '#fff',
-			width: '175px',
-			borderRadius: '0',
-			fontFamily: 'Roboto',
-			fontWeight: '600',
-			fontSize: '16px',
-			lineHeight: '19px',
-			border: '1px solid #000',
-			color: '#000',
-			boxShadow: 'none',
-			':hover': {
-				cursor: 'pointer',
-				border: '1px solid #000'
+			overflow: "hidden",
+			cursor: "pointer",
+			backgroundColor: "#fff",
+			width: "200px",
+			height: "50px",
+			borderRadius: "5px",
+			fontFamily: "Roboto, sans-serif",
+			fontWeight: "700",
+			fontSize: "20px",
+			lineHeight: "23px",
+			border: isMenuOpen ? "2px solid #2ecc71" : "2px solid #000",
+			color: "#000",
+			boxShadow: "none",
+
+			":hover": {
+				border: isMenuOpen ? "2px solid #2ecc71" : "2px solid #000",
+				opacity: isMenuOpen ? "1" : "0.8"
+			},
+			"@media only screen and (min-width: 640px)": {
+				...styles["@media only screen and (min-width: 640px)"],
+				width: "250px"
 			}
+		}),
+		menu: styles => ({
+			...styles,
+			padding: "5px 0",
+			borderRadius: "10px",
+			border: "2px solid #2ecc71"
 		}),
 		option: styles => ({
 			...styles,
-			backgroundColor: '#fff',
-			fontFamily: 'Roboto',
-			fontSize: '14px',
-			lineHeight: '17px',
-			color: '#000',
-			':hover': {
-				backgroundColor: 'rgba(46, 204, 113, 0.2)'
+			cursor: "pointer",
+			backgroundColor: "#fff",
+			fontFamily: "Roboto, sans-serif",
+			fontWeight: "500",
+			fontSize: "16px",
+			lineHeight: "19px",
+			color: "#000",
+			":hover": {
+				backgroundColor: "rgba(46, 204, 113, 0.2)",
+				color: "#2ecc71"
 			}
 		}),
-		ValueContainer: styles => ({
+		valuecontainer: styles => ({
 			...styles,
-			display: 'flex',
-			justifyContent: 'center',
-			padding: '0'
+			display: "flex",
+			justifyContent: "center",
+			padding: "0"
 		}),
 		indicatorSeparator: styles => ({
 			...styles,
-			backgroundColor: '#000'
+			margin: "0",
+			height: "100%",
+			backgroundColor: isMenuOpen ? "#2ecc71" : "#000",
+			width: "2px"
 		}),
 		dropdownIndicator: styles => ({
 			...styles,
-			color: '#000',
-			':hover': {
-				color: '#000'
+			display: "flex",
+			justifyContent: "center",
+			alignItems: "center",
+			width: "45px",
+			height: "100%",
+			backgroundColor: isMenuOpen ? "rgba(46, 204, 113, 0.2)" : "#fff",
+			color: isMenuOpen ? "#2ecc71" : "#000",
+
+			":hover": {
+				color: isMenuOpen ? "#2ecc71" : "#000"
 			}
 		}),
 		singleValue: (styles, { data }) => ({ ...styles, ...dot(data.color) })
 	};
 	const colourOptions = [
-		{ value: 'completed', label: 'Completed', color: '#ccc' },
-		{ value: 'watching', label: 'Watching', color: '#2ecc71' },
-		{ value: 'planed', label: 'Planed', color: '#3498db' }
+		{ value: "watching", label: "Watching", color: "#2ecc71" },
+		{ value: "planned", label: "Planned", color: "#3498db" },
+		{ value: "completed", label: "Completed", color: "#ccc" }
 	];
+
 	return (
-		<div className='pt-8 px-9 pb-16 flex w-full flex-row bg-white'>
-			<div className='flex relative min-w-36 justify-center items-center mr-14'>
-				<div className='flex absolute w-36 h-48 left-0 top-m-14 hover:opacity-80 active:opacity-100 active:scale-90'>
-					<img
-						className='w-full h-auto'
-						src={imageSrc}
-						alt={altText}
-						onClick={onClick}
-					/>
+		<div className='gap-6 md:gap-12 px-3 py-5 md:px-8 md:pt-5 md:pb-8 flex w-full flex-col md:flex-row bg-white'>
+			<div className='gap-4 md:gap-0 flex w-full md:w-36 flex-col justify-start items-center'>
+				<div className='relative flex md:min-w-36 md:h-40'>
+					<div className='flex w-48 h-64 md:w-36 md:h-48 left-0 hover:opacity-80 active:opacity-100 active:scale-90 transition duration-500 ease-in-out md:rounded-md md:absolute md:-top-[40px] md:left-auto overflow-hidden cursor-pointer active:duration-0'>
+						<img
+							className='w-full h-auto'
+							src={imageSrc}
+							alt={altText}
+							onClick={onClick}
+						/>
+					</div>
+				</div>
+				<div className='md:pt-0 flex w-full justify-center font-poetsen uppercase'>
+					<span
+						className='w-fit py-1 px-4 flex justify-center items-center text-white rounded-md'
+						style={{
+							backgroundColor:
+								contentType.toLowerCase() === "movie"
+									? "#2980b9"
+									: contentType.toLowerCase() === "anime"
+									? "#8e44ad"
+									: contentType.toLowerCase() === "series"
+									? "#16a085"
+									: contentType.toLowerCase() === "cartoon"
+									? "#f39c12"
+									: "#000"
+						}}
+					>
+						{contentType}
+					</span>
 				</div>
 			</div>
-			<div className='flex w-full flex-col justify-between gap-7'>
-				<div className='flex w-full '>
-					<h1 className='font-roboto font-bold relative text-2xl uppercase text-black'>
+			<div className='gap-5 md:gap-10 pt-0 md:pt-5 flex w-full flex-col justify-between'>
+				<div className='flex gap-3 w-full flex-col md:justify-start font-roboto text-black'>
+					<h1 className='pr-5 text-center md:text-left font-bold text-2xl md:text-3xl uppercase'>
 						{title}
 					</h1>
-				</div>
-				<div className='flex w-full flex-row items-center'>
-					<div className='flex max-w-64 mr-5'>
+					<div className='flex w-full justify-center md:justify-start'>
 						<Select
 							className='react-select-container'
 							classNamePrefix='react-select'
-							defaultValue={colourOptions[2]}
+							defaultValue={colourOptions.find(
+								option => option.value === currentState.toLowerCase()
+							)}
 							options={colourOptions}
 							styles={colorStyles}
 							onChange={onSelectChanges}
+							onMenuOpen={() => {
+								setIsMenuOpen(true);
+							}}
+							onMenuClose={() => {
+								setIsMenuOpen(false);
+							}}
 							isSearchable={false}
 						/>
 					</div>
-					<div className='flex w-full'>
-						<button
-							className='flex w-12 h-12 rounded-full bg-custom-orange hover:bg-opacity-80 active:scale-90 justify-center items-center'
-							onClick={onDelete}
-						>
-							<img
-								src='https://i.imgur.com/8IW9zgv.png'
-								alt='Remove ico'
-								width='15'
-								height='15'
-							/>
-						</button>
+					<div className='flex w-full justify-center md:justify-start items-center'>
+						<div className=' gap-1 md:gap-2 flex w-fit flex-row items-center'>
+							<span className='flex w-20 font-roboto font-bold text-base text-black'>
+								Episodes:
+							</span>
+							<span className='shrink-0 flex w-fit font-roboto text-base text-black'>{`${episodesCount} / ${allEpisodes}`}</span>
+							<div className='gap-1 flex w-full flex-row justify-start items-center'>
+								<AddEpisodesBtn onClick={onEpisodesAdd} />
+								<RemoveEpisodesBtn onClick={onEpisodesRemove} />
+							</div>
+						</div>
 					</div>
 				</div>
+				<RemoveButton onDelete={onDelete} />
 			</div>
 		</div>
 	);
