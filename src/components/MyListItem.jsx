@@ -26,6 +26,7 @@ export default function MyListItem({ title, isUnfolded, onClick, isDisabled }) {
 				</div>
 				<div className='flex w-fit justify-center items-center cursor-pointer'>
 					<Button
+						data-testid='UnfoldBtn'
 						onClick={onClick}
 						className='p-4 flex w-7 h-7 justify-center items-center hover:bg-slate-900 hover:bg-opacity-80 hover:text-white rounded-full active:scale-90 active:duration-0 transition duration-500 ease-in-out'
 						disabled={isDisabled}

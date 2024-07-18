@@ -16,6 +16,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { initialData } from "./config/data.js";
 import ContentFilters from "./ContentFilters.jsx";
+
 const LOCAL_STORAGE_KEY = "myData";
 
 export default function AddToList() {
@@ -23,7 +24,7 @@ export default function AddToList() {
 	const [originalData] = useState(initialData);
 	const [imageUrl, setImageUrl] = useState("");
 	const [imageAlt, setImageAlt] = useState("");
-	const [isPrivew, setIsPrivew] = useState(false);
+	const [isPrivew, setIsPreview] = useState(false);
 	const [scrollVisability, setScrollVisability] = useState("");
 	const [isText, setIsText] = useState(false);
 	const [isShow, setIsShow] = useState(false);
@@ -31,8 +32,18 @@ export default function AddToList() {
 	const [searchValue, setSearchValue] = useState("");
 	const [isFilterActive, setIsFilterActive] = useState(null);
 	const [isMyData, setIsMyData] = useState(() => {
-		return JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) || []);
+		const savedData = localStorage.getItem(LOCAL_STORAGE_KEY);
+		if (savedData && savedData !== "null") {
+			try {
+				return JSON.parse(savedData) || [];
+			} catch (e) {
+				console.error("Error parsing JSON from localStorage:", e);
+				return [];
+			}
+		}
+		return [];
 	});
+
 	const [addedContentIds, setAddedContentIds] = useState([]);
 
 	// newData
@@ -128,13 +139,13 @@ export default function AddToList() {
 	}, [isPrivew, scrollVisability]);
 
 	function handleImageClick(e) {
-		setIsPrivew(true);
+		setIsPreview(true);
 		setImageUrl(e.target.src);
 		setImageAlt(e.target.alt);
 	}
 
 	function handlePreviewClose() {
-		setIsPrivew(false);
+		setIsPreview(false);
 	}
 
 	return (

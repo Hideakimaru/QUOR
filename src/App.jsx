@@ -8,22 +8,20 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import { ScrollTrigger } from "gsap/all";
+import { handleOpen, handleClose } from "./components/utils/BurgerHandlers.js";
 
 function App() {
 	const [isOpen, setIsOpen] = useState(false);
 	const headerRef = useRef(null);
 	const footerRef = useRef(null);
+	const closeBtnRef = useRef(null);
 
 	gsap.registerPlugin(useGSAP);
 	gsap.registerPlugin(ScrollTrigger);
 
-	function handleOpen() {
-		setIsOpen(true);
-	}
-
-	function handleClose() {
-		setIsOpen(false);
-	}
+	gsap.config({
+		nullTargetWarn: false
+	});
 
 	useGSAP(
 		() => {
@@ -42,6 +40,20 @@ function App() {
 			}, headerRef);
 		},
 		{ scope: headerRef }
+	);
+
+	useGSAP(
+		() => {
+			let ctx = gsap.context(() => {
+				gsap.to(closeBtnRef.current, {
+					rotation: 720,
+					ease: "power1.out"
+				});
+			});
+
+			return () => ctx.revert();
+		},
+		{ dependencies: [isOpen], scope: headerRef }
 	);
 
 	useGSAP(
@@ -98,10 +110,13 @@ function App() {
 	return (
 		<>
 			{isOpen ? (
-				<MobileMenu onClick={handleClose} />
+				<MobileMenu
+					onClick={() => handleClose(setIsOpen)}
+					closeBtnRef={closeBtnRef}
+				/>
 			) : (
 				<MainWrapper>
-					<Header onClick={handleOpen} headerRef={headerRef} />
+					<Header onClick={() => handleOpen(setIsOpen)} headerRef={headerRef} />
 					<Outlet />
 					<Footer footerRef={footerRef} />
 				</MainWrapper>

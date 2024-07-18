@@ -12,10 +12,11 @@ export default function SearchBar({
 	isText
 }) {
 	return (
-		<div className=' flex w-full justify-center'>
+		<div className='flex w-full justify-center'>
 			<div
+				data-testid='SearchBar'
 				onClick={handleSearchClick}
-				className=' relative py-2 px-5 flex w-full md:w-[500px] flex-row justify-center items-center bg-white rounded-lg border-2 border-slate-950 font-poppins text-black cursor-text
+				className='relative py-2 px-5 flex w-full md:w-[500px] flex-row justify-center items-center bg-white rounded-lg border-2 border-slate-950 font-poppins text-black cursor-text
 			 transition duration-500 ease-in-out overflow-hidden'
 				style={{
 					borderColor: isSearch ? "#2ecc71" : ""
@@ -26,6 +27,7 @@ export default function SearchBar({
 				</div>
 				<div className='flex w-full'>
 					<input
+						data-testid='SearchInput'
 						ref={searchBarRef}
 						onBlur={handleSearchBlur}
 						className='flex w-full font-poppins font-light text-xl placeholder:text-xl placeholder:text-slate-500 focus:placeholder:opacity-0'
@@ -40,6 +42,7 @@ export default function SearchBar({
 				</div>
 				{isText ? (
 					<div
+						data-testid='ClearSearchBtn'
 						onClick={handleSearchClear}
 						className='absolute p-1 flex right-5 top-auto bg-gray-950 hover:bg-opacity-80 rounded-full cursor-pointer active:scale-90'
 					>

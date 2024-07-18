@@ -28,8 +28,9 @@ export default function ContentList({
 	gsap.registerPlugin(useGSAP);
 
 	useEffect(() => {
-		const savedData = JSON.parse(localStorage.getItem("myData") || []);
-		const isAlreadyAdded = savedData.some(item => item.id === contentId);
+		const savedData = JSON.parse(localStorage.getItem("myData") || "[]");
+		const isAlreadyAdded =
+			Array.isArray(savedData) && savedData.some(item => item.id === contentId);
 		setIsButtonActive(isAlreadyAdded);
 	}, [contentId]);
 
@@ -43,6 +44,7 @@ export default function ContentList({
 				<div className='relative flex md:min-w-36 md:h-40'>
 					<div className='flex w-48 h-64 md:w-36 md:h-48 left-0 hover:opacity-80 active:opacity-100 active:scale-90 transition duration-500 ease-in-out md:rounded-md md:absolute md:-top-[40px] md:left-auto overflow-hidden cursor-pointer active:duration-0'>
 						<img
+							data-testid='ContentImage'
 							className='w-full h-auto'
 							src={imageSrc}
 							alt={altText}
@@ -105,6 +107,7 @@ export default function ContentList({
 							<div className='flex w-full justify-center'>
 								{isExpanded ? (
 									<ArrowUpIcon
+										data-testid='ArrowUpIcon'
 										onClick={() => {
 											setIsExpaned(false);
 										}}
@@ -113,6 +116,7 @@ export default function ContentList({
 									/>
 								) : (
 									<ArrowDownIcon
+										data-testid='ArrowDownIcon'
 										ref={arrowDownRef}
 										className='cursor-pointer hover:text-custom-green hover:transition hover:duration-500 hover:ease-in-out'
 										sx={{ fontSize: "35px" }}
@@ -132,6 +136,7 @@ export default function ContentList({
 							</p>
 						) : (
 							<button
+								data-testid='AddContentBtn'
 								onClick={isAdded ? null : handleAddBtn}
 								className='py-2 px-1 flex w-36 justify-center items-center bg-custom-green  font-poppins font-bold text-lg text-white rounded-md hover:bg-opacity-80 transition duration-500 ease-in-out'
 							>

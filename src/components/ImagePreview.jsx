@@ -4,6 +4,7 @@ export default function ImagePreview({ src, alt, onClick }) {
 			<div className='flex w-full max-w-auto sm:max-w-[450px] lg:max-w-[350px] flex-col'>
 				<div className='flex w-full justify-end'>
 					<button
+						data-testid='CloseImagePreview'
 						className='flex font-roboto text-lg text-opacity-30 hover:text-opacity-100 font-normal bg-transparent active:scale-90 text-white items-center justify-center'
 						onClick={onClick}
 					>
@@ -11,7 +12,12 @@ export default function ImagePreview({ src, alt, onClick }) {
 					</button>
 				</div>
 				<div className='flex w-full'>
-					<img className='w-full h-auto' src={src} alt={alt} />
+					<img
+						data-testid='PreviewImage'
+						className='w-full h-auto'
+						src={src}
+						alt={alt}
+					/>
 				</div>
 			</div>
 		</div>

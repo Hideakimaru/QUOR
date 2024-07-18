@@ -1,6 +1,7 @@
 export function BurgerIcon({ onClick }) {
 	return (
 		<button
+			data-testid='burgerOpen'
 			onClick={onClick}
 			className='flex lg:hidden flex-col justify-center w-7 h-auto cursor-pointer ease-in-out hover:opacity-80'
 		>
@@ -9,9 +10,11 @@ export function BurgerIcon({ onClick }) {
 	);
 }
 
-export function X({ onClick }) {
+export function X({ onClick, closeBtnRef }) {
 	return (
 		<button
+			ref={closeBtnRef}
+			data-testid='burgerClose'
 			onClick={onClick}
 			className='w-7 h-7 cursor-pointer ease-in-out hover:opacity-80'
 		>

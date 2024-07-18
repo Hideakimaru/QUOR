@@ -4,7 +4,10 @@ import GoArrow from "./GoArrow";
 export default function TermsAndConditions() {
 	return (
 		<>
-			<div className='container mx-auto p-10 md:p-20 flex flex-col'>
+			<div
+				data-testid='mainTitle'
+				className='container mx-auto p-10 md:p-20 flex flex-col'
+			>
 				<strong className='text-2xl md:text-4xl text-center'>
 					Terms &amp; Conditions
 				</strong>

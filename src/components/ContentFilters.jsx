@@ -1,6 +1,7 @@
 function FilterBtn({ text, onClick, isFilterActive, contentType }) {
 	return (
 		<button
+			data-testid='FilterBtn'
 			onClick={() => onClick(contentType)}
 			className='w-fit py-4 px-8 flex justify-center items-center bg-slate-950 font-poppins font-medium text-lg text-white rounded-full hover:bg-opacity-80 active:bg-opacity-100'
 			style={{
@@ -18,6 +19,7 @@ export default function ContentFilters({ onClick, isFilterActive }) {
 	return (
 		<section className='gap-3 sm:gap-6 md:gap-4 md:max-w-[500px] md:mx-auto lg:max-w-max px-5 pt-8 pb-0 flex flex-wrap w-full flex-row justify-center items-center'>
 			<FilterBtn
+				data-testid='FilterNew'
 				key='New'
 				text='New'
 				onClick={onClick}
@@ -25,6 +27,7 @@ export default function ContentFilters({ onClick, isFilterActive }) {
 				contentType='new'
 			/>
 			<FilterBtn
+				data-testid='FilterMovies'
 				key='Movies'
 				text='Movies'
 				onClick={onClick}
@@ -32,6 +35,7 @@ export default function ContentFilters({ onClick, isFilterActive }) {
 				contentType='movie'
 			/>
 			<FilterBtn
+				data-testid='FilterSeries'
 				key='Series'
 				text='Series'
 				onClick={onClick}
@@ -39,6 +43,7 @@ export default function ContentFilters({ onClick, isFilterActive }) {
 				contentType='series'
 			/>
 			<FilterBtn
+				data-testid='FilterAnime'
 				key='Anime'
 				text='Anime'
 				onClick={onClick}
@@ -46,6 +51,7 @@ export default function ContentFilters({ onClick, isFilterActive }) {
 				contentType='anime'
 			/>
 			<FilterBtn
+				data-testid='FilterCartoons'
 				key='Cartoons'
 				text='Cartoons'
 				onClick={onClick}

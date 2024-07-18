@@ -17,32 +17,41 @@ export default function Footer({ footerRef }) {
 				</span>
 			</Link>
 			<div className='flex flex-row gap-4 justify-center items-center text-white'>
-				<a className='INSTAGRAM' href='#'>
+				<a data-testid='InstagramLink' className='INSTAGRAM' href='#'>
 					<InstagramIcon
+						data-testid='InstagramIcon'
 						className='hover:text-custom-green hover:transition hover:duration-500 hover:ease-in-out'
 						fontSize='medium'
 					/>
 				</a>
-				<a className='KOFI' href='#'>
+				<a data-testid='KofiLink' className='KOFI' href='#'>
 					<KofiIcon
+						data-testid='KofiIcon'
 						className='hover:text-custom-green hover:transition hover:duration-500 hover:ease-in-out'
 						fontSize='medium'
 					/>
 				</a>
-				<a className='GITHUB' href='https://github.com/Hideakimaru/MyWatchList'>
+				<a
+					data-testid='GithubLink'
+					className='GITHUB'
+					href='https://github.com/Hideakimaru/MyWatchList'
+				>
 					<GithubIcon
+						data-testid='GithubIcon'
 						className='hover:text-custom-green hover:transition hover:duration-500 hover:ease-in-out'
 						fontSize='medium'
 					/>
 				</a>
-				<a className='MAIL' href='mailto:mywatchlist.support@gmail.com'>
+				<a data-testid='MailLink' className='MAIL' href='#'>
 					<MailIcon
+						data-testid='MailIcon'
 						className='hover:text-custom-green hover:transition hover:duration-500 hover:ease-in-out'
 						fontSize='medium'
 					/>
 				</a>
-				<a className='TELEGRAM' href='https://t.me/MWLsupport'>
+				<a data-testid='TelegramLink' className='TELEGRAM' href='#'>
 					<TelegramIcon
+						data-testid='TelegramIcon'
 						className='hover:text-custom-green hover:transition hover:duration-500 hover:ease-in-out'
 						fontSize='medium'
 					/>

@@ -4,7 +4,8 @@ function NavLinks() {
 	return (
 		<>
 			<NavLink
-				className='p-5 flex h-full items-center hover:text-custom-green'
+				data-testid='navItem1'
+				className='p-5 flex h-full items-center text-white hover:text-custom-green'
 				to='/app'
 				style={({ isActive, isPending }) => {
 					return {
@@ -21,7 +22,8 @@ function NavLinks() {
 				Add
 			</NavLink>
 			<NavLink
-				className='p-5 flex h-full items-center hover:text-custom-green'
+				data-testid='navItem2'
+				className='p-5 flex h-full items-center text-white hover:text-custom-green'
 				to='/app/my-list'
 				style={({ isActive, isPending }) => {
 					return {

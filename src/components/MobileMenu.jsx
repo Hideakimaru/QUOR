@@ -18,15 +18,10 @@ const navRoutes = [
 		index: 2,
 		name: "My List",
 		path: "/app/my-list"
-	},
-	{
-		index: 3,
-		name: "Authification",
-		path: "/auth"
 	}
 ];
 
-export default function MobileMenu({ onClick }) {
+export default function MobileMenu({ onClick, closeBtnRef }) {
 	const mobileMenuRef = useRef(null);
 
 	useGSAP(
@@ -46,7 +41,7 @@ export default function MobileMenu({ onClick }) {
 			className='z-[1000] px-2 md:px-4 flex flex-col w-full h-screen overflow-hidden bg-slate-950 '
 		>
 			<div className='px-3 md:px-5 pt-8 pb-5 flex w-full justify-end items-center'>
-				<X onClick={onClick} />
+				<X onClick={onClick} closeBtnRef={closeBtnRef} />
 			</div>
 			<div className='flex flex-col w-full h-full justify-center'>
 				<ul className='flex flex-col gap-5 list-none'>

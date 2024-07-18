@@ -43,7 +43,7 @@ export default function WatchList() {
 	const [isSearch, setIsSearch] = useState(false);
 	const [isText, setIsText] = useState(false);
 	const [searchValue, setSearchValue] = useState("");
-	const [isShow, setIsShow] = useState(false);
+	const [filteredContent, setFiltredContent] = useState([]);
 
 	const searchBarRef = useRef(null);
 
@@ -82,6 +82,14 @@ export default function WatchList() {
 	}
 
 	// SearchBar
+
+	useEffect(() => {
+		const filtred = contentData.filter(content =>
+			content.title.toLowerCase().includes(searchValue.toLowerCase())
+		);
+		setFiltredContent(filtred);
+	}, [contentData, searchValue]);
+
 	function handleSearchChange(e) {
 		setSearchValue(e.target.value);
 		setIsText(true);
@@ -103,13 +111,6 @@ export default function WatchList() {
 	function handleSearchBlur() {
 		setIsSearch(false);
 	}
-
-	useEffect(() => {
-		const filteredContent = contentData.filter(content =>
-			content.title.toLowerCase().includes(searchValue.toLowerCase())
-		);
-		setIsShow(filteredContent.length === 0 && searchValue.toLowerCase() !== "");
-	}, [contentData, searchValue]);
 
 	// Data workers
 	useEffect(() => {
@@ -207,7 +208,42 @@ export default function WatchList() {
 				/>
 				<Hr />
 				<ContentWrapper>
-					{isContent ? (
+					{isText ? (
+						filteredContent.length > 0 ? (
+							<div>
+								<ul className='flex w-full flex-col'>
+									{filteredContent.map(content => (
+										<li className='mb-14 last:mb-0' key={content.id}>
+											<Content
+												imageSrc={content.titleImage}
+												altText={content.title}
+												title={content.title}
+												statusText={content.status}
+												onClick={handleImageClick}
+												onDelete={() => handleDelete(content.id)}
+												selectedStatus={content.selectStatus}
+												onSelectChanges={choice =>
+													handleSelectChange(content.id, choice)
+												}
+												contentType={content.contentType}
+												currentEpisode={content.currentEpisode}
+												allEpisodes={content.allEpisodes}
+												onEpisodesAdd={() => {
+													handleAddEpisodes(content.id);
+												}}
+												onEpisodesRemove={() => {
+													handleRemoveEpisodes(content.id);
+												}}
+												episodesCount={content.currentEpisode}
+											/>
+										</li>
+									))}
+								</ul>
+							</div>
+						) : (
+							<ContentMessage searchWords={searchValue} />
+						)
+					) : isContent ? (
 						<MyListsWrapper>
 							<MyListContainer>
 								<MyListItem
@@ -358,8 +394,6 @@ export default function WatchList() {
 								)}
 							</MyListContainer>
 						</MyListsWrapper>
-					) : isShow ? (
-						<ContentMessage searchWords={searchValue} />
 					) : (
 						<NoContentMessage />
 					)}

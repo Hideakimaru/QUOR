@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Select from "react-select";
 import RemoveButton from "./utils/RemoveButton";
 import AddEpisodesBtn from "./utils/AddEpisodesBtn";
 import RemoveEpisodesBtn from "./utils/RemoveEpisodesBtn";
+import CongratsText from "./utils/CongratsText";
 
 const dot = (color = "transperent") => ({
 	alignItems: "center",
@@ -35,7 +36,20 @@ export default function Content({
 }) {
 	const [currentState, setCurrentState] = useState(selectedStatus);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [isCongrats, setIsCongrats] = useState(false);
 
+	const congratsTextRef = useRef(null);
+	const contentRef = useRef(null);
+
+	useEffect(() => {
+		if (episodesCount === allEpisodes) {
+			setIsCongrats(true);
+		} else {
+			setIsCongrats(false);
+		}
+	}, [allEpisodes, episodesCount]);
+
+	// React select
 	useEffect(() => {
 		setCurrentState(selectedStatus);
 	}, [selectedStatus]);
@@ -122,7 +136,10 @@ export default function Content({
 	];
 
 	return (
-		<div className='gap-6 md:gap-12 px-3 py-5 md:px-8 md:pt-5 md:pb-8 flex w-full flex-col md:flex-row bg-white'>
+		<div
+			ref={contentRef}
+			className='gap-6 md:gap-12 px-3 py-5 md:px-8 md:pt-5 md:pb-8 flex w-full flex-col md:flex-row bg-white'
+		>
 			<div className='gap-4 md:gap-0 flex w-full md:w-36 flex-col justify-start items-center'>
 				<div className='relative flex md:min-w-36 md:h-40'>
 					<div className='flex w-48 h-64 md:w-36 md:h-48 left-0 hover:opacity-80 active:opacity-100 active:scale-90 transition duration-500 ease-in-out md:rounded-md md:absolute md:-top-[40px] md:left-auto overflow-hidden cursor-pointer active:duration-0'>
@@ -178,18 +195,24 @@ export default function Content({
 							isSearchable={false}
 						/>
 					</div>
-					<div className='flex w-full justify-center md:justify-start items-center'>
-						<div className=' gap-1 md:gap-2 flex w-fit flex-row items-center'>
+					<div className='flex flex-col w-full justify-center items-center md:items-start'>
+						<div className='gap-1 md:gap-2 flex w-fit flex-row items-center'>
 							<span className='flex w-20 font-roboto font-bold text-base text-black'>
 								Episodes:
 							</span>
-							<span className='shrink-0 flex w-fit font-roboto text-base text-black'>{`${episodesCount} / ${allEpisodes}`}</span>
+							<span
+								data-testid='EpisodesCounter'
+								className='shrink-0 flex w-fit font-roboto text-base text-black'
+							>{`${episodesCount} / ${allEpisodes}`}</span>
 							<div className='gap-1 flex w-full flex-row justify-start items-center'>
 								<AddEpisodesBtn onClick={onEpisodesAdd} />
 								<RemoveEpisodesBtn onClick={onEpisodesRemove} />
 							</div>
 						</div>
 					</div>
+					{isCongrats ? (
+						<CongratsText congratsTextRef={congratsTextRef} />
+					) : null}
 				</div>
 				<RemoveButton onDelete={onDelete} />
 			</div>
