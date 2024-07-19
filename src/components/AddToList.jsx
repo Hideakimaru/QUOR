@@ -61,6 +61,8 @@ export default function AddToList() {
 	gsap.registerPlugin(useGSAP);
 	gsap.registerPlugin(ScrollTrigger);
 
+	gsap.config({ nullTargetWarn: false });
+
 	const searchBarRef = useRef(null);
 
 	useGSAP(

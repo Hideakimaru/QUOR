@@ -8,6 +8,21 @@ import TermsAndConditions from "./components/TermsAndConditions.jsx";
 import HomePage from "./components/HomePage.jsx";
 import WatchList from "./components/WatchList.jsx";
 import AddToList from "./components/AddToList.jsx";
+import { ThemeProvider } from "./components/utils/ThemeContext.jsx";
+
+function initializeTheme() {
+	const savedTheme = localStorage.getItem("theme");
+	if (savedTheme) {
+		document.documentElement.classList.toggle("dark", savedTheme === "dark");
+	} else {
+		const prefersDarkScheme = window.matchMedia(
+			"(prefers-color-scheme: dark)"
+		).matches;
+		document.documentElement.classList.toggle("dark", prefersDarkScheme);
+	}
+}
+
+initializeTheme();
 
 const router = createBrowserRouter([
 	{
@@ -45,7 +60,9 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-	<React.StrictMode>
-		<RouterProvider router={router} />
-	</React.StrictMode>
+	<ThemeProvider>
+		<React.StrictMode>
+			<RouterProvider router={router} />
+		</React.StrictMode>
+	</ThemeProvider>
 );

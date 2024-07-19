@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ["./src/**/*.{html,js,jsx}", "./index.html"],
+	darkMode: "class",
 	theme: {
 		fontFamily: {
 			poppins: ["Poppins", "Helvetica", "sans-serif"],
@@ -17,9 +18,17 @@ export default {
 					"100%": { opacity: 1 }
 				}
 			},
+			opacity: {
+				87: ".87",
+				38: ".38",
+				67: ".67"
+			},
 			colors: {
 				"custom-green": "#2ecc71",
-				"custom-orange": "#f39c12"
+				"custom-orange": "#f39c12",
+				"custom-black": "#121212",
+				"custom-dark-gray": "#282828",
+				"custom-gray": "#3f3f3f"
 			},
 			top: {
 				"m-14": "-3.5rem"

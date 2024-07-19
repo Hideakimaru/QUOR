@@ -69,6 +69,7 @@ body {
 	line-height: inherit;
 	/* 2 */
 	@apply bg-gray-100;
+	@apply dark:bg-custom-black
 }
 
 body::-webkit-scrollbar {
@@ -80,6 +81,7 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-thumb {
 	@apply bg-custom-green;
+	@apply dark:bg-green-300;
 	@apply rounded-md;
 }
 

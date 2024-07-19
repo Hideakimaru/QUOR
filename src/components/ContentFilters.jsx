@@ -3,7 +3,7 @@ function FilterBtn({ text, onClick, isFilterActive, contentType }) {
 		<button
 			data-testid='FilterBtn'
 			onClick={() => onClick(contentType)}
-			className='w-fit py-4 px-8 flex justify-center items-center bg-slate-950 font-poppins font-medium text-lg text-white rounded-full hover:bg-opacity-80 active:bg-opacity-100'
+			className='w-fit py-4 px-8 flex justify-center items-center bg-slate-950 dark:bg-custom-dark-gray dark:hover:bg-custom-gray font-poppins font-medium text-lg text-white dark:text-white/87 rounded-full hover:bg-opacity-80 active:bg-opacity-100'
 			style={{
 				background: isFilterActive
 					? "linear-gradient(to right, #a855f7, #22c55e)"

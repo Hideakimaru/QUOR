@@ -3,6 +3,7 @@ import ArrowDownIcon from "@mui/icons-material/ExpandMore";
 import ArrowUpIcon from "@mui/icons-material/ExpandLess";
 import { gsap } from "gsap/gsap-core";
 import { useGSAP } from "@gsap/react";
+import { useTheme } from "./utils/ThemeHooks";
 
 export default function ContentList({
 	imageSrc,
@@ -24,6 +25,7 @@ export default function ContentList({
 	const btnRef = useRef(null);
 	const arrowDownRef = useRef(null);
 	const [isButtonActive, setIsButtonActive] = useState(false);
+	const { theme } = useTheme();
 
 	gsap.registerPlugin(useGSAP);
 
@@ -39,7 +41,7 @@ export default function ContentList({
 	}
 
 	return (
-		<div className='gap-6 md:gap-12 px-3 py-5 md:px-8 md:pt-5 md:pb-8 flex w-full flex-col md:flex-row bg-white'>
+		<div className='gap-6 md:gap-12 px-3 py-5 md:px-8 md:pt-5 md:pb-8 flex w-full flex-col md:flex-row bg-white dark:bg-custom-dark-gray'>
 			<div className='gap-4 md:gap-0 flex w-full md:w-36 flex-col justify-start items-center'>
 				<div className='relative flex md:min-w-36 md:h-40'>
 					<div className='flex w-48 h-64 md:w-36 md:h-48 left-0 hover:opacity-80 active:opacity-100 active:scale-90 transition duration-500 ease-in-out md:rounded-md md:absolute md:-top-[40px] md:left-auto overflow-hidden cursor-pointer active:duration-0'>
@@ -58,14 +60,24 @@ export default function ContentList({
 						style={{
 							backgroundColor:
 								contentType.toLowerCase() === "movie"
-									? "#2980b9"
+									? theme === "light"
+										? "#3b82f6"
+										: "#93c5fd"
 									: contentType.toLowerCase() === "anime"
-									? "#8e44ad"
+									? theme === "light"
+										? "#a855f7"
+										: "#c4b5fd"
 									: contentType.toLowerCase() === "series"
-									? "#16a085"
+									? theme === "light"
+										? "#14b8a6"
+										: "#5eead4"
 									: contentType.toLowerCase() === "cartoon"
-									? "#f39c12"
-									: "#000"
+									? theme === "light"
+										? "#f59e0b"
+										: "#fcd34d"
+									: theme === "light"
+									? "#121212"
+									: "rgba(255,255,255, 0.87)"
 						}}
 					>
 						{contentType}
@@ -73,7 +85,7 @@ export default function ContentList({
 				</div>
 			</div>
 			<div className='pt-5 flex w-full flex-col justify-between'>
-				<div className='flex gap-4 w-full flex-col md:justify-start font-roboto text-black'>
+				<div className='flex gap-4 w-full flex-col md:justify-start font-roboto dark:text-white/87 text-black'>
 					<h1 className='pr-5 text-center md:text-left font-bold text-2xl md:text-3xl uppercase'>
 						{title}
 					</h1>
@@ -111,14 +123,14 @@ export default function ContentList({
 										onClick={() => {
 											setIsExpaned(false);
 										}}
-										className='cursor-pointer hover:text-custom-green hover:transition hover:duration-500 hover:ease-in-out'
+										className='cursor-pointer hover:text-custom-green dark:hover:text-green-300 hover:transition hover:duration-500 hover:ease-in-out'
 										sx={{ fontSize: "35px" }}
 									/>
 								) : (
 									<ArrowDownIcon
 										data-testid='ArrowDownIcon'
 										ref={arrowDownRef}
-										className='cursor-pointer hover:text-custom-green hover:transition hover:duration-500 hover:ease-in-out'
+										className='cursor-pointer hover:text-custom-green dark:hover:text-green-300 hover:transition hover:duration-500 hover:ease-in-out'
 										sx={{ fontSize: "35px" }}
 										onClick={onArrowDownClick}
 									/>
@@ -131,14 +143,14 @@ export default function ContentList({
 						className='flex w-full justify-center md:justify-start items-start'
 					>
 						{isAdded || isButtonActive ? (
-							<p className='font-poppins font-normal text-base text-custom-green '>
+							<p className='font-poppins font-normal text-base text-custom-green dark:text-green-300'>
 								This has been added!&#9825;
 							</p>
 						) : (
 							<button
 								data-testid='AddContentBtn'
 								onClick={isAdded ? null : handleAddBtn}
-								className='py-2 px-1 flex w-36 justify-center items-center bg-custom-green  font-poppins font-bold text-lg text-white rounded-md hover:bg-opacity-80 transition duration-500 ease-in-out'
+								className='py-2 px-1 flex w-36 justify-center items-center bg-custom-green dark:bg-green-300  font-poppins font-bold text-lg text-white rounded-md dark:hover:bg-opacity-67 hover:bg-opacity-80 transition duration-500 ease-in-out'
 							>
 								Add
 							</button>

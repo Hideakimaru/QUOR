@@ -6,7 +6,7 @@ export default function TermsAndConditions() {
 		<>
 			<div
 				data-testid='mainTitle'
-				className='container mx-auto p-10 md:p-20 flex flex-col'
+				className='container mx-auto p-10 md:p-20 flex flex-col text-black dark:text-white/87'
 			>
 				<strong className='text-2xl md:text-4xl text-center'>
 					Terms &amp; Conditions
@@ -211,7 +211,7 @@ export default function TermsAndConditions() {
 
 				<div className='pt-10 flex flex-row justify-center items-center gap-5'>
 					<Link
-						className='flex flex-row w-40 items-center justify-center py-4 px-2 bg-custom-green rounded-md font-roboto font-bold text-white bg-opacity-50 hover:bg-opacity-100'
+						className='flex flex-row w-fit items-center justify-center py-4 px-8 bg-custom-green dark:bg-green-300 rounded-md font-roboto font-bold text-white dark:text-white/87 bg-opacity-50 hover:bg-opacity-100 dark:bg-opacity-38 dark:hover:bg-opacity-100'
 						to='/'
 					>
 						Yes, I&apos;m Agree

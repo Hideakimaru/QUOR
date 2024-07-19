@@ -3,6 +3,7 @@ import { X } from "./BurgerMenu";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { gsap } from "gsap/gsap-core";
+import { useTheme } from "./utils/ThemeHooks";
 const navRoutes = [
 	{
 		index: 0,
@@ -23,6 +24,7 @@ const navRoutes = [
 
 export default function MobileMenu({ onClick, closeBtnRef }) {
 	const mobileMenuRef = useRef(null);
+	const { theme } = useTheme();
 
 	useGSAP(
 		() => {
@@ -38,7 +40,7 @@ export default function MobileMenu({ onClick, closeBtnRef }) {
 	return (
 		<div
 			ref={mobileMenuRef}
-			className='z-[1000] px-2 md:px-4 flex flex-col w-full h-screen overflow-hidden bg-slate-950 '
+			className='z-[1000] px-2 md:px-4 flex flex-col w-full h-screen overflow-hidden bg-custom-black '
 		>
 			<div className='px-3 md:px-5 pt-8 pb-5 flex w-full justify-end items-center'>
 				<X onClick={onClick} closeBtnRef={closeBtnRef} />
@@ -54,11 +56,17 @@ export default function MobileMenu({ onClick, closeBtnRef }) {
 								<NavLink
 									id='MOBILE-MENU__LINKS'
 									reloadDocument={true}
-									className='font-poppins font-bold text-white text-2xl ease-in-out hover:text-custom-green'
+									className='font-poppins font-bold text-white text-2xl ease-in-out hover:text-custom-green dark:hover:text-green-300'
 									to={route.path}
 									style={({ isActive, isPending }) => {
 										return {
-											color: isActive ? "#2ecc71" : isPending ? "#fff" : ""
+											color: isActive
+												? theme === "light"
+													? "#2ecc71"
+													: "#86efac"
+												: isPending
+												? "#fff"
+												: ""
 										};
 									}}
 									end

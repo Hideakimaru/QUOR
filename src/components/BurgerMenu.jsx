@@ -16,9 +16,9 @@ export function X({ onClick, closeBtnRef }) {
 			ref={closeBtnRef}
 			data-testid='burgerClose'
 			onClick={onClick}
-			className='w-7 h-7 cursor-pointer ease-in-out hover:opacity-80'
+			className='w-7 h-7 cursor-pointer ease-in-out hover:opacity-80 dark:hover:opacity-67'
 		>
-			<span className='flex relative w-full justify-center h-[3px] bg-white rotate-45 after:absolute after:content-[""] after:w-full after:h-[3px] after:bg-white after:-rotate-90'></span>
+			<span className='flex relative w-full justify-center h-[3px] bg-white dark:bg-white/87 rotate-45 after:absolute after:content-[""] after:w-full after:h-[3px] after:bg-white after:-rotate-90'></span>
 		</button>
 	);
 }

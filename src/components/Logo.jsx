@@ -7,14 +7,17 @@ function Logo() {
 			<Link
 				data-testid='logo'
 				to='/'
-				className='flex flex-row hover:opacity-80 cursor-pointer'
+				className='flex flex-row dark:hover:opacity-67 hover:opacity-80 cursor-pointer'
 			>
 				<MovieFilter
+					className='dark:opacity-87'
 					data-testid='MovieFilter'
 					fontSize='large'
 					sx={{ color: "white" }}
 				/>
-				<h1 className='font-poetsen text-white font-bold text-3xl'>MWL</h1>
+				<h1 className='font-poetsen dark:text-white/87 text-white font-bold text-3xl'>
+					MWL
+				</h1>
 			</Link>
 		</div>
 	);

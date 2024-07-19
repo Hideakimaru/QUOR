@@ -38,7 +38,7 @@ export default function HomePage() {
 				data-testid='GetStartedBtn'
 				onMouseEnter={handleBtnHover}
 				to='/app'
-				className='btn py-4 px-2 flex justify-center w-40 bg-slate-950 text-white font-bold text-base  md:text-xl rounded-lg hover:bg-gradient-to-r hover:from-purple-500 hover:to-green-500'
+				className='btn py-4 px-2 flex justify-center w-40 dark:bg-custom-gray bg-slate-950 dark:text-white/87 text-white font-bold text-base md:text-xl rounded-lg hover:bg-gradient-to-r hover:from-purple-500 hover:to-green-500 dark:hover:bg-gradient-to-r dark:hover:text-white/87'
 			>
 				Get Started
 			</Link>
