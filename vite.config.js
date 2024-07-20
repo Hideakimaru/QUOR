@@ -4,6 +4,7 @@ import tailwindcss from "tailwindcss";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+	base: "/QUOR/",
 	plugins: [react()],
 	test: {
 		globals: true,

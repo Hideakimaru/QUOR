@@ -24,40 +24,43 @@ function initializeTheme() {
 
 initializeTheme();
 
-const router = createBrowserRouter([
-	{
-		path: "/",
-		element: <HomePage title='Welcome to MY WATCH LIST' />,
-		errorElement: <ErrorBoundary />
-	},
-	{
-		path: "app",
-		element: <App />,
-		errorElement: <ErrorBoundary />,
-		children: [
-			{
-				path: "/app",
-				element: <AddToList />,
-				errorElement: <ErrorBoundary />
-			},
-			{
-				path: "my-list",
-				element: <WatchList />,
-				errorElement: <ErrorBoundary />
-			}
-		]
-	},
-	{
-		path: "privacy-policy",
-		element: <PrivacyPolicy />,
-		errorElement: <ErrorBoundary />
-	},
-	{
-		path: "terms-and-conditions",
-		element: <TermsAndConditions />,
-		errorElement: <ErrorBoundary />
-	}
-]);
+const router = createBrowserRouter(
+	[
+		{
+			path: "/",
+			element: <HomePage title='Welcome to MY WATCH LIST' />,
+			errorElement: <ErrorBoundary />
+		},
+		{
+			path: "app",
+			element: <App />,
+			errorElement: <ErrorBoundary />,
+			children: [
+				{
+					path: "/app",
+					element: <AddToList />,
+					errorElement: <ErrorBoundary />
+				},
+				{
+					path: "my-list",
+					element: <WatchList />,
+					errorElement: <ErrorBoundary />
+				}
+			]
+		},
+		{
+			path: "privacy-policy",
+			element: <PrivacyPolicy />,
+			errorElement: <ErrorBoundary />
+		},
+		{
+			path: "terms-and-conditions",
+			element: <TermsAndConditions />,
+			errorElement: <ErrorBoundary />
+		}
+	],
+	{ basename: "/QUOR" }
+);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<ThemeProvider>
