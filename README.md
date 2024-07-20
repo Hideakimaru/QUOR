@@ -2,9 +2,7 @@
 
 Quor - your personal assistant for tracking movies, TV shows, anime, and cartoons. Add, track, and manage your video content easily and conveniently.
 
-## 🟢 QUOR in live on GitHub Pages
-
-** [QUOR](https://hideakimaru.github.io/QUOR/ "https://hideakimaru.github.io/QUOR/") **
+## 🟢 **[QUOR](https://hideakimaru.github.io/QUOR/ "https://hideakimaru.github.io/QUOR/")** - in live on GitHub Pages.
 
 ## 📦 Installation
 
