@@ -8,17 +8,17 @@ const navRoutes = [
 	{
 		index: 0,
 		name: "Home",
-		path: "/"
+		path: "/QUOR/"
 	},
 	{
 		index: 1,
 		name: "Add",
-		path: "/app"
+		path: "/QUOR/app"
 	},
 	{
 		index: 2,
 		name: "My List",
-		path: "/app/my-list"
+		path: "/QUOR/app/my-list"
 	}
 ];
 
