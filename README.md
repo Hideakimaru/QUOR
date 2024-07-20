@@ -7,7 +7,7 @@ Quor - your personal assistant for tracking movies, TV shows, anime, and cartoon
 **1.** Clone the repository:
 
 ```bash
-git clone https://github.com/Hideakimaru/MyWatchList.git
+git clone https://github.com/Hideakimaru/QUOR.git
 ```
 
 **2.** Go to the project directory:
