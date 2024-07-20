@@ -3,13 +3,16 @@ import { test, describe, expect } from "vitest";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import Header from "../src/components/Header.jsx";
+import { ThemeProvider } from "../src/components/utils/ThemeContext.jsx";
 
 describe("App", () => {
 	test("Check is header defined", () => {
 		render(
-			<MemoryRouter>
-				<Header />
-			</MemoryRouter>
+			<ThemeProvider>
+				<MemoryRouter>
+					<Header />
+				</MemoryRouter>
+			</ThemeProvider>
 		);
 
 		const header = screen.getByTestId("header");
@@ -18,9 +21,11 @@ describe("App", () => {
 
 	test("Check is MovieFilter visible in Logo", () => {
 		render(
-			<MemoryRouter>
-				<Header />
-			</MemoryRouter>
+			<ThemeProvider>
+				<MemoryRouter>
+					<Header />
+				</MemoryRouter>
+			</ThemeProvider>
 		);
 
 		const MovieFilter = screen.getByTestId("MovieFilter");
@@ -29,19 +34,23 @@ describe("App", () => {
 
 	test("Check is Logo text visible", () => {
 		render(
-			<MemoryRouter>
-				<Header />
-			</MemoryRouter>
+			<ThemeProvider>
+				<MemoryRouter>
+					<Header />
+				</MemoryRouter>
+			</ThemeProvider>
 		);
-		const logoText = screen.getByText(/MWL/i);
+		const logoText = screen.getByText(/QUOR/i);
 		expect(logoText).toBeVisible();
 	});
 
 	test("Check is Logo change state on hover", async () => {
 		render(
-			<MemoryRouter>
-				<Header />
-			</MemoryRouter>
+			<ThemeProvider>
+				<MemoryRouter>
+					<Header />
+				</MemoryRouter>
+			</ThemeProvider>
 		);
 
 		const logo = screen.getByTestId("logo");
@@ -54,12 +63,14 @@ describe("App", () => {
 
 	test("Check is Logo redirect to HomePage", async () => {
 		render(
-			<MemoryRouter initialEntries={["/app"]}>
-				<Routes>
-					<Route path='/' element={<div>Test Redirect</div>} />
-					<Route path='/app' element={<Header />} />
-				</Routes>
-			</MemoryRouter>
+			<ThemeProvider>
+				<MemoryRouter initialEntries={["/app"]}>
+					<Routes>
+						<Route path='/' element={<div>Test Redirect</div>} />
+						<Route path='/app' element={<Header />} />
+					</Routes>
+				</MemoryRouter>
+			</ThemeProvider>
 		);
 
 		const logo = screen.getByTestId("logo");
@@ -73,9 +84,11 @@ describe("App", () => {
 
 	test("Check is navigation texts is visible", () => {
 		render(
-			<MemoryRouter>
-				<Header />
-			</MemoryRouter>
+			<ThemeProvider>
+				<MemoryRouter>
+					<Header />
+				</MemoryRouter>
+			</ThemeProvider>
 		);
 
 		const navItem1 = screen.getByText(/add/i);
@@ -87,9 +100,11 @@ describe("App", () => {
 
 	test("Check is navigation links change state on hover", async () => {
 		render(
-			<MemoryRouter>
-				<Header />
-			</MemoryRouter>
+			<ThemeProvider>
+				<MemoryRouter>
+					<Header />
+				</MemoryRouter>
+			</ThemeProvider>
 		);
 
 		const navItem1 = screen.getByText(/add/i);
@@ -111,9 +126,11 @@ describe("App", () => {
 
 	test("Check is navItems change active state", async () => {
 		render(
-			<MemoryRouter>
-				<Header />
-			</MemoryRouter>
+			<ThemeProvider>
+				<MemoryRouter>
+					<Header />
+				</MemoryRouter>
+			</ThemeProvider>
 		);
 
 		const navItem1 = screen.getByTestId("navItem1");
@@ -135,12 +152,14 @@ describe("App", () => {
 
 	test("Check is navItems2 redirect to the /app/my-list route", async () => {
 		render(
-			<MemoryRouter initialEntries={["/app"]}>
-				<Routes>
-					<Route path='/app' element={<Header />} />
-					<Route path='/app/my-list' element={<div>Page My List</div>} />
-				</Routes>
-			</MemoryRouter>
+			<ThemeProvider>
+				<MemoryRouter initialEntries={["/app"]}>
+					<Routes>
+						<Route path='/app' element={<Header />} />
+						<Route path='/app/my-list' element={<div>Page My List</div>} />
+					</Routes>
+				</MemoryRouter>
+			</ThemeProvider>
 		);
 
 		const navItem2 = screen.getByTestId("navItem2");
@@ -154,12 +173,14 @@ describe("App", () => {
 
 	test("Check is navItems1 redirect back to the /app route", async () => {
 		render(
-			<MemoryRouter initialEntries={["/app/my-list"]}>
-				<Routes>
-					<Route path='/app/my-list' element={<Header />} />
-					<Route path='/app' element={<div>Page App</div>} />
-				</Routes>
-			</MemoryRouter>
+			<ThemeProvider>
+				<MemoryRouter initialEntries={["/app/my-list"]}>
+					<Routes>
+						<Route path='/app/my-list' element={<Header />} />
+						<Route path='/app' element={<div>Page App</div>} />
+					</Routes>
+				</MemoryRouter>
+			</ThemeProvider>
 		);
 
 		const navItem1 = screen.getByTestId("navItem1");

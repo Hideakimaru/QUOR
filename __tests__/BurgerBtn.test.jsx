@@ -9,6 +9,7 @@ import {
 } from "../src/components/utils/BurgerHandlers.js";
 import MobileMenu from "../src/components/MobileMenu.jsx";
 import Header from "../src/components/Header.jsx";
+import { ThemeProvider } from "../src/components/utils/ThemeContext.jsx";
 
 describe("App", () => {
 	test("Check is BurgerBtn works correct", async () => {
@@ -42,10 +43,12 @@ describe("App", () => {
 
 	test("Check is burgerBtn and Close btn change state on hover", async () => {
 		render(
-			<MemoryRouter>
-				<MobileMenu />
-				<Header />
-			</MemoryRouter>
+			<ThemeProvider>
+				<MemoryRouter>
+					<MobileMenu />
+					<Header />
+				</MemoryRouter>
+			</ThemeProvider>
 		);
 
 		const closeBtn = screen.getByTestId("burgerClose");

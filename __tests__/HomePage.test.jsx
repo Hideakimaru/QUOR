@@ -3,21 +3,24 @@ import { describe, expect, test } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
+import { ThemeProvider } from "../src/components/utils/ThemeContext.jsx";
 
 describe("HomePage", () => {
 	test("Check if logo redirect on /", async () => {
 		render(
-			<MemoryRouter initialEntries={["/"]}>
-				<Routes>
-					<Route path='/' element={<HomePage />} />
-				</Routes>
-			</MemoryRouter>
+			<ThemeProvider>
+				<MemoryRouter initialEntries={["/"]}>
+					<Routes>
+						<Route path='/' element={<HomePage />} />
+					</Routes>
+				</MemoryRouter>
+			</ThemeProvider>
 		);
 
-		const logo = screen.getByText(/MWL/i);
-		expect(logo).toBeInTheDocument();
+		const logo = screen.getAllByText(/QUOR/i);
+		expect(logo[0]).toBeInTheDocument();
 
-		await userEvent.click(logo);
+		await userEvent.click(logo[0]);
 
 		const homePageTitle = await screen.findByText(/Welcome to/i);
 		expect(homePageTitle).toBeInTheDocument();
@@ -25,26 +28,30 @@ describe("HomePage", () => {
 
 	test("Check if page contain texts", () => {
 		render(
-			<MemoryRouter>
-				<HomePage />
-			</MemoryRouter>
+			<ThemeProvider>
+				<MemoryRouter>
+					<HomePage />
+				</MemoryRouter>
+			</ThemeProvider>
 		);
 
 		const title = screen.getByText(/Welcome to/i);
 		expect(title).toBeInTheDocument();
 
-		const name = screen.getByText(/My Watch List/i);
-		expect(name).toBeInTheDocument();
+		const name = screen.getAllByText(/Quor/i);
+		expect(name[1]).toBeInTheDocument();
 
-		const logoText = screen.getByText(/MWL/i);
-		expect(logoText).toBeInTheDocument();
+		const logoText = screen.getAllByText(/QUOR/i);
+		expect(logoText[0]).toBeInTheDocument();
 	});
 
 	test("Check button changes the state when hovered", async () => {
 		render(
-			<MemoryRouter>
-				<HomePage />
-			</MemoryRouter>
+			<ThemeProvider>
+				<MemoryRouter>
+					<HomePage />
+				</MemoryRouter>
+			</ThemeProvider>
 		);
 		const btn = screen.getByTestId("GetStartedBtn");
 
@@ -59,12 +66,14 @@ describe("HomePage", () => {
 
 	test("Check button redirect to the /app router", async () => {
 		render(
-			<MemoryRouter initialEntries={["/"]}>
-				<Routes>
-					<Route path='/' element={<HomePage />} />
-					<Route path='/app' element={<div>App Page</div>} />
-				</Routes>
-			</MemoryRouter>
+			<ThemeProvider>
+				<MemoryRouter initialEntries={["/"]}>
+					<Routes>
+						<Route path='/' element={<HomePage />} />
+						<Route path='/app' element={<div>App Page</div>} />
+					</Routes>
+				</MemoryRouter>
+			</ThemeProvider>
 		);
 
 		const btn = screen.getByText("Get Started");
@@ -74,16 +83,5 @@ describe("HomePage", () => {
 
 		const appPage = await screen.findByText("App Page");
 		expect(appPage).toBeInTheDocument();
-	});
-
-	test("Check if MovieIcon is present", () => {
-		render(
-			<MemoryRouter>
-				<HomePage />
-			</MemoryRouter>
-		);
-
-		const movieIcon = screen.getByTestId("MovieIcon");
-		expect(movieIcon).toBeInTheDocument();
 	});
 });

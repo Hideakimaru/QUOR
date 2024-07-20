@@ -55,7 +55,7 @@ export default function WatchList() {
 			ScrollTrigger.refresh();
 		},
 		{
-			dependencies: [contentData]
+			dependencies: [contentData, filteredContent]
 		}
 	);
 

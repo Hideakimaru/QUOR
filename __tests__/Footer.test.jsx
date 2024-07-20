@@ -4,6 +4,7 @@ import { MemoryRouter, Routes, Route } from "react-router-dom";
 import Footer from "../src/components/Footer.jsx";
 import userEvent from "@testing-library/user-event";
 import InstagramIcon from "@mui/icons-material/Instagram.js";
+import { ThemeProvider } from "../src/components/utils/ThemeContext.jsx";
 
 describe("Footer", () => {
 	test("Check is texts is visible", () => {
@@ -13,7 +14,7 @@ describe("Footer", () => {
 			</MemoryRouter>
 		);
 
-		const logoText = screen.getByText(/MWL/i);
+		const logoText = screen.getByText(/QUOR/i);
 		expect(logoText).toBeVisible();
 
 		const privacyText = screen.getByText(/Privacy Policy/i);
@@ -59,7 +60,7 @@ describe("Footer", () => {
 			</MemoryRouter>
 		);
 
-		const footerLogo = screen.getByText(/MWL/i);
+		const footerLogo = screen.getByText(/QUOR/i);
 		expect(footerLogo).toBeVisible();
 
 		await userEvent.click(footerLogo);
@@ -119,11 +120,14 @@ describe("Footer", () => {
 		);
 		const instaIcon = screen.getByTestId("InstagramLink");
 		expect(instaIcon).toBeInTheDocument();
-		expect(instaIcon).toHaveAttribute("href", "#");
+		expect(instaIcon).toHaveAttribute(
+			"href",
+			"https://www.instagram.com/quorsupport/"
+		);
 
 		const kofiIcon = screen.getByTestId("KofiLink");
 		expect(kofiIcon).toBeInTheDocument();
-		expect(kofiIcon).toHaveAttribute("href", "#");
+		expect(kofiIcon).toHaveAttribute("href", "https://ko-fi.com/quorwebapp");
 
 		const githubIcon = screen.getByTestId("GithubLink");
 		expect(githubIcon).toBeInTheDocument();
@@ -134,16 +138,16 @@ describe("Footer", () => {
 
 		const mailIcon = screen.getByTestId("MailLink");
 		expect(mailIcon).toBeInTheDocument();
-		expect(mailIcon).toHaveAttribute("href", "#");
+		expect(mailIcon).toHaveAttribute("href", "mailto:quor.assist@gmail.com");
 
 		const telegramIcon = screen.getByTestId("TelegramLink");
 		expect(telegramIcon).toBeInTheDocument();
-		expect(telegramIcon).toHaveAttribute("href", "#");
+		expect(telegramIcon).toHaveAttribute("href", "https://t.me/QuorSupportBot");
 	});
 
 	test("Check Instagram icon href attribute", () => {
 		render(
-			<a className='INSTAGRAM' href='#'>
+			<a className='INSTAGRAM' href='https://www.instagram.com/quorsupport/'>
 				<InstagramIcon
 					data-testid='InstagramIcon'
 					className='hover:text-custom-green hover:transition hover:duration-500 hover:ease-in-out'
@@ -153,7 +157,10 @@ describe("Footer", () => {
 		);
 
 		const instaIcon = screen.getByTestId("InstagramIcon");
-		expect(instaIcon.closest("a")).toHaveAttribute("href", "#");
+		expect(instaIcon.closest("a")).toHaveAttribute(
+			"href",
+			"https://www.instagram.com/quorsupport/"
+		);
 	});
 
 	test("Check is Privacy and Terms change state on hover", async () => {

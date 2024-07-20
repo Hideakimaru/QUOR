@@ -5,6 +5,7 @@ import AddToList from "../src/components/AddToList.jsx";
 import App from "../src/App.jsx";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
+import { ThemeProvider } from "../src/components/utils/ThemeContext.jsx";
 
 describe("WatchList", () => {
 	window.scrollTo = vi.fn();
@@ -24,7 +25,11 @@ describe("WatchList", () => {
 	);
 
 	test("Check is WatchList render correct", async () => {
-		render(<RouterProvider router={router} />);
+		render(
+			<ThemeProvider>
+				<RouterProvider router={router} />
+			</ThemeProvider>
+		);
 
 		await new Promise(resolve => setTimeout(resolve, 2000));
 
@@ -53,7 +58,11 @@ describe("WatchList", () => {
 
 	test("Check is UnfoldBtn works correct", async () => {
 		router.navigate("/app");
-		render(<RouterProvider router={router} />);
+		render(
+			<ThemeProvider>
+				<RouterProvider router={router} />
+			</ThemeProvider>
+		);
 
 		await new Promise(resolve => setTimeout(resolve, 2000));
 
@@ -90,7 +99,11 @@ describe("WatchList", () => {
 
 	test("Check select change status", async () => {
 		router.navigate("/app");
-		render(<RouterProvider router={router} />);
+		render(
+			<ThemeProvider>
+				<RouterProvider router={router} />
+			</ThemeProvider>
+		);
 
 		await new Promise(resolve => setTimeout(resolve, 2000));
 
@@ -140,7 +153,11 @@ describe("WatchList", () => {
 
 	test("Check is episodes counter works correct", async () => {
 		router.navigate("/app");
-		render(<RouterProvider router={router} />);
+		render(
+			<ThemeProvider>
+				<RouterProvider router={router} />
+			</ThemeProvider>
+		);
 
 		await new Promise(resolve => setTimeout(resolve, 2000));
 
@@ -193,7 +210,11 @@ describe("WatchList", () => {
 
 	test("Check is content removed on remove btn click", async () => {
 		router.navigate("/app");
-		render(<RouterProvider router={router} />);
+		render(
+			<ThemeProvider>
+				<RouterProvider router={router} />
+			</ThemeProvider>
+		);
 
 		await new Promise(resolve => setTimeout(resolve, 2000));
 

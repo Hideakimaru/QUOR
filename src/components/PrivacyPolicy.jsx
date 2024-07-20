@@ -1,281 +1,119 @@
 import { Link, ScrollRestoration } from "react-router-dom";
-import GoArrow from "./GoArrow";
+import GoArrow from "./GoArrow.jsx";
+import Header from "./CustomHeader.jsx";
 
 export default function PrivacyPolicy() {
 	return (
 		<>
-			<div className='container mx-auto p-10 md:p-20 flex flex-col text-black dark:text-white/87'>
-				<strong
+			<Header />
+			<div className='container mt-20 gap-5 mx-auto p-3 sm:p-10 md:p-20 flex flex-col text-black dark:text-white/87'>
+				<h1
 					data-testid='mainTitle'
-					className='text-2xl md:text-4xl text-center'
+					className='font-bold text-2xl md:text-4xl text-center'
 				>
 					Privacy Policy
-				</strong>
-				<br />
+				</h1>
 				<p>
-					This privacy policy applies to the MyWatchList app (hereby referred to
-					as &quot;Application&quot;) for mobile devices that was created by
-					Yehor Marchenko (hereby referred to as &quot;Service Provider&quot;)
-					as an Open Source service. This service is intended for use &quot;AS
-					IS&quot;.
+					<strong>Effective Date: 07/20/2024</strong>
 				</p>
-				<br />
-				<strong>Information Collection and Use</strong>
 				<p>
-					The Application collects information when you download and use it.
-					This information may include information such as
+					Welcome to Quor! We value your privacy and are committed to protecting
+					your personal information. This Privacy Policy explains how we
+					collect, use, and safeguard your data when you use our services.
 				</p>
+
+				<h2>
+					<b>1.</b> Information We Collect
+				</h2>
+				<p>
+					<strong>Personal Information</strong>: When you sign up for Quor, we
+					collect personal information such as your name, email address, and any
+					other information you choose to provide.
+				</p>
+				<p>
+					<strong>Usage Data</strong>: We collect information about how you
+					interact with our application, including the content you add to your
+					watchlist, your preferences, and activity logs.
+				</p>
+
+				<h2>
+					<b>2.</b> How We Use Your Information
+				</h2>
+				<p>We use the information we collect to:</p>
 				<ul>
+					<li>Provide and improve our services.</li>
+					<li>Personalize your experience on Quor.</li>
 					<li>
-						Your device&apos;s Internet Protocol address (e.g. IP address)
+						Communicate with you, including sending updates and notifications.
 					</li>
 					<li>
-						The pages of the Application that you visit, the time and date of
-						your visit, the time spent on those pages
-					</li>
-					<li>The time spent on the Application</li>
-					<li>The operating system you use on your mobile device</li>
-				</ul>
-				<p />
-				<br />
-				<p style={{ display: "none" }}>
-					The Application does not gather precise information about the location
-					of your mobile device.
-				</p>
-				<div style={{}}>
-					<p>
-						The Application collects your device&apos;s location, which helps
-						the Service Provider determine your approximate geographical
-						location and make use of in below ways:
-					</p>
-					<ul>
-						<li>
-							Geolocation Services: The Service Provider utilizes location data
-							to provide features such as personalized content, relevant
-							recommendations, and location-based services.
-						</li>
-						<li>
-							Analytics and Improvements: Aggregated and anonymized location
-							data helps the Service Provider to analyze user behavior, identify
-							trends, and improve the overall performance and functionality of
-							the Application.
-						</li>
-						<li>
-							Third-Party Services: Periodically, the Service Provider may
-							transmit anonymized location data to external services. These
-							services assist them in enhancing the Application and optimizing
-							their offerings.
-						</li>
-					</ul>
-				</div>
-				<br />
-				<p>
-					The Service Provider may use the information you provided to contact
-					you from time to time to provide you with important information,
-					required notices and marketing promotions.
-				</p>
-				<br />
-				<p>
-					For a better experience, while using the Application, the Service
-					Provider may require you to provide us with certain personally
-					identifiable information, including but not limited to Email, UserId,
-					gender, age. The information that the Service Provider request will be
-					retained by them and used as described in this privacy policy.
-				</p>
-				<br />
-				<strong>Third Party Access</strong>
-				<p>
-					Only aggregated, anonymized data is periodically transmitted to
-					external services to aid the Service Provider in improving the
-					Application and their service. The Service Provider may share your
-					information with third parties in the ways that are described in this
-					privacy statement.
-				</p>
-				<div>
-					<br />
-					<p>
-						Please note that the Application utilizes third-party services that
-						have their own Privacy Policy about handling data. Below are the
-						links to the Privacy Policy of the third-party service providers
-						used by the Application:
-					</p>
-					<ul>
-						<li>
-							<a
-								href='https://www.google.com/policies/privacy/'
-								target='_blank'
-								rel='noopener noreferrer'
-							>
-								Google Play Services
-							</a>
-						</li>
-						{/**/}
-						<li>
-							<a
-								href='https://firebase.google.com/support/privacy'
-								target='_blank'
-								rel='noopener noreferrer'
-							>
-								Google Analytics for Firebase
-							</a>
-						</li>
-						<li>
-							<a
-								href='https://firebase.google.com/support/privacy/'
-								target='_blank'
-								rel='noopener noreferrer'
-							>
-								Firebase Crashlytics
-							</a>
-						</li>
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-						{/**/}
-					</ul>
-				</div>
-				<br />
-				<p>
-					The Service Provider may disclose User Provided and Automatically
-					Collected Information:
-				</p>
-				<ul>
-					<li>
-						as required by law, such as to comply with a subpoena, or similar
-						legal process;
-					</li>
-					<li>
-						when they believe in good faith that disclosure is necessary to
-						protect their rights, protect your safety or the safety of others,
-						investigate fraud, or respond to a government request;
-					</li>
-					<li>
-						with their trusted services providers who work on their behalf, do
-						not have an independent use of the information we disclose to them,
-						and have agreed to adhere to the rules set forth in this privacy
-						statement.
+						Analyze usage patterns to enhance our application’s functionality.
 					</li>
 				</ul>
-				<p />
-				<br />
-				<strong>Opt-Out Rights</strong>
+
+				<h2>
+					<b>3.</b> Sharing Your Information
+				</h2>
 				<p>
-					You can stop all collection of information by the Application easily
-					by uninstalling it. You may use the standard uninstall processes as
-					may be available as part of your mobile device or via the mobile
-					application marketplace or network.
+					We do not sell, trade, or otherwise transfer your personal information
+					to outside parties except as described below:
 				</p>
-				<br />
-				<strong>Data Retention Policy</strong>
 				<p>
-					The Service Provider will retain User Provided data for as long as you
-					use the Application and for a reasonable time thereafter. If
-					you&apos;d like them to delete User Provided Data that you have
-					provided via the Application, please contact them at{" "}
-					<a className='underline' href='mailto:mywatchlist.support@gmail.com'>
-						mywatchlist.support@gmail.com
-					</a>{" "}
-					and they will respond in a reasonable time.
+					<strong>Service Providers</strong>: We may share your information with
+					third-party service providers who assist us in operating our website,
+					conducting our business, or servicing you.
 				</p>
-				<br />
-				<strong>Children</strong>
 				<p>
-					The Service Provider does not use the Application to knowingly solicit
-					data from or market to children under the age of 13.
+					<strong>Legal Requirements</strong>: We may disclose your information
+					if required by law or in response to valid requests by public
+					authorities.
 				</p>
-				<div>
-					<br />
-					<p>
-						The Application does not address anyone under the age of 13. The
-						Service Provider does not knowingly collect personally identifiable
-						information from children under 13 years of age. In the case the
-						Service Provider discover that a child under 13 has provided
-						personal information, the Service Provider will immediately delete
-						this from their servers. If you are a parent or guardian and you are
-						aware that your child has provided us with personal information,
-						please contact the Service Provider (
-						<a
-							className='underline'
-							href='mailto:mywatchlist.support@gmail.com'
-						>
-							mywatchlist.support@gmail.com
-						</a>
-						) so that they will be able to take the necessary actions.
-					</p>
-				</div>
-				{/**/}
-				<br />
-				<strong>Security</strong>
+
+				<h2>
+					<b>4.</b> Data Security
+				</h2>
 				<p>
-					The Service Provider is concerned about safeguarding the
-					confidentiality of your information. The Service Provider provides
-					physical, electronic, and procedural safeguards to protect information
-					the Service Provider processes and maintains.
+					We implement a variety of security measures to maintain the safety of
+					your personal information. However, please be aware that no method of
+					electronic storage is 100% secure.
 				</p>
-				<br />
-				<strong>Changes</strong>
+
+				<h2>
+					<b>5.</b> Your Rights
+				</h2>
+				<p>You have the right to:</p>
+				<ul>
+					<li>Access the personal information we hold about you.</li>
+					<li>Request correction or deletion of your personal information.</li>
+					<li>Opt-out of certain data collection and use practices.</li>
+				</ul>
+
+				<h2>
+					<b>6.</b> Changes to This Privacy Policy
+				</h2>
 				<p>
-					This Privacy Policy may be updated from time to time for any reason.
-					The Service Provider will notify you of any changes to the Privacy
-					Policy by updating this page with the new Privacy Policy. You are
-					advised to consult this Privacy Policy regularly for any changes, as
-					continued use is deemed approval of all changes.
+					We may update this Privacy Policy from time to time. We will notify
+					you of any changes by posting the new Privacy Policy on this page.
 				</p>
-				<br />
-				<p>This privacy policy is effective as of 2024-06-16</p>
-				<br />
-				<strong>Your Consent</strong>
+
+				<h2>
+					<b>7.</b> Contact Us
+				</h2>
 				<p>
-					By using the Application, you are consenting to the processing of your
-					information as set forth in this Privacy Policy now and as amended by
-					us.
+					If you have any questions about this Privacy Policy, please contact us
+					at:
 				</p>
-				<br />
-				<strong>Contact Us</strong>
 				<p>
-					If you have any questions regarding privacy while using the
-					Application, or have questions about the practices, please contact the
-					Service Provider via email at{" "}
-					<a className='underline' href='mailto:mywatchlist.support@gmail.com'>
-						mywatchlist.support@gmail.com
-					</a>
-					.
-				</p>
-				<hr className='my-5' />
-				<p>
-					This privacy policy page was generated by{" "}
+					<strong>Email</strong>:{" "}
 					<a
-						href='https://app-privacy-policy-generator.nisrulz.com/'
-						target='_blank'
-						rel='noopener noreferrer'
+						className='underline hover:no-underline'
+						href='mailto:quor.assist@gmail.com'
 					>
-						App Privacy Policy Generator
+						quor.assist@gmail.com
 					</a>
 				</p>
+
+				<p>Thank you for using Quor. Your privacy is important to us.</p>
 				<div className='pt-10 flex flex-row justify-center items-center gap-5'>
 					<Link
 						className='flex flex-row w-fit items-center justify-center py-4 px-8 bg-custom-green dark:bg-green-300 rounded-md font-roboto font-bold text-white dark:text-white/87 bg-opacity-50 hover:bg-opacity-100 dark:bg-opacity-38 dark:hover:bg-opacity-100'

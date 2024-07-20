@@ -33,7 +33,7 @@ export default function HomePage() {
 			className='p-2 md:p-5 flex flex-col mx-auto w-full h-screen gap-5 md:gap-10 items-center justify-center'
 		>
 			<HomeHeader />
-			<HomePageTitle appName='My Watch List' />
+			<HomePageTitle appName='QUOR' />
 			<Link
 				data-testid='GetStartedBtn'
 				onMouseEnter={handleBtnHover}

@@ -3,6 +3,7 @@ import { createMemoryRouter, RouterProvider } from "react-router-dom";
 import { describe, expect, test } from "vitest";
 import PrivacyPolicy from "../src/components/PrivacyPolicy.jsx";
 import userEvent from "@testing-library/user-event";
+import { ThemeProvider } from "../src/components/utils/ThemeContext.jsx";
 
 describe("PrivacyPolicy", () => {
 	test("Check is privacy commponent is visible", () => {
@@ -11,7 +12,11 @@ describe("PrivacyPolicy", () => {
 			{ initialEntries: ["/privacy-policy"] }
 		);
 
-		render(<RouterProvider router={router} />);
+		render(
+			<ThemeProvider>
+				<RouterProvider router={router} />
+			</ThemeProvider>
+		);
 
 		const title = screen.getByTestId("mainTitle");
 		expect(title).toBeVisible();
@@ -26,7 +31,11 @@ describe("PrivacyPolicy", () => {
 			{ initialEntries: ["/privacy-policy"] }
 		);
 
-		render(<RouterProvider router={router} />);
+		render(
+			<ThemeProvider>
+				<RouterProvider router={router} />
+			</ThemeProvider>
+		);
 
 		const agreeBtn = screen.getByText(/I'm agree/i);
 		expect(agreeBtn).toBeVisible();
@@ -43,15 +52,16 @@ describe("PrivacyPolicy", () => {
 			{ initialEntries: ["/privacy-policy"] }
 		);
 
-		render(<RouterProvider router={router} />);
+		render(
+			<ThemeProvider>
+				<RouterProvider router={router} />
+			</ThemeProvider>
+		);
 
-		const links = screen.getAllByText(/mywatchlist.support@gmail.com/i);
+		const links = screen.getAllByText(/quor.assist@gmail.com/i);
 		links.forEach(link => {
 			expect(link).toBeVisible();
-			expect(link).toHaveAttribute(
-				"href",
-				"mailto:mywatchlist.support@gmail.com"
-			);
+			expect(link).toHaveAttribute("href", "mailto:quor.assist@gmail.com");
 		});
 	});
 });

@@ -4,6 +4,7 @@ import { createMemoryRouter, RouterProvider } from "react-router-dom";
 import AddToList from "../src/components/AddToList.jsx";
 import App from "../src/App.jsx";
 import userEvent from "@testing-library/user-event";
+import { ThemeProvider } from "../src/components/utils/ThemeContext.jsx";
 
 describe("AddToList", () => {
 	window.scrollTo = vi.fn();
@@ -27,9 +28,13 @@ describe("AddToList", () => {
 	);
 
 	test("Check is AddToList render correct", async () => {
-		render(<RouterProvider router={router} />);
+		render(
+			<ThemeProvider>
+				<RouterProvider router={router} />
+			</ThemeProvider>
+		);
 
-		const titleText = screen.getByText(/WATCH SOMETHING NEW/i);
+		const titleText = screen.getByText(/watch something new/i);
 		expect(titleText).toBeVisible();
 
 		const filterBtn = screen.getAllByTestId("FilterBtn");
@@ -42,7 +47,11 @@ describe("AddToList", () => {
 	});
 
 	test("Check is SearchBar works correct", async () => {
-		render(<RouterProvider router={router} />);
+		render(
+			<ThemeProvider>
+				<RouterProvider router={router} />
+			</ThemeProvider>
+		);
 
 		const searchBar = screen.getByTestId("SearchBar");
 		expect(searchBar).toBeVisible();
@@ -68,7 +77,11 @@ describe("AddToList", () => {
 	});
 
 	test("Check is FilterBtn works correct", async () => {
-		render(<RouterProvider router={router} />);
+		render(
+			<ThemeProvider>
+				<RouterProvider router={router} />
+			</ThemeProvider>
+		);
 
 		const filterBtn = screen.getAllByTestId("FilterBtn");
 
@@ -118,7 +131,11 @@ describe("AddToList", () => {
 	});
 
 	test("Check is content example works correct", async () => {
-		render(<RouterProvider router={router} />);
+		render(
+			<ThemeProvider>
+				<RouterProvider router={router} />
+			</ThemeProvider>
+		);
 
 		const contentTitle = screen.getByText(/money heist/i);
 		expect(contentTitle).toBeVisible();
@@ -155,7 +172,11 @@ describe("AddToList", () => {
 	});
 
 	test("Check is content image preview is showing when click on image", async () => {
-		render(<RouterProvider router={router} />);
+		render(
+			<ThemeProvider>
+				<RouterProvider router={router} />
+			</ThemeProvider>
+		);
 
 		const contentImage = screen.getAllByTestId("ContentImage");
 
@@ -178,7 +199,11 @@ describe("AddToList", () => {
 	});
 
 	test("Check is Go to top arrow works correct", async () => {
-		render(<RouterProvider router={router} />);
+		render(
+			<ThemeProvider>
+				<RouterProvider router={router} />
+			</ThemeProvider>
+		);
 
 		window.scrollTo = vi.fn(options => {
 			Object.defineProperty(window, "scrollY", {

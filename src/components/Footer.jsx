@@ -13,18 +13,26 @@ export default function Footer({ footerRef }) {
 		>
 			<Link className='LOGO-TEXT' to='/' replace={true}>
 				<span className='font-poetsen font-bold text-4xl hover:opacity-80 text-white dark:text-white/87'>
-					MWL
+					QUOR
 				</span>
 			</Link>
 			<div className='flex flex-row gap-4 justify-center items-center text-white dark:text-white/87'>
-				<a data-testid='InstagramLink' className='INSTAGRAM' href='#'>
+				<a
+					data-testid='InstagramLink'
+					className='INSTAGRAM'
+					href='https://www.instagram.com/quorsupport/'
+				>
 					<InstagramIcon
 						data-testid='InstagramIcon'
 						className='hover:text-custom-green dark:hover:text-green-300 hover:transition hover:duration-500 hover:ease-in-out'
 						fontSize='medium'
 					/>
 				</a>
-				<a data-testid='KofiLink' className='KOFI' href='#'>
+				<a
+					data-testid='KofiLink'
+					className='KOFI'
+					href='https://ko-fi.com/quorwebapp'
+				>
 					<KofiIcon
 						data-testid='KofiIcon'
 						className='hover:text-custom-green dark:hover:text-green-300 hover:transition hover:duration-500 hover:ease-in-out'
@@ -42,14 +50,22 @@ export default function Footer({ footerRef }) {
 						fontSize='medium'
 					/>
 				</a>
-				<a data-testid='MailLink' className='MAIL' href='#'>
+				<a
+					data-testid='MailLink'
+					className='MAIL'
+					href='mailto:quor.assist@gmail.com'
+				>
 					<MailIcon
 						data-testid='MailIcon'
 						className='hover:text-custom-green dark:hover:text-green-300 hover:transition hover:duration-500 hover:ease-in-out'
 						fontSize='medium'
 					/>
 				</a>
-				<a data-testid='TelegramLink' className='TELEGRAM' href='#'>
+				<a
+					data-testid='TelegramLink'
+					className='TELEGRAM'
+					href='https://t.me/QuorSupportBot'
+				>
 					<TelegramIcon
 						data-testid='TelegramIcon'
 						className='hover:text-custom-green dark:hover:text-green-300 hover:transition hover:duration-500 hover:ease-in-out'
@@ -74,7 +90,7 @@ export default function Footer({ footerRef }) {
 			</div>
 			<p className='COPYRIGHT font-popins font-medium text-bold text-white dark:text-white/87'>
 				&#xA9;&nbsp;Copyright 2024{" "}
-				<span className='italic font-light '>Yehor Marchenko</span>
+				<span className='italic font-light'>Yehor Marchenko</span>
 			</p>
 		</footer>
 	);
