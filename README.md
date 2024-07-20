@@ -86,4 +86,4 @@ Also If you have any suggestions or questions about QUOR.
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE "LICENSE").
+This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](LICENSE "LICENSE").

@@ -107,12 +107,18 @@ function App() {
 		{ scope: footerRef }
 	);
 
+	function handleLinkClick(e) {
+		e.stopPropagation();
+		setIsOpen(false);
+	}
+
 	return (
 		<>
 			{isOpen ? (
 				<MobileMenu
 					onClick={() => handleClose(setIsOpen)}
 					closeBtnRef={closeBtnRef}
+					onLinkClick={handleLinkClick}
 				/>
 			) : (
 				<MainWrapper>

@@ -61,16 +61,13 @@ export default function AddToList() {
 	gsap.registerPlugin(useGSAP);
 	gsap.registerPlugin(ScrollTrigger);
 
-	gsap.config({ nullTargetWarn: false });
+	gsap.config({ nullTargetWarn: false, trialWarn: false });
 
 	const searchBarRef = useRef(null);
 
-	useGSAP(
-		() => {
-			ScrollTrigger.refresh();
-		},
-		{ dependencies: [searchValue, isFilterActive] }
-	);
+	useEffect(() => {
+		ScrollTrigger.refresh();
+	}, [searchValue, isFilterActive]);
 
 	// SearchBar handlers
 	function handleSearchChange(e) {

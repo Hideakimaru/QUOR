@@ -50,14 +50,11 @@ export default function WatchList() {
 	gsap.registerPlugin(useGSAP);
 	gsap.registerPlugin(ScrollTrigger);
 
-	useGSAP(
-		() => {
-			ScrollTrigger.refresh();
-		},
-		{
-			dependencies: [contentData, filteredContent]
-		}
-	);
+	gsap.config({ nullTargetWarn: false, trialWarn: false });
+
+	useEffect(() => {
+		ScrollTrigger.refresh();
+	}, [contentData, filteredContent]);
 
 	// Episodes button's
 

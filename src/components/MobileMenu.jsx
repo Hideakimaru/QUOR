@@ -4,27 +4,30 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { gsap } from "gsap/gsap-core";
 import { useTheme } from "./utils/ThemeHooks";
+
 const navRoutes = [
 	{
 		index: 0,
 		name: "Home",
-		path: "/QUOR/"
+		path: "/"
 	},
 	{
 		index: 1,
 		name: "Add",
-		path: "/QUOR/app"
+		path: "/app"
 	},
 	{
 		index: 2,
 		name: "My List",
-		path: "/QUOR/app/my-list"
+		path: "/app/my-list"
 	}
 ];
 
-export default function MobileMenu({ onClick, closeBtnRef }) {
+export default function MobileMenu({ onClick, closeBtnRef, onLinkClick }) {
 	const mobileMenuRef = useRef(null);
 	const { theme } = useTheme();
+
+	gsap.config({ nullTargetWarn: false });
 
 	useGSAP(
 		() => {
@@ -54,8 +57,8 @@ export default function MobileMenu({ onClick, closeBtnRef }) {
 								key={route.index}
 							>
 								<NavLink
+									onClick={onLinkClick}
 									id='MOBILE-MENU__LINKS'
-									reloadDocument={true}
 									className='font-poppins font-bold text-white text-2xl ease-in-out hover:text-custom-green dark:hover:text-green-300'
 									to={route.path}
 									style={({ isActive, isPending }) => {

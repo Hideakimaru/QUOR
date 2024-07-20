@@ -28,7 +28,7 @@ const router = createBrowserRouter(
 	[
 		{
 			path: "/",
-			element: <HomePage title='Welcome to MY WATCH LIST' />,
+			element: <HomePage />,
 			errorElement: <ErrorBoundary />
 		},
 		{
@@ -37,7 +37,7 @@ const router = createBrowserRouter(
 			errorElement: <ErrorBoundary />,
 			children: [
 				{
-					path: "/app",
+					path: "",
 					element: <AddToList />,
 					errorElement: <ErrorBoundary />
 				},
