@@ -190,6 +190,7 @@ export default function WatchList() {
 						src={imageUrl}
 						alt={imageAlt}
 						onClick={handlePreviewClose}
+						isPreview={isPreview}
 					/>
 				)}
 				<Title text='My List' />
@@ -395,7 +396,7 @@ export default function WatchList() {
 						<NoContentMessage />
 					)}
 				</ContentWrapper>
-				<GoArrow />
+				<GoArrow isPrivew={isPreview} />
 			</Wrapper>
 			<ScrollRestoration />
 		</>

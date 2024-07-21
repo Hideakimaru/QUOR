@@ -16,8 +16,8 @@ export default function SearchBar({
 
 	const borderColor = isSearch
 		? theme === "dark"
-			? "#86efac"
-			: "#2ecc71"
+			? "#22c55e"
+			: "#16a34a"
 		: theme === "dark"
 		? "#3f3f3f"
 		: "#d1d5db";
@@ -41,7 +41,7 @@ export default function SearchBar({
 						data-testid='SearchInput'
 						ref={searchBarRef}
 						onBlur={handleSearchBlur}
-						className='flex w-full font-poppins font-light text-xl placeholder:text-xl placeholder:text-slate-500 dark:placeholder:text-white/87 focus:placeholder:opacity-0 dark:bg-custom-dark-gray dark:caret-white/87 dark:text-white/87'
+						className='flex w-full font-poppins font-light text-xl placeholder:text-xl placeholder:text-slate-500 dark:placeholder:text-white/87 focus:placeholder:opacity-0 bg-transparent dark:caret-white/87 dark:text-white/87'
 						type='text'
 						name='search'
 						id='search'

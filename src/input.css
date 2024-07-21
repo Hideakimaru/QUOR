@@ -80,8 +80,8 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-	@apply bg-custom-green;
-	@apply dark:bg-green-300;
+	@apply bg-green-600;
+	@apply dark:bg-green-500;
 	@apply rounded-md;
 }
 

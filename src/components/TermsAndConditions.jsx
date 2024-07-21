@@ -129,7 +129,7 @@ export default function TermsAndConditions() {
 
 				<div className='pt-10 flex flex-row justify-center items-center gap-5'>
 					<Link
-						className='flex flex-row w-fit items-center justify-center py-4 px-8 bg-custom-green dark:bg-green-300 rounded-md font-roboto font-bold text-white dark:text-white/87 bg-opacity-50 hover:bg-opacity-100 dark:bg-opacity-38 dark:hover:bg-opacity-100'
+						className='flex flex-row w-fit items-center justify-center py-4 px-8 bg-green-600 dark:bg-green-500 rounded-md font-roboto font-bold text-white dark:text-white/87 bg-opacity-50 hover:bg-opacity-100 dark:bg-opacity-38 dark:hover:bg-opacity-100'
 						to='/'
 					>
 						Yes, I&apos;m Agree

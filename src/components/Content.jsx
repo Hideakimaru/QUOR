@@ -72,8 +72,8 @@ export default function Content({
 			lineHeight: "23px",
 			border: isMenuOpen
 				? theme === "light"
-					? "2px solid #2ecc71"
-					: "2px solid #86efac"
+					? "2px solid #16a34a"
+					: "2px solid #22c55e"
 				: theme === "light"
 				? "2px solid #000"
 				: "2px solid #3f3f3f",
@@ -82,8 +82,8 @@ export default function Content({
 			":hover": {
 				border: isMenuOpen
 					? theme === "light"
-						? "2px solid #2ecc71"
-						: "2px solid #86efac"
+						? "2px solid #16a34a"
+						: "2px solid #22c55e"
 					: theme === "light"
 					? "2px solid #000"
 					: "2px solid #3f3f3f",
@@ -98,7 +98,7 @@ export default function Content({
 			...styles,
 			padding: "5px 0",
 			borderRadius: "10px",
-			border: theme === "light" ? "2px solid #2ecc71" : "2px solid #86efac",
+			border: theme === "light" ? "2px solid #16a34a" : "2px solid #22c55e",
 			backgroundColor: theme === "light" ? "#fff" : "#282828"
 		}),
 		option: styles => ({
@@ -113,7 +113,7 @@ export default function Content({
 			":hover": {
 				backgroundColor:
 					theme === "light" ? "rgba(46, 204, 113, 0.2)" : "rgba(63, 63, 63, 1)",
-				color: theme === "light" ? "#2ecc71" : "#86efac"
+				color: theme === "light" ? "#16a34a" : "#22c55e"
 			}
 		}),
 		valuecontainer: styles => ({
@@ -128,8 +128,8 @@ export default function Content({
 			height: "100%",
 			backgroundColor: isMenuOpen
 				? theme === "light"
-					? "#2ecc71"
-					: "#86efac"
+					? "#16a34a"
+					: "#22c55e"
 				: theme === "light"
 				? "#000"
 				: "#3f3f3f",
@@ -144,15 +144,15 @@ export default function Content({
 			height: "100%",
 			backgroundColor: isMenuOpen
 				? theme === "light"
-					? "rgba(46, 204, 113, 0.2)"
-					: "rgba(134, 239, 172, 0.2)"
+					? "rgba(22, 163, 74, 0.2)"
+					: "rgba(34, 197, 94, 0.2)"
 				: theme === "light"
 				? "#fff"
 				: "#282828",
 			color: isMenuOpen
 				? theme === "light"
-					? "#2ecc71"
-					: "#86efac"
+					? "#16a34a"
+					: "#22c55e"
 				: theme === "light"
 				? "#000"
 				: "#3f3f3f",
@@ -160,8 +160,8 @@ export default function Content({
 			":hover": {
 				color: isMenuOpen
 					? theme === "light"
-						? "#2ecc71"
-						: "#86efac"
+						? "#16a34a"
+						: "#22c55e"
 					: theme === "light"
 					? "#000"
 					: "#3f3f3f"
@@ -177,17 +177,17 @@ export default function Content({
 		{
 			value: "watching",
 			label: "Watching",
-			color: theme === "light" ? "#22c55e" : "#86efac"
+			color: theme === "light" ? "#059669" : "#10b981"
 		},
 		{
 			value: "planned",
 			label: "Planned",
-			color: theme === "light" ? "#3b82f6" : "#93c5fd"
+			color: theme === "light" ? "#0284c7" : "#0ea5e9"
 		},
 		{
 			value: "completed",
 			label: "Completed",
-			color: theme === "light" ? "#6b7280" : "#d1d5db"
+			color: theme === "light" ? "#525252" : "#737373"
 		}
 	];
 
@@ -213,14 +213,14 @@ export default function Content({
 						style={{
 							backgroundColor:
 								contentType.toLowerCase() === "movie"
-									? "#2980b9"
+									? "#3b82f6"
 									: contentType.toLowerCase() === "anime"
-									? "#8e44ad"
+									? "#8b5cf6"
 									: contentType.toLowerCase() === "series"
-									? "#16a085"
+									? "#14b8a6"
 									: contentType.toLowerCase() === "cartoon"
-									? "#f39c12"
-									: "#000"
+									? "#f59e0b"
+									: "#121212"
 						}}
 					>
 						{contentType}

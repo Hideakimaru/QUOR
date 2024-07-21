@@ -8,14 +8,12 @@ function NavLinks() {
 		<>
 			<NavLink
 				data-testid='navItem1'
-				className='p-5 flex h-full items-center dark:text-white/87 text-white dark:hover:text-green-200 hover:text-custom-green'
+				className='p-5 flex h-full items-center dark:text-white/87 text-white hover:text-green-600 dark:hover:text-green-600'
 				to='/app'
 				style={({ isActive, isPending }) => {
 					return {
 						borderBottom: isActive
-							? theme === "light"
-								? "4px solid #2ecc71"
-								: "4px solid #86efac"
+							? "4px solid #22c55e"
 							: isPending
 							? "none"
 							: "",
@@ -32,14 +30,12 @@ function NavLinks() {
 			</NavLink>
 			<NavLink
 				data-testid='navItem2'
-				className='p-5 flex h-full items-center dark:text-white/87 text-white dark:hover:text-green-200 hover:text-custom-green'
+				className='p-5 flex h-full items-center dark:text-white/87 text-white hover:text-green-600 dark:hover:text-green-600'
 				to='/app/my-list'
 				style={({ isActive, isPending }) => {
 					return {
 						borderBottom: isActive
-							? theme === "light"
-								? "4px solid #2ecc71"
-								: "4px solid #86efac"
+							? "4px solid #22c55e"
 							: isPending
 							? "none"
 							: "",

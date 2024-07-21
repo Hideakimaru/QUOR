@@ -94,22 +94,6 @@ export default function DarkMode() {
 		setIsHovered(false);
 	}
 
-	const getSunColor = () => {
-		if (isHovered || isAnimation) {
-			return theme === "light" ? "#fbbf24" : "#fde68a";
-		} else {
-			return "#fff";
-		}
-	};
-
-	const getMoonColor = () => {
-		if (isHovered || isAnimation) {
-			return theme === "light" ? "#3b82f6" : "#bfdbfe";
-		} else {
-			return "#fff";
-		}
-	};
-
 	return (
 		<div
 			onClick={handleModeChange}
@@ -122,7 +106,8 @@ export default function DarkMode() {
 				<LightModeIcon
 					ref={sunIconRef}
 					sx={{
-						color: getSunColor(),
+						color:
+							isHovered || isAnimation ? "#ca8a04" : "rgba(255, 255, 255, 1)",
 						fontSize: "40px"
 					}}
 				/>
@@ -130,7 +115,10 @@ export default function DarkMode() {
 				<DarkModeIcon
 					ref={moonIconRef}
 					sx={{
-						color: getMoonColor(),
+						color:
+							isHovered || isAnimation
+								? "#3b82f6"
+								: "rgba(255, 255, 255, 0.87)",
 						fontSize: "40px"
 					}}
 				/>

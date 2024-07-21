@@ -6,7 +6,7 @@ export default function NoContentMessage() {
 				You haven&apos;t content yet😔
 			</h1>
 			<Link
-				className='font-poppins font-bold text-sm sm:text-lg md:text-2xl text-custom-green dark:text-green-300 underline hover:no-underline hover:transition hover:duration-500 hover:ease-in-out'
+				className='font-poppins font-bold text-sm sm:text-lg md:text-2xl text-green-600 dark:text-green-500 underline hover:no-underline hover:transition hover:duration-500 hover:ease-in-out'
 				to='/app'
 			>
 				Take something!

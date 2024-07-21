@@ -9,6 +9,9 @@ export default {
 			poetsen: ["Poetsen One", "Helvetica", "sans-serif"]
 		},
 		extend: {
+			screens: {
+				tall: { raw: "(min-height: 1024px) " }
+			},
 			animation: {
 				showing: "showing 1s ease-in-out"
 			},

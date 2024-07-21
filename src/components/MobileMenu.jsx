@@ -3,7 +3,6 @@ import { X } from "./BurgerMenu";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { gsap } from "gsap/gsap-core";
-import { useTheme } from "./utils/ThemeHooks";
 
 const navRoutes = [
 	{
@@ -25,7 +24,6 @@ const navRoutes = [
 
 export default function MobileMenu({ onClick, closeBtnRef, onLinkClick }) {
 	const mobileMenuRef = useRef(null);
-	const { theme } = useTheme();
 
 	gsap.config({ nullTargetWarn: false });
 
@@ -53,22 +51,20 @@ export default function MobileMenu({ onClick, closeBtnRef, onLinkClick }) {
 					{navRoutes.map(route => {
 						return (
 							<li
-								className='p-5 flex justify-center items-center border-b last:border-none border-white'
+								className='p-5 flex justify-center items-center border-b last:border-none border-white/87'
 								key={route.index}
 							>
 								<NavLink
 									onClick={onLinkClick}
 									id='MOBILE-MENU__LINKS'
-									className='font-poppins font-bold text-white text-2xl ease-in-out hover:text-custom-green dark:hover:text-green-300'
+									className='font-poppins font-bold text-white/87 text-2xl ease-in-out hover:text-green-500'
 									to={route.path}
 									style={({ isActive, isPending }) => {
 										return {
 											color: isActive
-												? theme === "light"
-													? "#2ecc71"
-													: "#86efac"
+												? "#22c55e"
 												: isPending
-												? "#fff"
+												? "rgba(255, 255, 255, 0.87)"
 												: ""
 										};
 									}}

@@ -24,7 +24,7 @@ export default function AddToList() {
 	const [originalData] = useState(initialData);
 	const [imageUrl, setImageUrl] = useState("");
 	const [imageAlt, setImageAlt] = useState("");
-	const [isPrivew, setIsPreview] = useState(false);
+	const [isPreview, setIsPreview] = useState(false);
 	const [scrollVisability, setScrollVisability] = useState("");
 	const [isText, setIsText] = useState(false);
 	const [isShow, setIsShow] = useState(false);
@@ -129,13 +129,13 @@ export default function AddToList() {
 
 	// Image handlers
 	useEffect(() => {
-		isPrivew && setScrollVisability("hidden");
+		isPreview && setScrollVisability("hidden");
 		document.body.style.overflow = scrollVisability;
 
 		return () => {
 			setScrollVisability("visible");
 		};
-	}, [isPrivew, scrollVisability]);
+	}, [isPreview, scrollVisability]);
 
 	function handleImageClick(e) {
 		setIsPreview(true);
@@ -150,11 +150,12 @@ export default function AddToList() {
 	return (
 		<>
 			<Wrapper>
-				{isPrivew && (
+				{isPreview && (
 					<ImagePrivew
 						src={imageUrl}
 						alt={imageAlt}
 						onClick={handlePreviewClose}
+						isPreview={isPreview}
 					/>
 				)}
 				<Title text='watch something new' />
@@ -224,7 +225,7 @@ export default function AddToList() {
 						</ul>
 					)}
 				</ContentWrapper>
-				<GoArrow />
+				<GoArrow isPreview={isPreview} />
 			</Wrapper>
 			<ScrollRestoration />
 		</>

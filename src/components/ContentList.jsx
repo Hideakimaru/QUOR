@@ -3,7 +3,6 @@ import ArrowDownIcon from "@mui/icons-material/ExpandMore";
 import ArrowUpIcon from "@mui/icons-material/ExpandLess";
 import { gsap } from "gsap/gsap-core";
 import { useGSAP } from "@gsap/react";
-import { useTheme } from "./utils/ThemeHooks";
 
 export default function ContentList({
 	imageSrc,
@@ -25,7 +24,6 @@ export default function ContentList({
 	const btnRef = useRef(null);
 	const arrowDownRef = useRef(null);
 	const [isButtonActive, setIsButtonActive] = useState(false);
-	const { theme } = useTheme();
 
 	gsap.registerPlugin(useGSAP);
 
@@ -60,24 +58,14 @@ export default function ContentList({
 						style={{
 							backgroundColor:
 								contentType.toLowerCase() === "movie"
-									? theme === "light"
-										? "#3b82f6"
-										: "#93c5fd"
+									? "#3b82f6"
 									: contentType.toLowerCase() === "anime"
-									? theme === "light"
-										? "#a855f7"
-										: "#c4b5fd"
+									? "#8b5cf6"
 									: contentType.toLowerCase() === "series"
-									? theme === "light"
-										? "#14b8a6"
-										: "#5eead4"
+									? "#14b8a6"
 									: contentType.toLowerCase() === "cartoon"
-									? theme === "light"
-										? "#f59e0b"
-										: "#fcd34d"
-									: theme === "light"
-									? "#121212"
-									: "rgba(255,255,255, 0.87)"
+									? "#f59e0b"
+									: "#121212"
 						}}
 					>
 						{contentType}
@@ -123,14 +111,14 @@ export default function ContentList({
 										onClick={() => {
 											setIsExpaned(false);
 										}}
-										className='cursor-pointer hover:text-custom-green dark:hover:text-green-300 hover:transition hover:duration-500 hover:ease-in-out'
+										className='cursor-pointer hover:text-green-500 dark:hover:text-green-400 hover:transition hover:duration-500 hover:ease-in-out'
 										sx={{ fontSize: "35px" }}
 									/>
 								) : (
 									<ArrowDownIcon
 										data-testid='ArrowDownIcon'
 										ref={arrowDownRef}
-										className='cursor-pointer hover:text-custom-green dark:hover:text-green-300 hover:transition hover:duration-500 hover:ease-in-out'
+										className='cursor-pointer hover:text-green-600 dark:hover:text-green-500 hover:transition hover:duration-500 hover:ease-in-out'
 										sx={{ fontSize: "35px" }}
 										onClick={onArrowDownClick}
 									/>
@@ -143,14 +131,14 @@ export default function ContentList({
 						className='flex w-full justify-center md:justify-start items-start'
 					>
 						{isAdded || isButtonActive ? (
-							<p className='font-poppins font-normal text-base text-custom-green dark:text-green-300'>
+							<p className='font-poppins font-normal text-base text-green-600 dark:text-green-500'>
 								This has been added!&#9825;
 							</p>
 						) : (
 							<button
 								data-testid='AddContentBtn'
 								onClick={isAdded ? null : handleAddBtn}
-								className='py-2 px-1 flex w-36 justify-center items-center bg-custom-green dark:bg-green-300  font-poppins font-bold text-lg text-white rounded-md dark:hover:bg-opacity-67 hover:bg-opacity-80 transition duration-500 ease-in-out'
+								className='py-2 px-1 flex w-36 justify-center items-center bg-green-600 dark:bg-green-500  font-poppins font-bold text-lg text-white rounded-md dark:hover:bg-opacity-67 hover:bg-opacity-80 transition duration-500 ease-in-out'
 							>
 								Add
 							</button>

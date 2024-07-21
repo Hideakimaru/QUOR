@@ -24,7 +24,7 @@ export default function Footer({ footerRef }) {
 				>
 					<InstagramIcon
 						data-testid='InstagramIcon'
-						className='hover:text-custom-green dark:hover:text-green-300 hover:transition hover:duration-500 hover:ease-in-out'
+						className='hover:text-green-600 dark:hover:text-green-500 hover:transition hover:duration-500 hover:ease-in-out'
 						fontSize='medium'
 					/>
 				</a>
@@ -35,7 +35,7 @@ export default function Footer({ footerRef }) {
 				>
 					<KofiIcon
 						data-testid='KofiIcon'
-						className='hover:text-custom-green dark:hover:text-green-300 hover:transition hover:duration-500 hover:ease-in-out'
+						className='hover:text-green-600 dark:hover:text-green-500 hover:transition hover:duration-500 hover:ease-in-out'
 						fontSize='medium'
 					/>
 				</a>
@@ -46,7 +46,7 @@ export default function Footer({ footerRef }) {
 				>
 					<GithubIcon
 						data-testid='GithubIcon'
-						className='hover:text-custom-green dark:hover:text-green-300 hover:transition hover:duration-500 hover:ease-in-out'
+						className='hover:text-green-600 dark:hover:text-green-500 hover:transition hover:duration-500 hover:ease-in-out'
 						fontSize='medium'
 					/>
 				</a>
@@ -57,7 +57,7 @@ export default function Footer({ footerRef }) {
 				>
 					<MailIcon
 						data-testid='MailIcon'
-						className='hover:text-custom-green dark:hover:text-green-300 hover:transition hover:duration-500 hover:ease-in-out'
+						className='hover:text-green-600 dark:hover:text-green-500 hover:transition hover:duration-500 hover:ease-in-out'
 						fontSize='medium'
 					/>
 				</a>
@@ -68,7 +68,7 @@ export default function Footer({ footerRef }) {
 				>
 					<TelegramIcon
 						data-testid='TelegramIcon'
-						className='hover:text-custom-green dark:hover:text-green-300 hover:transition hover:duration-500 hover:ease-in-out'
+						className='hover:text-green-600 dark:hover:text-green-500 hover:transition hover:duration-500 hover:ease-in-out'
 						fontSize='medium'
 					/>
 				</a>

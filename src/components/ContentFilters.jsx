@@ -1,12 +1,18 @@
+import { useTheme } from "./utils/ThemeHooks";
+
 function FilterBtn({ text, onClick, isFilterActive, contentType }) {
+	const { theme } = useTheme();
+
 	return (
 		<button
 			data-testid='FilterBtn'
 			onClick={() => onClick(contentType)}
-			className='w-fit py-4 px-8 flex justify-center items-center bg-slate-950 dark:bg-custom-dark-gray dark:hover:bg-custom-gray font-poppins font-medium text-lg text-white dark:text-white/87 rounded-full hover:bg-opacity-80 active:bg-opacity-100'
+			className='w-fit py-3 px-5 sm:py-4 sm:px-8 flex justify-center items-center bg-slate-950 dark:bg-custom-dark-gray dark:hover:bg-custom-gray font-poppins font-medium text-base sm:text-lg text-white dark:text-white/87 rounded-full hover:bg-opacity-80 active:bg-opacity-100'
 			style={{
 				background: isFilterActive
-					? "linear-gradient(to right, #a855f7, #22c55e)"
+					? theme === "light"
+						? "linear-gradient(to right, #9333ea, #16a34a)"
+						: "linear-gradient(to right, #a855f7, #22c55e)"
 					: ""
 			}}
 		>

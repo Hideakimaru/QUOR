@@ -30,7 +30,7 @@ export const initialData = [
 			"Set in Korea's medieval Joseon period, it tells the story of Crown Prince Lee Chang (Ju Ji-hoon), who becomes embroiled in a coup/political conspiracy and is forced to embark upon a mission to investigate the spread of a mysterious undead plague that has beset the current emperor and the country's southern provinces. The story starts with a notice written in Korean on a billboard, claiming the king of Joseon is dead and the crown prince should be crowned immediately as the new king. However, inside the palace, the king is known to be severely sick and has been secretly treated for the past 10 days. No one was allowed to visit the king, not even the crown prince himself. Late at night, the crown prince sneaks out to visit his father, wanting to know the truth. But instead of his own father, he encountered the silhouette of a beastly monster. Accompanied by the physician Seo-bi (Bae Doo-na), the enigmatic Yeong-sin (Kim Sung-kyu), and his personal guard Mu-yeong (Kim Sang-ho), Prince Lee Chang must prevent the advance of the plague towards his home capital of Hanyang (present-day Seoul) while addressing the sinister coup masterminded by Minister Cho Hak-ju (Ryu Seung-ryong) and his family aimed towards his deposition from the throne."
 	},
 	{
-		id: 3,
+		id: 2,
 		selectStatus: "Planned",
 		title: "John Wick",
 		titleImage: "https://i.imgur.com/DoYSLXd.png",
@@ -102,7 +102,7 @@ export const initialData = [
 			"  Helen."
 	},
 	{
-		id: 4,
+		id: 3,
 		selectStatus: "Planned",
 		title: "Your Name",
 		titleImage: "https://i.imgur.com/RQGcGsz.png",
@@ -121,7 +121,7 @@ export const initialData = [
 			'She returns to the village to see that the evacuation plan failed but convinces her father, the mayor, to order an evacuation. Beginning to forget Taki, she discovers that he wrote "I love you" on her hand instead of his name. Taki awakens in his own time with no memory. Five years later, Taki is a university graduate struggling to find a job. He is obsessed with the impact of Tiamat, when the villagers of Itomori were miraculously saved by a fortuitous evacuation drill, but cannot remember why. One day, he glimpses Mitsuha, who has moved to Tokyo; they race to find each other. As they pass the stairs of a shrine, Taki calls out to Mitsuha, and the two simultaneously ask each other for their name.'
 	},
 	{
-		id: 5,
+		id: 4,
 		selectStatus: "Planned",
 		title: "Persuasion",
 		titleImage: "https://i.imgur.com/0lFf07W.png",
@@ -144,7 +144,7 @@ export const initialData = [
 			"In Bath, Anne is reacquainted with William Elliot, who appears to pursue her, while also stating that his intention in Bath is to ensure Anne’s father does not marry Ms Penelope Clay thereby creating the potential for an heir which could displace him. Anne learns that Louisa is engaged to a sailor and believes this to be Wentworth given their previous attachment. Wentworth arrives to Bath and is piqued by William Elliot’s apparent pursuit of Anne, especially as William leads Wentworth to believe he and Anne are engaged. William Elliot does in fact make her a marriage proposal, although Anne has not given an answer. Anne’s sister Mary and family also soon arrive to Bath. Captain Wentworth has been made an offer of a ship and is deciding whether to take it, and overhears Anne and Harville discussing the relative faithfulness of men and women in love. Deeply moved by what Anne says about women not giving up their feelings of love even when all hope is lost, Wentworth writes her a note declaring his feelings for her and departs. Anne runs after him, along the way seeing William Elliot in an embrace with Mrs Penelope Clay. Anne and Captain Wentworth embrace. The wedding of William Elliot and Penelope Clay is shown."
 	},
 	{
-		id: 6,
+		id: 5,
 		selectStatus: "Planned",
 		title: "Demon Slayer",
 		titleImage: "https://i.imgur.com/bhewtBS.png",
@@ -171,7 +171,7 @@ export const initialData = [
 			"Muzan's death has effectively vanquished all demons under his control while Yushiro goes to live as a painter. Tanjiro and Nezuko return to their home, accompanied by Zenitsu and Inosuke. Tanjiro and Inosuke marry Kanao and fellow Demon Slayer Aoi Kanzaki, respectively, while Zenitsu marries Nezuko. In a modern-day epilogue, the descendants and reincarnations of the Corps members enjoy a peaceful life free of demons."
 	},
 	{
-		id: 7,
+		id: 6,
 		selectStatus: "Planned",
 		title: "The Witcher",
 		titleImage: "https://i.imgur.com/5Xx9Zgc.png",
@@ -191,7 +191,7 @@ export const initialData = [
 			"—grantss"
 	},
 	{
-		id: 8,
+		id: 7,
 		selectStatus: "Planned",
 		title: "Spider-Man: Across the Spider-Verse",
 		titleImage: "https://i.imgur.com/rF4QeqA.jpg",
@@ -216,7 +216,7 @@ export const initialData = [
 			"As the Society begins their search for Miles in Earth-1610, Gwen and Miles realizes that Miles has arrived on Earth-42 rather than his own dimension. In this world, his uncle Aaron Davis is alive while his father is dead, and New York City is riddled with unchecked crime. Miles is knocked unconscious and finds himself restrained by Aaron and Earth-42's version of the Prowler, who is revealed to be Miles. Meanwhile, Gwen speaks with Miles' parents, promising to find him and bring him home. As the Spot begins his multiversal attack on Earth-1610's New York, Miles prepares to escape his restraints, and Gwen assembles a team to find Miles, consisting of Peter B., Mayday, Pavitr, Hobie, Margo, Spider-Man Noir, Peni Parker, and Spider-Ham."
 	},
 	{
-		id: 9,
+		id: 8,
 		selectStatus: "Planned",
 		title: "LIFT",
 		titleImage: "https://i.imgur.com/sWrWEBJ.png",
@@ -241,5 +241,353 @@ export const initialData = [
 			"Abby, Cyrus, and Camila are captured at gunpoint by Jorgenson, who also executes Leviathan's representative after they decide to cancel the deal. The Carabinieri arrive, and Cyrus uses N8's NFT technology to show them a recording of Jorgenson murdering the representative. Jorgenson is arrested, while Abby punches Huxley upon learning he authorized the NATO jets. She resigns from Interpol and joins Cyrus." +
 			"" +
 			"Weeks later, Cyrus reveals to Abby that the crew stole the gold shipment during the heist on the airliner, replacing the actual shipment with iron bars painted to look like gold. Together, the crew recover their gold haul and celebrate their success while Cyrus and Abby rekindle their relationship."
+	},
+	{
+		id: 9,
+		selectStatus: "Planned",
+		title:
+			"The Ossan Newbie Adventurer, Trained to Death by the Most Powerful Party, Became Invincible",
+		titleImage: "https://i.imgur.com/EnnKNyL.jpg",
+		contentYear: "2024",
+		episodesCount: "3 / 12",
+		currentEpisode: 0,
+		allEpisodes: 12,
+		ratingNumber: "8",
+		contentGenre: "Action, Animation, Adventure",
+		contentType: "Anime",
+		contentDescription:
+			"In some areas, everything has its time, but there are exceptions to the rule. The same rule applies to the activities of adventurers. It is believed that only in youth does it make sense to try yourself in this field, and all because in a certain age range it is easier to accumulate magical power and replenish strength. But with growing up and especially approaching maturity, it is much more difficult to cope with such tasks. Often, such attempts turn out to be a failure. Risks do not frighten a thirty-year-old guy who dreams of himself as an adventurer and intends to become one despite all obstacles. The resistance on this path is quite high, because he meets more skeptics than like-minded people. Rick Gladiator, due to the fact that he has nerves of steel and self-confidence, managed to please adventurers who have reached rank S, since they impartially assessed the potential of a strong guy. Of course, his age confused them a little, but he will definitely be able to serve them. And Rick takes on training that lasts for two years. During this period of time, he had to experience wild fatigue. But he did not give up, and continued on his way to get the E rank."
+	},
+	{
+		id: 10,
+		selectStatus: "Planned",
+		title: "The Strongest Magician in the Demon Lord's Army Was a Human",
+		titleImage: "https://i.imgur.com/YXmU9Hl.png",
+		contentYear: "2024",
+		episodesCount: "4 / 12",
+		currentEpisode: 0,
+		allEpisodes: 12,
+		ratingNumber: "7",
+		contentGenre: "Action, Animation, Adventure",
+		contentType: "Anime",
+		contentDescription:
+			"The legendary warrior appeared in the kingdom, and at the mere mention of his name, people almost trembled. No wonder, because the one who was recognized as the most powerful wizard, and also the one who controlled the army of Mao, was a demon endowed with unprecedented power. He did not even try to convince his admirers and enemies, whose numbers only increased, otherwise. He demonstrated his incredible powers, since he could capture any fortress. It was rumored that he would do something similar alone. In addition, the demon Ike was cruel and unwavering, and such personalities are not to be trifled with. Ike continued to bend his line, keeping secret what could radically change the attitude of others towards him. The young man, menacing in appearance, was in fact a person who only possessed information. He masterfully used his knowledge of the world, and also had a fairly strong memory and, if necessary, applied all this in practice. No one could match him in knowledge, and therefore it was hard to believe that Ike could be human. The hero continues to lead his remarkable life as a commander, and also a handsome man, from whom girls go crazy."
+	},
+	{
+		id: 11,
+		selectStatus: "Planned",
+		title: "Our Last Crusade or the Rise of a New World",
+		titleImage: "https://i.imgur.com/WfHaznQ.jpg",
+		contentYear: "2024",
+		episodesCount: "2 / 12",
+		currentEpisode: 0,
+		allEpisodes: 12,
+		ratingNumber: "6.4",
+		contentGenre: "Action, Animation, Fantasy",
+		contentType: "Anime",
+		contentDescription:
+			'The leaders of the Empire have long been trying to bring humanity to a new level of development. During the implemented measures, civilization has really moved forward significantly, because almost all the rough and hard work began to be done by various machines. As a result, production volumes accelerated, and people had a lot of free time, which they began to spend on self-development, as well as building relationships that required emotions and expression of feelings. But the machines required energy for their work, and people were puzzled by the search for a source of energy. There is a way to extract it, and it is associated with drilling the soil. But these methods became the reason for the awakening of the "star spirits". And these creatures possess incredible energy and, if they wish, they can provide people with impressive abilities. But the Empire is opposed to cooperation with the spirits. Moreover, they are called witches and they are hunted. Meanwhile, the spirits themselves create their own Kingdom, and the Empire gets a rather powerful and organized enemy. Some people are actively advocating for peace talks.'
+	},
+	{
+		id: 12,
+		selectStatus: "Planned",
+		title: "Lovely Runner",
+		titleImage: "https://i.imgur.com/dD99bn5.jpg",
+		contentYear: "2024",
+		episodesCount: "16 / 16",
+		currentEpisode: 0,
+		allEpisodes: 16,
+		ratingNumber: "8.7",
+		contentGenre: "Comedy, Fantasy, Music",
+		contentType: "Series",
+		contentDescription:
+			"Ryu Sung-jae is a world celebrity whose life appears to be successful, although in reality, he is completely exhausted by his work in the show business. Meanwhile, Im Sol has become a devoted fan of Sung-jae's talent, as listening to his songs brought her comfort after she was forced to give up on her cherished dream. The day that Ryu's death by suicide is reported to have become one of the most terrible days in Im Sol's life. But soon, an unexpected turn of events gives her the opportunity to travel back 15 years in time and try to prevent her idol's tragic future."
+	},
+	{
+		id: 13,
+		selectStatus: "Planned",
+		title: "I Parry Everything",
+		titleImage: "https://i.imgur.com/DytUWXi.png",
+		contentYear: "2024",
+		episodesCount: "3 / 12",
+		currentEpisode: 0,
+		allEpisodes: 12,
+		ratingNumber: "8.7",
+		contentGenre: "Action, Animation, Adventure",
+		contentType: "Anime",
+		contentDescription:
+			"The Kingdom of Kleiz is in troubled times, because there is an attempt on the princess's life, and unknown people have managed to create incredibly powerful monsters. Many signs indicate that a war will break out in the country in the near future. But an ordinary guy, Noor, does not suspect anything like this at all, who is more concerned with questions of his own survival, because he was left an orphan from an early age. But he remembered how his mother, before her death, asked him to become a real adventurer. And his attempts to at least learn something in training centers turned into a complete collapse. At the same time, the guy did not give up on the realization of his dream and continued to engage in physical fitness. In addition to developing endurance and strength, he did not forget to earn extra money for his daily bread and therefore hired himself as a handyman wherever possible. Over ten years of such a lifestyle, he really became strong in both body and spirit. But the most important thing is that Noor has developed the ability to parry a simultaneous attack of a thousand swords. However, this skill is not a ticket to the adventurers' guild. But it may be useful in defending the state from an unprecedented threat."
+	},
+	{
+		id: 15,
+		selectStatus: "Planned",
+		title: "Failure Frame",
+		titleImage: "https://i.imgur.com/gQSWLGD.png",
+		contentYear: "2024",
+		episodesCount: "3 / 12",
+		currentEpisode: 0,
+		allEpisodes: 12,
+		ratingNumber: "7.8",
+		contentGenre: "Action, Animation, Adventure",
+		contentType: "Anime",
+		contentDescription:
+			"A high school student could not forget the violence he experienced in childhood from his mother's chosen one. The woman did not even bother to protect her little son from an adult man who beat him mercilessly. The child grew up with the feeling that he was an empty place and with a lot of complexes. But one day he mustered up the courage and audacity to stand up for a classmate who was being bullied by a bully from their class. And this happened when the whole class was riding on a bus on an excursion. No one expected such an escapade from Toka Mimori, and he himself believed that he was prompted to do this by one special dream. But the strange vision actually came true, and the whole class was transferred to another world, where they were greeted as summoned heroes. The Kingdom of Alayon needed help, because it was attacked by the Emperor of Darkness. Only heroes from another world are capable of coping with this terrible enemy. Such experience was already there, and therefore the subjects of the kingdom used a proven method. The class teacher, who was transported along with the students, tries to calm the children down and advises them to listen to the goddess who met them and brought them up to speed. But the situation really is mortally dangerous."
+	},
+	{
+		id: 16,
+		selectStatus: "Planned",
+		title: "Dune: Part Two",
+		titleImage: "https://i.imgur.com/NOHdtRx.jpg",
+		contentYear: "2024",
+		episodesCount: "1 / 1",
+		currentEpisode: 0,
+		allEpisodes: 1,
+		ratingNumber: "8.6",
+		contentGenre: "Action, Drama, Adventure",
+		contentType: "Movie",
+		contentDescription:
+			"Following the destruction of House Atreides by House Harkonnen, Princess Irulan, the daughter of Padishah Emperor Shaddam IV, journals about her father's betrayal of the Atreides. On Arrakis, Stilgar's Fremen troops accompany Paul Atreides and his pregnant Bene Gesserit mother, Lady Jessica, to Sietch Tabr. Some Fremen suspect they are spies, while Stilgar and others see signs of the prophecy that a mother and son from the \"Outer World\" will bring prosperity to Arrakis." +
+			"" +
+			"The Fremen accept Paul but Stilgar tells Jessica she must succeed Sietch Tabr's dying Reverend Mother by drinking the Water of Life—a drug fatal for males and untrained women. She uses her Bene Gesserit training to transmute the liquid and survive, inheriting the memories of all past Reverend Mothers. The liquid prematurely awakens the mind of her unborn daughter, Alia, allowing Jessica to communicate with her. They agree to focus on convincing the more skeptical northern Fremen of the prophecy. Chani and her friend, Shishakli, correctly believe the prophecy was fabricated to manipulate the Fremen, but Chani begins to respect Paul after he declares that he only intends to fight alongside the Fremen, not to rule them." +
+			"" +
+			'Paul and Chani fall in love as Paul immerses himself in Fremen culture: learning their language, becoming a Fedaykin fighter, riding a sandworm, and raiding Harkonnen spice operations. Paul adopts the Fremen names "Usul" and "Muad\'Dib". Due to the continuing spice raids, Baron Vladimir Harkonnen replaces his nephew, Rabban, as Arrakis\'s ruler with his cunning and psychopathic younger nephew, Feyd-Rautha. Lady Margot Fenring, a Bene Gesserit, is sent to evaluate Feyd-Rautha as a prospective Kwisatz Haderach and secure his genetic lineage.' +
+			"" +
+			"Jessica travels south to unite with Fremen fundamentalists who believe most strongly in the prophecy. Paul remains in the north, fearful that his visions of an apocalyptic holy war will come to pass if he goes south as a messiah. During a raid on a smuggler spice harvester, Paul reunites with Gurney Halleck, who leads Paul to the hidden atomic warhead stockpile of House Atreides. Feyd-Rautha unleashes a devastating attack on the northern Fremen, destroying Sietch Tabr, killing Shishakli, and forcing Paul and the survivors to journey south. Upon arrival, Paul drinks the Water of Life and falls into a coma. This angers Chani, but Jessica compels her to mix her tears with the liquid, which awakens Paul. Now possessing a partial clairvoyance across space and time, Paul sees an adult Alia on water-filled Arrakis. He also sees a singular path to victory among all possible futures, and that Jessica is Baron Harkonnen's daughter." +
+			"" +
+			"Paul meets with the southern Fremen war council, galvanizing the crowd by demonstrating his ability to discern their deepest thoughts. He declares himself the Lisan al Gaib and sends a challenge to Shaddam, who arrives on Arrakis with Irulan and the Sardaukar. As Shaddam chastises the Harkonnens for their failures, the Fremen launch an offensive, using atomics and sandworms to overpower the Sardaukar. Paul executes the Baron and captures Shaddam and his entourage. Meanwhile, Gurney leads an assault on Arrakeen, intercepting and killing Rabban." +
+			"" +
+			"Paul challenges Shaddam for the throne and, to Chani's dismay, demands to marry Irulan. Previously summoned by the Baron, the Great Houses arrive in orbit, ready to invade the planet, but Paul threatens to destroy the spice fields with atomic weapons if they intervene. Feyd-Rautha volunteers to be Shaddam's champion, and Paul kills him in a duel. Irulan agrees to Paul's request for marriage on the condition that her father lives. Shaddam surrenders, but the Great Houses reject Paul's ascendancy, so he orders the Fremen to attack the orbiting fleet. As Stilgar leads the Fremen onto the captured Sardaukar ships, Jessica and Alia reflect on the beginning of Paul's holy war. Chani refuses to bow to Paul and departs alone on a sandworm."
+	},
+	{
+		id: 17,
+		selectStatus: "Planned",
+		title: "Road House",
+		titleImage: "https://i.imgur.com/7VCuvBg.jpg",
+		contentYear: "2024",
+		episodesCount: "1 / 1",
+		currentEpisode: 0,
+		allEpisodes: 1,
+		ratingNumber: "6.2",
+		contentGenre: "Action, Thriller",
+		contentType: "Movie",
+		contentDescription:
+			"Troubled former UFC middleweight fighter Elwood Dalton makes a living scamming fighters on the underground circuit. He is approached by Frankie, the owner of an unruly roadhouse in the fictional Florida Keys community of Glass Key, who offers him a job as head bouncer. Initially hesitant, Dalton takes up the offer after narrowly averting a suicide attempt with a freight train that destroys his car. He takes a bus to Frankie's establishment, called simply The Road House, and befriends Charlie, a teenager who runs a bookstore with her father, Stephen." +
+			"" +
+			"At the Road House, Dalton fends off a motorcycle gang working for local crime boss Ben Brandt and personally drives the injured thugs to the hospital, where he meets Ellie, a doctor who tends to his injuries. Staying in Frankie's disused houseboat, Dalton mentors the other bouncers and becomes popular with the locals. After an attempt on his life by gang leader Dell, Dalton finds him lying in wait at his houseboat. He throws Dell overboard but is unable to save him from being killed and eaten by a crocodile." +
+			"" +
+			"Knox, a psychotic enforcer, is tasked by Brandt's incarcerated father to hunt down Dalton. After an unexpected date with Ellie, Dalton is confronted at gunpoint by Sheriff, who tells him to leave town. However, Ellie, revealed to be the sheriff's daughter, intervenes. She explains that her father is in league with Brandt, who has inherited his wealthy father's drug empire. Brandt meets Dalton at the Road House and taunts him about his past: In a UFC title fight against a friend, Dalton was overcome with rage and killed his opponent in the ring. Knox arrives with Brandt's men, and an all-out bar fight ensues, leaving Dalton badly beaten." +
+			"" +
+			"Frankie admits that Brandt has been buying up property to build an expensive resort, but she is the lone holdout. Dalton decides to leave town but discovers that Charlie and Stephen are in the hospital after Brandt's men burned down their bookstore. Enraged, Dalton kills one of the thugs responsible and captures a sheriff's deputy making a large delivery of Brandt's illicit cash, framing the deputy for the murder and taking the money. The sheriff soon informs Dalton that Brandt has kidnapped Ellie and will exchange her for the money." +
+			"" +
+			"Stealing a bomb-laden motorboat to reach Brandt's catamaran yacht, Dalton finds him with the sheriff, who tells him the kidnapping was a lie to lure Dalton aboard. However, Brandt reveals that he is holding Ellie hostage. Tempers flare as Knox approaches in his boat, but Dalton detonates the motorboat and finds Ellie below deck, attempting to smash a window. Fleeing the sinking yacht, Brandt recaptures Ellie while Dalton commandeers Knox's boat. Catching up to Brandt, Dalton and Ellie leap off as Brandt is launched on top of the Road House." +
+			"" +
+			"Climbing up on a causeway, Knox carjacks a pickup truck and crashes into the Road House, leading to a brutal fistfight with Dalton. When Brandt orders him to kill Dalton, Knox snaps Brandt's neck instead. He prepares to finish off Dalton with a shard of wood, but Dalton gains the upper hand and repeatedly stabs Knox into submission. The sheriff arrives, agreeing to cover up for Dalton." +
+			"" +
+			"As Frankie and Stephen begin to rebuild, Charlie says goodbye to Dalton as he waits for his bus out of town. Stephen discovers Dalton has left them the trunk of cash as the bus pulls away. In a mid-credits scene, Knox has survived and assaults the hospital staff, leaving in his gown."
+	},
+	{
+		id: 18,
+		selectStatus: "Planned",
+		title: "Quality Assurance in Another World",
+		titleImage: "https://i.imgur.com/PjfltbB.png",
+		contentYear: "2024",
+		episodesCount: "3 / 12",
+		currentEpisode: 0,
+		allEpisodes: 12,
+		ratingNumber: "7.3",
+		contentGenre: "Animation, Adventure, Comedy",
+		contentType: "Anime",
+		contentDescription:
+			"The world of computer games is a space that provides a variety of emotions and also gives the opportunity to implement bold ideas and even adjust game scenarios. This is exactly what Haga does. Despite his rather young age, he is a very smart gamer who has managed to gain experience in eliminating various bugs and other defects in game algorithms. His skills are in demand and he is eager to develop in this area further, because there is no limit to perfection. And he will get a unique chance to gain stunning experience, because he penetrates directly into the virtual world. The guy is shocked to such an extent that he almost lost his speech, but he has no time to hesitate, because danger awaits in games at every step. Having somehow gotten used to the new situation, he comes to the conclusion that he is imprisoned in the game and he is entirely dependent on the events that develop in it. He makes friends with a sweet and kind girl, Nicola, and she introduces him to the situation even better. The guy learns about what the poor villagers are facing. And he intends to take an active part in the game events, being himself as a character."
+	},
+	{
+		id: 19,
+		selectStatus: "Planned",
+		title: "Dungeon People",
+		titleImage: "https://i.imgur.com/oPnrQf6.png",
+		contentYear: "2024",
+		episodesCount: "3 / 12",
+		currentEpisode: 0,
+		allEpisodes: 12,
+		ratingNumber: "8.5",
+		contentGenre: "Animation, Adventure, Comedy",
+		contentType: "Anime",
+		contentDescription:
+			"The girl Clay was raised by her father as a true explorer of the world around her. But she had enough of such activities that raised a real professional in her, albeit in a rather criminal sphere. The man himself was a thief and decided that his daughter could continue the dynasty. The little girl tried to justify her father's expectations. It so happens that her father went underground and disappeared there. For three years, there was no word or sight of him. Not believing that her father could have died, the girl decides to go looking for him, but she is not sufficiently informed about the danger that awaits her there. Having lost her vigilance, she penetrates far enough into the dungeon, and there encounters the boss himself. She makes a strong impression on him, and he decides to hire her. Clay herself did not expect such a development of events, besides, she took the position of administrator and can now thoroughly study the structure of the dungeon. She is required to ensure its operation. The little girl is imbued with teamwork, comprehends the basics of corporate ethics and other wisdom, and easily builds a career in this amazing place. And of course, receives excellent bonuses for her work."
+	},
+	{
+		id: 21,
+		selectStatus: "Planned",
+		title: "My Wife Has No Emotion",
+		titleImage: "https://i.imgur.com/T1g2IWD.jpg",
+		contentYear: "2024",
+		episodesCount: "4 / 12",
+		currentEpisode: 0,
+		allEpisodes: 12,
+		ratingNumber: "8.2",
+		contentGenre: "Animation, Comedy, Romance",
+		contentType: "Anime",
+		contentDescription:
+			"The young man Takuma led an ordinary life of a man who devoted himself entirely to work. He did not complain about this state of affairs, since he did not have any hobbies that could compete with workaholism, and the saddest thing was that he did not have a family. So he shuttled between work and home. He returned to his native walls only to get enough sleep and return to the office again. With such a schedule, he had neither the time nor the energy to run the household, and even a lonely person needs cleanliness and a hot dinner. Usually, all this is provided by a loving wife to her husband, but Takuma has to use a robot for these purposes. At first, he perceived this device as an advanced gadget, but soon his perception of this thing began to change dramatically. Seeing an artificial woman bustling about the house, he began to perceive such a person as a semblance of a person. It became much easier for the man himself to stay at home, because he no longer felt lonely. But the caring robot Mina does not have emotions, which upsets her owner, because he wants to evoke a response from her with his stories about how his day went and what makes him happy and sad."
+	},
+	{
+		id: 22,
+		selectStatus: "Planned",
+		title: "The Elusive Samurai",
+		titleImage: "https://i.imgur.com/dvCK9it.jpg",
+		contentYear: "2024",
+		episodesCount: "3 / 12",
+		currentEpisode: 0,
+		allEpisodes: 12,
+		ratingNumber: "7.8",
+		contentGenre: "Animation, Comedy, Adventure",
+		contentType: "Anime",
+		contentDescription:
+			"The mischievous boy Tokiyuki Hojo, due to his age of eight, cannot yet demonstrate any incredible skills and talents, which is why he is not upset at all. The child simply enjoys his childhood, but since he is the heir to the Kamakura shoguns, he will have to begin a difficult process of training and ascent to certain heights. The life of the baby changed quite abruptly, which was facilitated by a coup d'etat, during which the clan of his relatives was overthrown. Takauji Ashikaga was behind these events. The young heir could have been in danger of death, but he was incredibly lucky." +
+			"" +
+			"Tokiyuki's life was saved by Yorishige Suwa, who is a priest and also a prophet. Although the boy escaped, the mortal threat does not retreat from him. The new ruler fears that the heir to the shogun he killed may return and take revenge, and for this reason he hires assassins who must find the fugitive. Realizing the full extent of the danger, the hero is initially puzzled only by how he can hide more reliably, but then comes to the realization that he needs allies and like-minded people in the fight to restore the shogunate and return power to his clan."
+	},
+	{
+		id: 23,
+		selectStatus: "Planned",
+		title: "Atri: My Dear Moments",
+		titleImage: "https://i.imgur.com/TTujQQi.jpg",
+		contentYear: "2024",
+		episodesCount: "2 / 12",
+		currentEpisode: 0,
+		allEpisodes: 12,
+		ratingNumber: "8",
+		contentGenre: "Animation, Drama, Romance",
+		contentType: "Anime",
+		contentDescription:
+			"Natural disasters can be quite large-scale, that is, cover almost the entire world. So one day it happened, when the level of the world's oceans rose catastrophically, swallowing almost all the land that existed on planet Earth. Surprisingly, not all representatives of human civilization died, a small percentage were lucky enough to survive. However, their further existence was like a nightmare, because there was water everywhere and people had no idea how to act further. Only very young creatures tried to adapt to the conditions of the surrounding world." +
+			"" +
+			"Among such optimists was a guy named Natsuki Ikaruga. Of course, he himself was also worried about what happened, sad about the past that disappeared without a trace. He understood that the world would never be the same, but due to his youth, he tried to find at least some reasons for joy. One of them is an amazing creature nicknamed Atri. In appearance, she was a very cute girl, in fact, she is a high-tech robot. She thinks like a human and even experiences emotions. But she has lost her memory and the hero intends to help her."
+	},
+	{
+		id: 24,
+		selectStatus: "Planned",
+		title: "How to Become Ordinary",
+		titleImage: "https://i.imgur.com/mhTslFS.png",
+		contentYear: "2024",
+		episodesCount: "3 / 12",
+		currentEpisode: 0,
+		allEpisodes: 12,
+		ratingNumber: "8.3",
+		contentGenre: "Animation, Drama, Mystery",
+		contentType: "Anime",
+		contentDescription:
+			"Kobata and Osanai went to school together, and later managed to enter the same university. Their relationship was quite warm and friendly, and devoid of romance. Dojima congratulated Kobata in a peculiar way on passing the entrance exams. The girl thought this man was dangerous, but the guy considered him a small citizen. One day, Dojima asks Kobata for help in finding a small bag of his classmate. At the same time, the hero has to postpone the fulfillment of Osanai's request until later, and it was related to a strawberry cake. Dojima is completely indifferent to the affairs of other guys, and does not behave like a modest and small person. Osanai is not angry with his friend. They still go to a limited sale of cakes, and Kobata dedicates her to the problem of an unknown girl whose bag was stolen. He has unraveled similar cases before. Friends are used to discussing all the issues they encountered. From the outside they gave the impression of a couple in love, but in reality neither of them was going to meet anyone. They managed to buy the last two cakes, which they put in the basket of a bicycle, and it was stolen by a stranger before their eyes."
+	},
+	{
+		id: 25,
+		selectStatus: "Planned",
+		title: "Wistoria: Wand and Sword",
+		titleImage: "https://i.imgur.com/loMq7Fb.jpg",
+		contentYear: "2024",
+		episodesCount: "2 / 12",
+		currentEpisode: 0,
+		allEpisodes: 12,
+		ratingNumber: "7.7",
+		contentGenre: "Animation, Action, Adventure",
+		contentType: "Anime",
+		contentDescription:
+			"Will has been working incredibly hard all his adult life, because he has a dream and wants to make it come true, and it is connected with entering an academy specializing in magic. He is sure that he will be able to become a sorcerer, and the greatest one at that. But without proper training, this cannot be achieved. The problem is that this guy has absolutely no inclination to comprehend magical disciplines, much less to manifest them. And when he enters the academy, he faces a real nightmare, because almost immediately he finds himself among the worst students, and the teachers are completely perplexed by what he forgot in this institution. Will faces neglect towards himself almost every day, which is why he begins to doubt the correctness of his choice. Despite all this, he does not lose hope that he will be able to master magic. He has abilities, and they manifest themselves in the ability to wield a sword. And as it turns out, magic isn't always needed to succeed in the series of tests that students at the academy must pass. The hero comes to the conclusion that he needs to continue believing in himself and making every effort to fulfill the promise he made to a loved one."
+	},
+	{
+		id: 26,
+		selectStatus: "Planned",
+		title: "Fairy Tail 100 Years Quest",
+		titleImage: "https://i.imgur.com/ZftTLXF.jpg",
+		contentYear: "2024",
+		episodesCount: "2 / 12",
+		currentEpisode: 0,
+		allEpisodes: 12,
+		ratingNumber: "7.7",
+		contentGenre: "Animation, Action, Adventure",
+		contentType: "Anime",
+		contentDescription:
+			'The members of the legendary Fairy Tail guild still intend to reach the level of the strongest mages. In addition, they can show their skills in the upcoming "Centennial Quest", and even professionals cannot always succeed in it. Natsu and his comrades are not at all afraid of this circumstance and are ready to take on tasks. And this really turns out to be difficult, since they suffered significant losses on the way, but still got to the place where they needed to. And then they have to find the direct customer, who will pay them a reward for the completed mission. They cope with this task, and almost immediately receive another task, which they did not even count on.' +
+			"" +
+			"The guild will have to fight a difficult opponent, because we are talking about five bugs, in addition to this, they also need to seal them. The heroes are aware of the risks, but they want to show their skills in magic. In addition, Lucy has really become much stronger. And they can't do without adventures, especially Erza Scarlett is exhausted from boredom. And they certainly won't have to sit idle, because the task they receive will require maximum dedication and immersion in the events that are taking place."
+	},
+	{
+		id: 27,
+		selectStatus: "Planned",
+		title: "Tower of God",
+		titleImage: "https://i.imgur.com/xnd0jmU.jpg",
+		contentYear: "2024",
+		episodesCount: "2 / 12",
+		currentEpisode: 0,
+		allEpisodes: 12,
+		ratingNumber: "7.6",
+		contentGenre: "Animation, Action, Adventure",
+		contentType: "Anime",
+		contentDescription:
+			"There is an incredible architectural structure in the world in the form of a giant tower, which is located almost in the middle of the world. A legend is associated with this tower, as if the one who climbs to the roof will be able to fulfill any wish. Getting there is not so easy, since this requires not only courage, but also some kind of permission. To obtain it, you must go through a rather rigorous selection, during which it is necessary to complete the most difficult tasks that test candidates for ingenuity, dexterity and physical strength. In addition, the participants in the selection must show toughness, will and even demonstrate ambition. Those who are eager for victory should be prepared to kill someone who could have been an ally yesterday. On the way to the top of the tower, betrayal is not seen as something reprehensible, on the contrary, it becomes a completely necessary quality. After the selection has passed, there are many dead. But those who managed to survive get the right to try to climb to the top and fulfill their most cherished dream. On this path, young creatures who were not fully prepared for this will test their strength. Agero Agnis Kun, Wang Nan Ja, Rachel and other children are drawn into the game."
+	},
+	{
+		id: 28,
+		selectStatus: "Planned",
+		title: "VTuber Legend",
+		titleImage: "https://i.imgur.com/0BpBBqV.png",
+		contentYear: "2024",
+		episodesCount: "2 / 12",
+		currentEpisode: 0,
+		allEpisodes: 12,
+		ratingNumber: "6.6",
+		contentGenre: "Animation, Comedy",
+		contentType: "Anime",
+		contentDescription:
+			"Vtuber is a popular type of streaming that burst onto the Internet several years ago and won the hearts of millions of anime fans and others around the world. The main idea of ​​such a broadcast is that a person, instead of showing himself as usual, is replaced by a 3D model. It is usually in an anime style with the simplest facial expressions. The person leaves only his voice for broadcasting. And sometimes he changes it with the help of different programs." +
+			"" +
+			'Suffering from poverty, our main character decides to go into this type of activity. Dreaming of instantly becoming popular, earning a lot of money and living like a fairy tale, she passes an interview at the company "Live On" and has been broadcasting live every day for three months. Unfortunately for her, things are not going very well. The views are weak compared to her colleagues in the shop and this worries her a lot. Almost every evening after such "work" the girl drinks alcohol in the hope of relaxing. And then one day she starts drinking, forgetting to turn off the broadcast...'
+	},
+	{
+		id: 29,
+		selectStatus: "Planned",
+		title: "A Journey Through Another World",
+		titleImage: "https://i.imgur.com/6cpoR1Y.jpg",
+		contentYear: "2024",
+		episodesCount: "3 / 12",
+		currentEpisode: 0,
+		allEpisodes: 12,
+		ratingNumber: "7.2",
+		contentGenre: "Animation, Drama, Family",
+		contentType: "Anime",
+		contentDescription:
+			"It happens that some people die despite the fate that was assigned to them. This is exactly what happened to poor Kayano Takumi. And even God himself is surprised by what happened, but it is not so easy to correct an unfortunate mistake, the victim of which was a young man who should have continued his life's journey. A difficult search for a solution begins. He has no chance of being reborn, and even more so, he will not return to the interrupted incarnation. And there is only one option left that can be offered to the victim." +
+			"" +
+			"And for him, the proposed development of events seems incredible and simply fabulous. The guy will have to go to another world, where unfamiliar rules and laws rule the ball. The young man will have to get acquainted with all this in order to adapt and get down to business, because he must find a place for himself in the sun and benefit society. He is somewhat confused, because he has to accept conditions that run counter to something familiar. He must become an adventurer, which requires dedication and risk. But besides that, Kayano will take care of numerous children. Charming kids will surround him from all sides. And this circumstance seems quite acceptable."
+	},
+	{
+		id: 30,
+		selectStatus: "Planned",
+		title: "The Second Best Hospital in the Galaxy",
+		titleImage: "https://i.imgur.com/9wZucqi.jpg",
+		contentYear: "2024",
+		episodesCount: "8 / 8",
+		currentEpisode: 0,
+		allEpisodes: 8,
+		ratingNumber: "6.4",
+		contentGenre: "Animation, Action, Adventure",
+		contentType: "Cartoon",
+		contentDescription:
+			"The events take place in the distant year 14002 and tell the story of two humanoid female doctors working in a space hospital, which is recognized as the second best in the entire galaxy. Being true professionals in their field, both have completely different temperaments and approaches to work: Doctor Slich, as a rule, demonstrates confidence and bravado during complex surgeries, and her colleague Clack, although extremely smart, is indecisive. In the course of their medical practice, Slich and Clack encounter amazing adventures."
+	},
+	{
+		id: 31,
+		selectStatus: "Planned",
+		title: "Kung Fu Panda 4",
+		titleImage: "https://i.imgur.com/lFT9kzn.jpg",
+		contentYear: "2024",
+		episodesCount: "1 / 1",
+		currentEpisode: 0,
+		allEpisodes: 1,
+		ratingNumber: "6.3",
+		contentGenre: "Animation, Action, Adventure",
+		contentType: "Cartoon",
+		contentDescription:
+			"A panda named Po, a fearless Dragon Warrior who has defeated many powerful enemies on his way, must choose a successor to become the spiritual leader of the Valley of Peace. Suddenly, he encounters a new enemy who is trying to take over the Valley, and who is many times stronger than all the previous ones - an evil witch who can take the form of any kung fu master. To emerge victorious from the fight, Po must join forces with the steppe fox Zhen - a young street thief who claims to be the Dragon Warrior."
 	}
 ];
