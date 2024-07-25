@@ -24,7 +24,6 @@ export default function AddToList() {
 	const [originalData] = useState(initialData);
 	const [imageUrl, setImageUrl] = useState("");
 	const [imageAlt, setImageAlt] = useState("");
-	const [isPreview, setIsPreview] = useState(false);
 	const [scrollVisability, setScrollVisability] = useState("");
 	const [isText, setIsText] = useState(false);
 	const [isShow, setIsShow] = useState(false);
@@ -45,6 +44,8 @@ export default function AddToList() {
 	});
 
 	const [addedContentIds, setAddedContentIds] = useState([]);
+	const [isPreview, setIsPreview] = useState(false);
+	const [isGoTopBtnShow, setIsGoTopBtnShow] = useState(false);
 
 	// newData
 
@@ -65,6 +66,23 @@ export default function AddToList() {
 
 	const searchBarRef = useRef(null);
 
+	//Go to Top Arrow logic
+	useEffect(() => {
+		window.addEventListener("scroll", () => {
+			if (window.scrollY >= 150) {
+				setIsGoTopBtnShow(true);
+			} else {
+				setIsGoTopBtnShow(false);
+			}
+		});
+	}, []);
+
+	function handleGoTopClick(e) {
+		e.stopPropagation();
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	}
+
+	//Scroll trigger updates positions
 	useEffect(() => {
 		ScrollTrigger.refresh();
 	}, [searchValue, isFilterActive]);
@@ -139,11 +157,17 @@ export default function AddToList() {
 
 	function handleImageClick(e) {
 		setIsPreview(true);
+		setIsGoTopBtnShow(false);
 		setImageUrl(e.target.src);
 		setImageAlt(e.target.alt);
 	}
 
 	function handlePreviewClose() {
+		if (window.scrollY <= 150) {
+			setIsGoTopBtnShow(false);
+		} else {
+			setIsGoTopBtnShow(true);
+		}
 		setIsPreview(false);
 	}
 
@@ -225,7 +249,7 @@ export default function AddToList() {
 						</ul>
 					)}
 				</ContentWrapper>
-				<GoArrow isPreview={isPreview} />
+				{isGoTopBtnShow && <GoArrow onClick={handleGoTopClick} />}
 			</Wrapper>
 			<ScrollRestoration />
 		</>

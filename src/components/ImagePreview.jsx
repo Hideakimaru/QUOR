@@ -28,9 +28,9 @@ export default function ImagePreview({ src, alt, onClick, isPreview }) {
 	return (
 		<div
 			ref={previewContainerRef}
-			className='z-[1000] p-5 flex fixed flex-col w-full max-h-screen h-screen justify-center items-center top-0 left-0 bg-black dark:bg-custom-black bg-opacity-80 dark:bg-opacity-67'
+			className='z-[1000] p-5 flex fixed flex-col w-full h-screen justify-center items-center top-0 left-0 bg-black dark:bg-custom-black bg-opacity-80 dark:bg-opacity-67'
 		>
-			<div className='flex w-full max-w-full md:max-w-[600px] lg:max-w-[800px] xl:max-w-[400px] flex-col justify-center items-center'>
+			<div className='flex w-full max-w-full max-h-[80vh] md:max-w-[600px] lg:max-w-[800px] xl:max-w-[400px] flex-col justify-center items-center'>
 				<div className='-mr-[21px] py-2 flex w-full justify-end'>
 					<button
 						data-testid='CloseImagePreview'
@@ -41,7 +41,7 @@ export default function ImagePreview({ src, alt, onClick, isPreview }) {
 						&#x2715;
 					</button>
 				</div>
-				<div className='flex w-full max-h-[80vh] justify-center items-center'>
+				<div className='flex w-full justify-center items-center'>
 					<img
 						ref={previewImageRef}
 						className='w-full h-full'

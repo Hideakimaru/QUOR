@@ -27,7 +27,6 @@ export default function WatchList() {
 	});
 	const [imageUrl, setImageUrl] = useState("");
 	const [imageAlt, setImageAlt] = useState("");
-	const [isPreview, setIsPreview] = useState(false);
 	const [scrollVisibility, setScrollVisibility] = useState("");
 	const [isContent, setIsContent] = useState(false);
 	const [isUnfolded, setIsUnfolded] = useState({
@@ -44,6 +43,8 @@ export default function WatchList() {
 	const [isText, setIsText] = useState(false);
 	const [searchValue, setSearchValue] = useState("");
 	const [filteredContent, setFiltredContent] = useState([]);
+	const [isPreview, setIsPreview] = useState(false);
+	const [isGoTopBtnShow, setIsGoTopBtnShow] = useState(false);
 
 	const searchBarRef = useRef(null);
 
@@ -52,6 +53,23 @@ export default function WatchList() {
 
 	gsap.config({ nullTargetWarn: false, trialWarn: false });
 
+	//Go to Top Arrow logic
+	useEffect(() => {
+		window.addEventListener("scroll", () => {
+			if (window.scrollY >= 150) {
+				setIsGoTopBtnShow(true);
+			} else {
+				setIsGoTopBtnShow(false);
+			}
+		});
+	}, []);
+
+	function handleGoTopClick(e) {
+		e.stopPropagation();
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	}
+
+	// Scroll trigger updates
 	useEffect(() => {
 		ScrollTrigger.refresh();
 	}, [contentData, filteredContent]);
@@ -158,12 +176,19 @@ export default function WatchList() {
 
 	function handleImageClick(e) {
 		setIsPreview(true);
+		setIsGoTopBtnShow(false);
 		setImageUrl(e.target.src);
 		setImageAlt(e.target.alt);
 	}
 
+	console.log(window.scrollY);
 	function handlePreviewClose() {
 		setIsPreview(false);
+		if (window.scrollY <= 150) {
+			setIsGoTopBtnShow(false);
+		} else {
+			setIsGoTopBtnShow(true);
+		}
 	}
 
 	function handleSelectChange(contentId, choice) {
@@ -396,7 +421,7 @@ export default function WatchList() {
 						<NoContentMessage />
 					)}
 				</ContentWrapper>
-				<GoArrow isPrivew={isPreview} />
+				{isGoTopBtnShow && <GoArrow onClick={handleGoTopClick} />}
 			</Wrapper>
 			<ScrollRestoration />
 		</>

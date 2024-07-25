@@ -1,7 +1,6 @@
 import ArrowIcon from "@mui/icons-material/ArrowUpward";
-import { useEffect, useState } from "react";
 
-function ArrowButton({ onClick }) {
+export default function GoArrow({ onClick }) {
 	return (
 		<button
 			data-testid='GoArrow'
@@ -11,35 +10,4 @@ function ArrowButton({ onClick }) {
 			<ArrowIcon fontSize='medium' />
 		</button>
 	);
-}
-
-export default function GoArrow({ isPrivew }) {
-	const [isShow, setIsShow] = useState(false);
-
-	useEffect(() => {
-		if (isPrivew) {
-			setIsShow(false);
-		} else if (window.scrollY === 0) {
-			setIsShow(false);
-		} else {
-			setIsShow(true);
-		}
-	}, [isPrivew]);
-
-	function handleClick(e) {
-		e.stopPropagation();
-		window.scrollTo({ top: 0, behavior: "smooth" });
-	}
-
-	useEffect(() => {
-		window.addEventListener("scroll", () => {
-			if (window.scrollY >= 150) {
-				setIsShow(true);
-			} else {
-				setIsShow(false);
-			}
-		});
-	}, []);
-
-	return <>{isShow && <ArrowButton onClick={handleClick} />}</>;
 }

@@ -3,6 +3,7 @@ import ArrowDownIcon from "@mui/icons-material/ExpandMore";
 import ArrowUpIcon from "@mui/icons-material/ExpandLess";
 import { gsap } from "gsap/gsap-core";
 import { useGSAP } from "@gsap/react";
+import ContentImage from "./ContentImage";
 
 export default function ContentList({
 	imageSrc,
@@ -41,17 +42,7 @@ export default function ContentList({
 	return (
 		<div className='gap-6 md:gap-12 px-3 py-5 md:px-8 md:pt-5 md:pb-8 flex w-full flex-col md:flex-row bg-white dark:bg-custom-dark-gray'>
 			<div className='gap-4 md:gap-0 flex w-full md:w-36 flex-col justify-start items-center'>
-				<div className='relative flex md:min-w-36 md:h-40'>
-					<div className='flex w-48 h-64 md:w-36 md:h-48 left-0 hover:opacity-80 active:opacity-100 active:scale-90 transition duration-500 ease-in-out md:rounded-md md:absolute md:-top-[40px] md:left-auto overflow-hidden cursor-pointer active:duration-0'>
-						<img
-							data-testid='ContentImage'
-							className='w-full h-auto'
-							src={imageSrc}
-							alt={altText}
-							onClick={onClick}
-						/>
-					</div>
-				</div>
+				<ContentImage imageSrc={imageSrc} altText={altText} onClick={onClick} />
 				<div className='md:pt-0 flex w-full justify-center font-poetsen uppercas'>
 					<span
 						className='w-fit py-1 px-4 flex justify-center items-center text-white rounded-md'
