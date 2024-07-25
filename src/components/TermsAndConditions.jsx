@@ -1,12 +1,31 @@
 import { Link, ScrollRestoration } from "react-router-dom";
 import GoArrow from "./GoArrow.jsx";
 import Header from "./CustomHeader.jsx";
+import { useEffect, useState } from "react";
 
 export default function TermsAndConditions() {
+	const [isGoTopBtnShow, setIsGoTopBtnShow] = useState(false);
+
+	//Go to Top Arrow logic
+	useEffect(() => {
+		window.addEventListener("scroll", () => {
+			if (window.scrollY >= 150) {
+				setIsGoTopBtnShow(true);
+			} else {
+				setIsGoTopBtnShow(false);
+			}
+		});
+	}, []);
+
+	function handleGoTopClick(e) {
+		e.stopPropagation();
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	}
+
 	return (
 		<>
 			<Header />
-			<div className='container mt-20 gap-5 mx-auto p-3 sm:p-10 md:p-20 flex flex-col text-black dark:text-white/87'>
+			<div className='container mt-20 gap-5 mx-auto px-3 py-8 sm:px-10 sm:py-32 md:p-20 flex flex-col text-black dark:text-white/87'>
 				<h1
 					data-testid='mainTitle'
 					className='font-bold text-2xl md:text-4xl text-center'
@@ -135,7 +154,7 @@ export default function TermsAndConditions() {
 						Yes, I&apos;m Agree
 					</Link>
 				</div>
-				<GoArrow />
+				{isGoTopBtnShow && <GoArrow onClick={handleGoTopClick} />}
 			</div>
 			<ScrollRestoration />
 		</>
