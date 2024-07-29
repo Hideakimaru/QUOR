@@ -55,10 +55,8 @@ Open [http://localhost:5173/](http://localhost:5173/ "http://localhost:5173/") i
 
 ## 🎥 Demo
 
-![Content Adding](https://i.imgur.com/vVFxwiZ.gif)
+![Content Adding](https://i.imgur.com/RP7Nbnd.gif)
 
-
-![Manage Content](https://i.imgur.com/J8xjOvy.gif)
 
 ## 🔧 Technologies used
 
