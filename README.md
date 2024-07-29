@@ -24,7 +24,7 @@ cd QUOR
 npm install
 ```
 
-**4.** Install dependencies:
+**4.** Start development server:
 
 ```bash
 npm run dev
