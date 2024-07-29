@@ -55,7 +55,8 @@ Open [http://localhost:5173/](http://localhost:5173/ "http://localhost:5173/") i
 
 ## 🎥 Demo
 
-![Quor preview](https://i.imgur.com/Ow3DsPH.gif)
+
+![Quor preview](https://i.imgur.com/iwv6JPm.gif)
 
 
 ## 🔧 Technologies used
