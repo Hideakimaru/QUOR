@@ -53,12 +53,6 @@ Open [http://localhost:5173/](http://localhost:5173/ "http://localhost:5173/") i
 
 ![Quor Content Tracker](https://i.imgur.com/UvGAyDr.png)
 
-## 🎥 Demo
-
-
-![Quor preview](https://i.imgur.com/CcfQH3Q.gif)
-
-
 ## 🔧 Technologies used
 
 * React: A library for creating user interfaces.
